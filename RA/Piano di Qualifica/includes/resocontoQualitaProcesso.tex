@@ -1,0 +1,434 @@
+\newpage
+\section{Resoconto Qualità di Processo}
+
+In questa sezione del documento vengono descritti e analizzati gli esiti delle metriche previste per il controllo della qualità di processo, in base alla revisione di progetto.
+La prima tabella contiene le metriche con associato esito applicate sull'intero sistema.
+Le successive tabelle sono una per ogni metrica applicata ad un singolo modulo, metodo, funzione, procedura o classe che sia.
+
+	\subsection{Revisione di Qualifica}
+	
+		\begin{longtable}{|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
+			\hline
+			\rowcolor{Gray}
+			\textbf{Id} & \textbf{Metrica} & \textbf{Valore} & \textbf{Esito} \\
+			\hline
+			\hyperlink{MPC1}{MPC1} & \textit{Disponibilità \textit{NetBreakDB}} & 95\% & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC2}{MPC2} & \textit{Schedule Variance} & 0 & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC3}{MPC3} & \textit{Budget Variance} & 75 & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC4}{MPC4} & \textit{Rischi non preventivati} & 1 & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC5}{MPC5} & \textit{Adempimento requisiti obbligatori} & 100\% & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC13}{MPC13} & \textit{Linee di commento} & 20\% & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC14}{MPC14} & \textit{Test di Unità} & 96\% & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC15}{MPC15} & \textit{Test di Integrazione} & 70\% & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC16}{MPC16} & \textit{Test di Sistema} & 80\% & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC17}{MPC17} & \textit{Test superati} & 88\% & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+			\hyperlink{MPC19}{MPC19} & \textit{Code Coverage} & 67\% & \textcolor{Green}{\textit{Superato}}\\
+			\hline
+		
+			\caption{Resoconto esiti metriche - Qualità di processo}
+		\end{longtable}
+	
+%\hyperlink{MPC6}{MPC6} & \textit{Fan In} & xx & \textcolor{Green}{\textit{Superato}}\\
+%\hline
+%\hyperlink{MPC7}{MPC7} & \textit{Fan Out} & xx & \textcolor{Green}{\textit{Superato}}\\
+%\hline
+	
+\subsubsection{Numero di metodi per classe}
+La metrica \textit{Numero di metodi per classe} (\hyperlink{MPC8}{MPC8}), si applica ad ogni classe progettata ed implementata.
+
+\begin{longtable}{|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
+	\hline
+	\rowcolor{Gray}
+	\textbf{Classe} & \textbf{Valore} & \textbf{Esito} \\
+	\hline
+	
+	\textit{AppRouter} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AppRun} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ProfileManagerController} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegistrationController} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SellingPolicyController} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{UserRegistrationController} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegisteredController} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController} & 7 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{TransactionsListController} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminManagerController} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController} & 7 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{LoginController} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{VirtualAccountController} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{PasswordRecoveryController} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ResetPasswordController} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIPurchasedController} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Gateway} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ServiceInteractionHandler} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db} & 15 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db} & 14 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Transactions\_db} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SLA\_db} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{FileHandler} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{FrontEndMS} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	
+	\caption{Resoconto esiti metrica Numero di metodi per classe}
+\end{longtable}
+
+\subsubsection{Numero di parametri per metodo}
+La metrica \textit{Numero di parametri per metodo} (\hyperlink{MPC9}{MPC9}), si applica ad ogni metodo progettato ed implementato.
+
+\begin{longtable}{|>{\centering\arraybackslash}p{10cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{3cm}|}
+	\hline
+	\rowcolor{Gray}
+	\textbf{Metodo} & \textbf{Valore} & \textbf{Esito} \\
+	\hline
+	
+	\textit{AppRouter::AppRouter()} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AppRun::initialSetting()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ProfileManagerController::ProfileManagerController()} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ProfileManagerController::confirm()} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ProfileManagerController::getUserDetails()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegistrationController::APIRegistrationController()} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegistrationController::insertMicroservice()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SellingPolicyController::SellingPolicyController()} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SellingPolicyController::selectPolicy()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{UserRegistrationController::UserRegistrationController()} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{UserRegistrationController::signUp()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{UserRegistrationController::login()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegisteredController::APIRegisteredController()} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegisteredController::getMicroservicesDetails()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegisteredController::setMicroservice()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController::SearchController()} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController::searchUser()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController::searchMicroservice()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController::viewUser()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController::viewMicroserviceInfo()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController::buyMicroservice()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController::goToResultsPage()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{TransactionsListController::TransactionsListController()} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{TransactionsListController::getTransactions()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminManagerController::AdminManagerController()} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminManagerController::confirm()} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminManagerController::getAdminDetails()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController::AdminModerationController()} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController::selectUser()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController::selectMicroservice()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController::suspendUser()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController::suspendMicroservice()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController::removeUser()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController::removeMicroservice()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{LoginController::LoginController()} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{LoginController::login()} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{LoginController::registration()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{LoginController::recoveryPassword()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{VirtualAccountController::VirtualAccountController()} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{VirtualAccountController::confirm()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{VirtualAccountController::getBalance()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{VirtualAccountController::rechargeCredits()} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{PasswordRecoveryController::PasswordRecoveryController()} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{PasswordRecoveryController::passwordForgot()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{PasswordRecoveryController::login()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ResetPasswordController::ResetPasswordController()} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ResetPasswordController::setNewPassword()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ResetPasswordController::confirmNewPassword()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIPurchasedController::APIPurchasedController()} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIPurchasedController::getMicroservices()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Gateway::setNewRedirection()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Gateway::validateCall()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Gateway::random\_SLA\_survey()} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Gateway::manage\_call()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ServiceInteractionHandler::getServiceMetaFromCourier()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ServiceInteractionHandler::generateClientInterface()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ServiceInteractionHandler::generateCourier()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_all\_ms\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_ms\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_intf\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_interfaces\_of\_ms()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_ms\_from\_interface()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_msidlist\_from\_category()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_category\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_categories\_of\_ms()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_last\_registered\_ms()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::retrieve\_last\_registered\_ms\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::microservice\_registration()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::microservice\_update()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::interface\_registration()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::interface\_update()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::add\_category\_to\_ms()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db::remove\_category\_from\_ms()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::user\_exists()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::retrieve\_admin\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::retrieve\_client\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::retrieve\_client\_fullname()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::retrieve\_client\_type()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::retrieve\_moderation\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::retrieve\_modtype\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::retrieve\_clienttype\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::basicclient\_registration()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::developer\_upgrade()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::basicclient\_downgrade()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::client\_moderation()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::client\_update()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db::client\_delete()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Transactions\_db::retrieve\_apikey\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Transactions\_db::retrieve\_purchases\_list()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Transactions\_db::apikey\_registration()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Transactions\_db::purchase\_registration()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Transactions\_db::apikey\_remaining\_update()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SLA\_db::retrieve\_apikey\_slasurvey\_list()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SLA\_db::retrieve\_ms\_slasurvey\_list()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SLA\_db::retrieve\_slasurvey\_info()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SLA\_db::retrieve\_slasurvey\_iscompliant()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SLA\_db::slasurvey\_insert()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{FileHandler::setFile()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{FileHandler::fileNameExists()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{FrontEndMS::homepage\_ms\_list()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{FrontEndMS::homepage\_filter\_list()} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	
+	\caption{Resoconto esiti metrica Numero di parametri per metodo}
+\end{longtable}
+
+\subsubsection{Numero di attributi per classe}
+La metrica \textit{Numero di attributi per classe} (\hyperlink{MPC10}{MPC10}), si applica per ogni classe progettata ed implementata.
+
+\begin{longtable}{|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
+	\hline
+	\rowcolor{Gray}
+	\textbf{Classe} & \textbf{Valore} & \textbf{Esito} \\
+	\hline
+	
+	\textit{AppRouter} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AppRun} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ProfileManager} & 6 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{API} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegistered} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{RegisterAPI} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SellingPolicy} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIPurchased} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{TransactionsList} & 1 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIList} & 2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{RegisterUser} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminManager} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Login} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{VirtualAccount} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{PasswordRecovery} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ResetPassword} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModeration} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{UserDetailsModel} & 13 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{TransactionModel} & 6 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{MicroserviceModel} & 13 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SLAMicroserviceModel} & 6 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ProfileManagerController} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegistrationController} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SellingPolicyController} & 3 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{UserRegistrationController} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIRegisteredController} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SearchController} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{TransactionsListController} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminManagerController} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{AdminModerationController} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{LoginController} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{VirtualAccountController} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{PasswordRecoveryController} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ResetPasswordController} & 4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{APIPurchasedController} & 5 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Gateway} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{ServiceInteractionHandler} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Microservices\_db} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Users\_db} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{Transactions\_db} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{SLA\_db} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{FileHandler} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\textit{FrontEndMS} & 0 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	
+	\caption{Resoconto esiti metrica Numero di attributi per classe}
+\end{longtable}
+
+%\subsubsection{Complessità Ciclomatica}
+%Le unità prese in considerazione per la valutazione della metrica \textit{Complessità Ciclomatica} (\hyperlink{MPC11}{MPC11}) possono essere metodi, funzioni, moduli, classi, etc..
+
+%\begin{longtable}{|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
+%	\hline
+%	\rowcolor{Gray}
+%	\textbf{Unità} & \textbf{Valore} & \textbf{Esito} \\
+%	\hline
+	
+%	\textit{lorem ipsum} & xx & \textcolor{Green}{\textit{Superato}}\\
+%	\hline
+	
+%	\caption{Resoconto esiti metrica Complessità Ciclomatica}
+%\end{longtable}
