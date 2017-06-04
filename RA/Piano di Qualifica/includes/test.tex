@@ -1,6 +1,6 @@
 \newpage
 \section{Test}
-Al fine di produrre del software di qualità, nelle successive attività di progetto ,il team ha l'obiettivo di strutturare dei test volti a verificare che il software prodotto rispecchi le funzionalità richieste.
+Al fine di produrre del software di qualità, il team ha strutturato dei test volti a verificare l'efficacia del software prodotto, ovvero che quest'ultimo rispecchi le funzionalità richieste.
 Tutte le attività di testing prodotte devono poter essere ripetibili e deterministiche, al fine di poter fornire informazioni utili a intraprendere azioni correttive, nel caso si ottengano dei risultati diversi da quelli attesi.
 Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scelto di rappresentare delle tabelle di log di facile consultazione, le quali forniscono un'indicazione degli output delle attività di verifica, eventuali errori e/o risultati non coerenti con quanto fissato.
 
@@ -23,7 +23,7 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 		\hline
 		\endhead
 		\hypertarget{TU1}{TU1} & Verificare che, ricevendo delle richieste conformi alle API definite, l’oggetto passi il controllo al corretto Controller o che, in caso di errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
-		\hypertarget{TU2}{TU2} & Verificare che il messaggio d’errore venga costruito in modo coerente rispetto ai dati passati al costruttore o che, in caso di errore, la risposta riporti lo stato anomalo riscontrato. & \textit{Non Implementato}\\ \hline
+		\hypertarget{TU2}{TU2} & Verificare che il messaggio d’errore venga costruito in modo coerente rispetto ai dati passati al costruttore o che, in caso di errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TU3}{TU3} & Verificare che, in base ai parametri forniti in input, il metodo effettui le operazioni richieste, verificando che l’utente che esegue la richiesta sia effettivamente un utente autenticato e mantenendo aggiornate le
 		informazioni riguardanti l’utente
 		o che, in caso di errore, la risposta riporti lo stato
@@ -65,7 +65,7 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 		\hypertarget{TU31}{TU31} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, gestendo la possibilità di effettuare il redirect alla pagina di visualizzazione profilo utente o che, nel caso di un errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TU32}{TU32} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, gestendo la possibilità di effettuare il redirect alla pagina di gestione profilo utente o che, nel caso di un errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TU33}{TU33} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, gestendo la possibilità di effettuare il redirect alla pagina di visualizzazione delle proprie transazioni o che, nel caso di un errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
-		\hypertarget{TU34}{TU34} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, gestendo la possibilità di effettuare il redirect alla pagina di gestione del conto o che, nel caso di un errore, la risposta riporti lo stato anomalo riscontrato. & \textit{Non Implementato}\\ \hline
+		\hypertarget{TU34}{TU34} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, gestendo la possibilità di effettuare il redirect alla pagina di gestione del conto o che, nel caso di un errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		%breakpoint 2
 		\hypertarget{TU35}{TU35} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, permettendo la gestione per l'inserimento di un nuovo microservizio o che, in caso di errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TU36}{TU36} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, permettendo la gestione per la modifica dei microservizi già inseriti in precedenza e presenti sul marketplace o che, in caso di errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
@@ -98,13 +98,22 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 		\hypertarget{TU58}{TU58} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, memorizzando i dati relativi ad un utente e gestendoli richiamando i relativi \textit{Controller}. Nello specifico, gestendo la ricerca di microservizi e sviluppatori all'interno dell'applicazione web, i dati e le statistiche riguardanti un microservizio o che, nel caso di un errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TU59}{TU59} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, memorizzando i dati relativi ad un utente e gestendoli richiamando i relativi \textit{Controller}. Nello specifico, gestendo i dati e le statistiche riguardanti un microservizio o che, nel caso di un errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TU60}{TU60} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, costruendo l’oggetto contenente le informazioni sull'errore, ritornando correttamente il titolo, il messaggio ed il codice dell’errore o che, in caso di errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
-		\hypertarget{TU61}{TU61} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, gestendo le chiamate ai microservizi, ossia il loro inoltro e salvataggio; in particolare i metodi devono permettere di inviare una richiesta di chiamata ad un microservizio o, nel caso di un errore, deve garantire che la risposta riporti lo stato anomalo riscontrato. & \textit{Non Implementato}\\ \hline
+		\hypertarget{TU61}{TU61} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, gestendo le chiamate ai microservizi, ossia il loro inoltro e salvataggio; in particolare i metodi devono permettere di inviare una richiesta di chiamata ad un microservizio o, nel caso di un errore, deve garantire che la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TU62}{TU62} & Verificare che, in base ai parametri forniti in input, i metodi effettuino le operazioni richieste, gestendo le chiamate ai microservizi, ossia il loro inoltro e salvataggio; in particolare i metodi devono permettere di registrarne i dati di utilizzo di una chiamata ad un microservizio o, nel caso di un errore, deve garantire che la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TU63}{TU63} & Verificare che, in base ai parametri forniti in input, i metodi richiedano in maniera corretta il reperimento e il salvataggio dei dati di un utente registrato (cliente o sviluppatore che sia), che i dati vengano restituiti nella maniera attesa o che, in caso di errore, la risposta riporti lo stato anomalo riscontrato. & \textcolor{Green}{\textit{Superato}}\\ \hline
 
-		\caption[Test di Unità]{Test di Unità}
-		\label{tabella:test3}
+		\caption[Test di unità]{Test di unità}
+		\label{tabella:test0}
 	\end{longtable}
+
+	\subsubsection{Grado di completamento dei test di unità}
+	Di seguito viene fornito un pie chart che rappresenta il grado di completamento dei \textbf{test di unità} implementati e superati.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{includes/img/test_unita.png}
+		\caption{Grado di completamento test di unità}
+	\end{figure}
+	
 	\clearpage
 	
 	\subsection{Test di integrazione}
@@ -137,16 +146,25 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 		\textit{Services} e con il resto delle componenti dell’applicazione che lo utilizzano. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TI5}{TI5} & Viene verificato che le \textit{Views} si integrino correttamente con i
 		\textit{Controllers}, in modo da visualizzare senza errori i dati ricevuti. & \textcolor{Green}{\textit{Superato}}\\ \hline
-		\hypertarget{TI6}{TI6} & Viene verificato che l’applicazione web gestisca	correttamente il back-end del prodotto, in modo tale da fornire al front-end le informazioni richieste. & \textit{Non Implementato}\\ \hline
-		\hypertarget{TI7}{TI7} & Viene verificato che il \textit{Server} sia configurato e che sia in grado di caricare correttamente tutte le librerie necessarie all'istanziazione delle classi in modo corretto. & \textit{Non Implementato}\\ \hline
+		\hypertarget{TI6}{TI6} & Viene verificato che l’applicazione web gestisca	correttamente il back-end del prodotto, in modo tale da fornire al front-end le informazioni richieste. & \textcolor{Green}{\textit{Superato}}\\ \hline
+		\hypertarget{TI7}{TI7} & Viene verificato che il \textit{Server} sia configurato e che sia in grado di caricare correttamente tutte le librerie necessarie all'istanziazione delle classi in modo corretto. & \textit{Non implementato}\\ \hline
 		\hypertarget{TI8}{TI8} & Viene verificato che la \textit{Single Page App} si integri correttamente con i microservizi \textit{Jolie} utilizzati per il back-end. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TI9}{TI9} & Viene verificato che i \textit{Controllers} si integrino correttamente
-		e gestiscano le richieste inoltrate dai \textit{Routers}. & \textit{Non Implementato}\\ \hline
+		e gestiscano le richieste inoltrate dai \textit{Routers}. & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TI10}{TI10} & Viene verificato che il \textit{Model} si integri correttamente con i
 		\textit{Controllers} per la gestione dell’inserimento, della modifica e della cancellazione dei dati. & \textcolor{Green}{\textit{Superato}}\\ \hline
-		\caption[Test di Integrazione]{Test di Integrazione}
-		\label{tabella:test2}
+		\caption[Test di integrazione]{Test di integrazione}
+		\label{tabella:test1}
 	\end{longtable}
+
+	\subsubsection{Grado di completamento dei test di integrazione}
+	Di seguito viene fornito un pie chart che rappresenta il grado di completamento dei \textbf{test di integrazione} implementati e superati.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{includes/img/test_integrazione.png}
+		\caption{Grado di completamento test di integrazione}
+	\end{figure}
+
 	\clearpage
 	
 	\subsection{Test di sistema}
@@ -238,22 +256,56 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 		\hypertarget{TSVO12}{TSVO12} & Viene verificato che il sistema funzioni su \textit{Safari} per iOS 10 o versioni superiori & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TSVF13}{TSVF13} & Viene verificato che il sistema funzioni su \textit{Google Chrome} per iOS versione 56.0 o superiore & \textit{Non Implementato}\\ \hline
 		\hypertarget{TSVD14}{TSVD14} & Viene verificato che il sistema funzioni su \textit{Google Chrome} per Android versione 56.0 o superiore & \textit{Non Implementato}\\ \hline
-		\caption[Test di Sistema]{Test di Sistema}
-		\label{tabella:test1}
+		\caption[Test di sistema]{Test di sistema}
+		\label{tabella:test2}
 	\end{longtable}
+	
+	\subsubsection{Grado di completamento dei test di sistema}
+	Di seguito viene fornito un pie chart che rappresenta il grado di completamento dei \textbf{test di sistema} implementati e superati.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{includes/img/test_sistema.png}
+		\caption{Grado di completamento test di sistema}
+	\end{figure}	
+	
 	\clearpage
 	
-	\subsection{Test di regressione}
+	\subsection{Test di non regressione}
 	Questa tipologia di test consiste nell'eseguire nuovamente i test che coinvolgono le componenti software che hanno subito modifiche, in modo da verificare che i cambiamenti apportati non compromettano il funzionamento di componenti che non sono stati aggiornati e che, precedentemente, non erano soggetti ad errori.\\
-	I test di regressione saranno descritti nel modo seguente:
+	I test di non regressione saranno descritti nel modo seguente:
 	\begin{center}
-		\textbf{TR}[\textit{IdTest}]
+		\textbf{TNR}[\textit{IdTest}]
 	\end{center}
-	dove \textbf{\textit{IdTest}} rappresenta il codice identificativo progressivo della modifica apportata, la quale ha prodotto il corrispondente test di regressione.
+	dove \textbf{\textit{IdTest}} rappresenta il codice identificativo progressivo della modifica apportata, la quale ha prodotto il corrispondente test di non regressione.
+	
+	% TABELLA
+	\normalsize
+	\begin{longtable}{|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{8cm} | >{\centering\arraybackslash}p{3.8cm}|}
+		\hline \rowcolor{Gray}
+		\textbf{Id Test} & \textbf{Descrizione} & \textbf{Stato}\\
+		\hline
+		\endhead
+		\hypertarget{TNR1}{TNR1} & Descrizione... & \textcolor{Green}{\textit{Superato}}\\ \hline
+		\hypertarget{TNR2}{TNR2} & Descrizione... & \textcolor{Green}{\textit{Superato}}\\ \hline
+		\hypertarget{TNR3}{TNR3} & Descrizione... & \textcolor{Green}{\textit{Superato}}\\ \hline
+		\hypertarget{TNR4}{TNR4} & Descrizione... & \textcolor{Green}{\textit{Superato}}\\ \hline
+		\caption[Test di non regressione]{Test di non regressione}
+		\label{tabella:test3}
+	\end{longtable}
+	
+	\subsubsection{Grado di completamento dei test di non regressione}
+	Di seguito viene fornito un pie chart che rappresenta il grado di completamento dei \textbf{test di non regressione} implementati e superati.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{includes/img/test_non_regressione.png}
+		\caption{Grado di completamento test di non regressione}
+	\end{figure}	
+	
+	\clearpage
 	
 	\subsection{Test di validazione}
 	Questa tipologia di test serve a verificare che il prodotto soddisfi le richieste del proponente attraverso le funzionalità implementate.\\
-	Per questo motivo, occorrerà simulare il comportamento generale dell'applicativo e dell'utente che interagisce con esso, attraverso delle macro azioni.
+	Per questo motivo, occorrerà simulare il comportamento generale dell'applicativo e dell'utente che interagisce con esso, attraverso delle macro azioni.\\
 	I test di validazione saranno organizzati nel modo seguente:
 	\begin{center}
 		\textbf{TV}[\textit{TipologiaRequisito}][\textit{RilevanzaRequisito}][\textit{CodiceRequisito}]
@@ -300,33 +352,34 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 			\item Premere il pulsante di conferma;
 			\item Verificare attraverso l’autenticazione che la registrazione sia avvenuta correttamente.
 		\end{itemize}
-		& \textit{Non Implementato}\\ \hline
+		& \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO2}{TVFO2} & L’utente intende autenticarsi alla piattaforma \progetto. All’utente è richiesto di:
 		\begin{itemize}
 			\item Trovarsi nella sezione apposita;
+			\item Essere in possesso delle credenziali richieste;
 			\item Inserire le credenziali nell’apposito form;
 			\item Premere il pulsante di autenticazione;
 			\item Verificare che l’autenticazione sia effettivamente avvenuta.
 		\end{itemize}
-		& \textit{Non Implementato}\\ \hline
+		& \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO4}{TVFO4} & L’utente autenticato  intende ricercare una API sul marketplace. All’utente è richiesto di:
 		\begin{itemize}
 			\item Trovarsi nella sezione apposita;
 			\item Ricercare una API digitando le keywords;
 			\item Visualizzazione dei risultati della ricerca, secondo le keywords specificate.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO5}{TVFO5} & L’utente autenticato  intende visualizzare le informazioni relative ad una API. All’utente è richiesto di:
 		\begin{itemize}
 			\item Trovarsi nella sezione apposita;
 			\item Selezionare l'API di cui vuole visualizzare le informazioni;
 			\item Visualizzazione dei dati relativi alla API selezionata.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO5.6}{TVFO5.6} & L’utente autenticato  intende consultare la documentazione relativa ad una API. All’utente è richiesto di:
 		\begin{itemize}
 			\item Trovarsi nella sezione apposita;
 			\item Selezionare l'API di interesse;
 			\item Visualizzazione della documentazione dell'API.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO7}{TVFO7} & L’utente autenticato intende acquistare l'API che sta visualizzando. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
@@ -334,20 +387,20 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 			\item Selezionare la policy di vendita;
 			\item Confermare l'acquisto attraverso l'apposito pulsante;
 			\item Verificare la transazione nel proprio storico.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO8.2}{TVFO8.2} & L’utente sviluppatore intende visualizzare l'elenco di API da lui caricate sulla piattaforma \progetto. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
 			\item Trovarsi nella sezione apposita;
 			\item Verificare che vengano visualizzati tutte le proprie API inserite.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO8.2.3}{TVFO8.2.3} & L’utente sviluppatore intende visualizzare il numero di licenze attive per le API da lui caricate sulla piattaforma \progetto. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
 			\item Trovarsi nella sezione apposita;
 			\item Selezionare una API dall'elenco visualizzato;
 			\item Verificare che vengao il numero di licenze attive per la propria API registrata.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO8.2.4}{TVFO8.2.4} & L’utente sviluppatore intende modificare i dati relativi ad una sua API caricata. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
@@ -356,7 +409,7 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 			\item Modificare i dati dell'API selezionata;
 			\item Premere il pulsante di conferma modifica;
 			\item Verificare che sia stata modificata l'API.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO9}{TVFO9} & L’utente sviluppatore intende caricare una propria API sulla piattaforma \progetto. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
@@ -365,13 +418,13 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 			\item Inserire i dati necessari alla pubblicazione della propria API;
 			\item Premere il pulsante di conferma inserimento nuova API;
 			\item Verificare che sia stata aggiunta al marketplace l'API.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO10.1.1}{TVFO10.1.1} & L’utente autenticato intende visualizzare il proprio profilo. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
 			\item Trovarsi nella sezione apposita;
 			\item Visualizzare il proprio profilo.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO10.1.2}{TVFO10.1.2} & L’utente autenticato intende modificare i propri dati. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
@@ -380,27 +433,27 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 			\item Premere il tasto "Conferma Modifiche";
 			\item Visualizzare il profilo dell’utente modificato.
 		\end{itemize}
-		& \textit{Non Implementato}\\ \hline
+		& \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFD10.1.2.9}{TVFD10.1.2.9} & L’utente autenticato  intende modificare la tipologia di utenza, effettuando un upgrade dell'account. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
 			\item Trovarsi nella sezione apposita;
 			\item Effettuare l'upgrade dell'account, passando da "cliente" a "sviluppatore";
 			\item Verificare la modifica effettuata.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO10.2.1}{TVFO10.2.1} & L’utente intende visualizzare il saldo del proprio conto associato all'account. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
 			\item Trovarsi nella sezione apposita;
 			\item Premere il pulsante "Conto Virtuale";
 			\item Visualizzazione del saldo attuale del proprio conto.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO10.3}{TVFO10.3} & L’utente autenticato intende visualizzare lo storico delle transazioni effettuate. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
 			\item Trovarsi nella sezione apposita;
 			\item Visualizzare lo storico delle transazioni.
-		\end{itemize} & \textit{Non Implementato}\\ \hline		
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline		
 		\hypertarget{TVFO11}{TVFO11} & L’utente intende disconnettersi dalla piattaforma \progetto. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
@@ -408,7 +461,7 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 			\item Premere il pulsante di logout;
 			\item Verificare che la disconnessione sia effettivamente avvenuta.
 		\end{itemize}
-		& \textit{Non Implementato}\\ \hline
+		& \textcolor{Green}{\textit{Superato}}\\ \hline
 		\hypertarget{TVFO12.2.1}{TVFO12.2.1} & L’utente amministratore della piattaforma \progetto\ intende moderare un determinato utente registrato. All’utente è richiesto di:
 		\begin{itemize}
 			\item Essere autenticato;
@@ -416,10 +469,19 @@ Per avere un tracciamento dei test prodotti e dei risultati ottenuti, si è scel
 			\item Selezionare l'utente che si vuole moderare;
 			\item Inserire i dati del rapporto di moderazione;
 			\item Verificare che l'utente sia stato effettivamente moderato.
-		\end{itemize} & \textit{Non Implementato}\\ \hline
-		\caption[Test di Validazione]{Test di Validazione}
-		\label{tabella:test0}
+		\end{itemize} & \textcolor{Green}{\textit{Superato}}\\ \hline
+		\caption[Test di validazione]{Test di validazione}
+		\label{tabella:test4}
 	\end{longtable}
+
+	\subsubsection{Grado di completamento dei test di validazione}
+	Di seguito viene fornito un pie chart che rappresenta il grado di completamento dei \textbf{test di validazione} implementati e superati.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{includes/img/test_validazione.png}
+		\caption{Grado di completamento test di validazione}
+	\end{figure}
+	
 	\clearpage
 	
 \input{includes/tracciamento.tex}

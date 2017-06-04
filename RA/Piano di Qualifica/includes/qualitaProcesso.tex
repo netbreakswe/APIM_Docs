@@ -70,7 +70,7 @@
 		Per tutta la durata del progetto, l’infrastruttura impiegata nello sviluppo dovrà raggiungere i seguenti obiettivi:
 		\begin{itemize}
 			\item ogni procedura riguardante le attività svolte più frequentemente durante lo sviluppo del
-			progetto, sarà descritta nel documento \textsc{NormeDiProgetto 3\_0\_0.pdf};
+			progetto, sarà descritta nel documento \textsc{NormeDiProgetto 4\_0\_0.pdf};
 			\item ogni riferimento normativo ed informativo sarà completo di informazioni utili al proprio
 			reperimento;
 			\item la piattaforma \textit{NetBreakDB} sarà a disposizione di ogni componente del team, in caso di bisogno di accesso ai dati in essa contenuti;
@@ -106,7 +106,7 @@
 		\item l'allocazione di compiti e responsabilità;
 		\item le misurazioni per rilevare lo stato del progetto, rispetto alle pianificazioni stilate.
 	\end{itemize}
-	Durante tutta l’attività di	progetto, sarà fondamentale mantenere aggiornata la pianificazione effettuata, in modo da essere sempre coerente con la situazione attuale. Nel caso in cui, in una fase di lavoro, venissero rilevati dei valori negativi, attraverso l'utilizzo delle metriche scelte Schedule Variance e Budget Variance, occorrerà compensare tali valori entro la fine dell’attività di progetto, al fine di evitare di eccedere le ore di lavoro totali e, di conseguenza, il preventivo dei costi finale indicato nella pianificazione contenuta nel documento \textsc{PianoDiProgetto 3\_0\_0.pdf}.
+	Durante tutta l’attività di	progetto, sarà fondamentale mantenere aggiornata la pianificazione effettuata, in modo da essere sempre coerente con la situazione attuale. Nel caso in cui, in una fase di lavoro, venissero rilevati dei valori negativi, attraverso l'utilizzo delle metriche scelte Schedule Variance e Budget Variance, occorrerà compensare tali valori entro la fine dell’attività di progetto, al fine di evitare di eccedere le ore di lavoro totali e, di conseguenza, il preventivo dei costi finale indicato nella pianificazione contenuta nel documento \textsc{PianoDiProgetto 4\_0\_0.pdf}.
 		
 		\subsubsection{Obiettivi}
 		L’intero sviluppo del progetto dovrà seguire la pianificazione prodotta:
@@ -281,7 +281,7 @@
 	
 	\subsection{Software Architectural Design Process}
 	Lo scopo del processo è fornire una progettazione di minimo del prodotto che andrà a soddisfare i requisiti individuati.
-	Tutte le attività presenti in questo processo portano alla produzione del documento \textsc{SpecificaTecnica 2\_0\_0.pdf}.
+	Tutte le attività presenti in questo processo portano alla produzione del documento \textsc{SpecificaTecnica 3\_0\_0.pdf}.
 		
 		\subsubsection{Obiettivi}
 			\begin{itemize}
@@ -299,7 +299,7 @@
 		Le attività svolte dovranno raggiungere i seguenti obiettivi:
 		\begin{itemize}
 			\item il livello di dettaglio della progettazione dovrà indicare tutti i metodi, con i relativi parametri e campi dati, forniti da ciascuna classe;
-			\item la struttura a basso livello dell’architettura e le relazioni fra le varie unità software concepite saranno esposte nel documento \textsc{DefinizioneDiProdotto 1\_0\_0.pdf}, il quale definirà esattamente cosa implementare;
+			\item la struttura a basso livello dell’architettura e le relazioni fra le varie unità software concepite saranno esposte nel documento \textsc{DefinizioneDiProdotto 2\_0\_0.pdf}, il quale definirà esattamente cosa implementare;
 		\end{itemize}
 		
 		\subsubsection{Metriche}
@@ -367,7 +367,7 @@
 	\subsection{Software Construction Process}
 	Questo processo definisce le principali attività volte alla produzione di unità software eseguibili, che
 	rispettino quanto prodotto durante la progettazione.
-	Nell’attività di Codifica, il \textit{\Progr} dovrà semplicemente attenersi a quanto indicato nel documento \textsc{DefinizioneDiProdotto 1\_0\_0.pdf}. Inoltre, sarà necessario procedere con la codifica dei test individuati in sede di progettazione, al fine di verificare il corretto funzionamento delle varie unità prodotte.
+	Nell’attività di Codifica, il \textit{\Progr} dovrà semplicemente attenersi a quanto indicato nel documento \textsc{DefinizioneDiProdotto 2\_0\_0.pdf}. Inoltre, sarà necessario procedere con la codifica dei test individuati in sede di progettazione, al fine di verificare il corretto funzionamento delle varie unità prodotte.
 		
 		\subsubsection{Obiettivi}
 		Affinchè le unità software prodotte risultino di qualità, il team ha individuato i seguenti obiettivi:
@@ -520,9 +520,30 @@
 				\\
 				\caption{Test di Sistema}
 			\end{longtable}
+		
+			\paragraph{Test di Validazione}
+			\textbf{Id Metrica}: \hypertarget{MPC17}{MPC17}\\
+			\textbf{Descrizione}: indica la percentuale di test di validazione eseguiti.
+			
+			\begin{itemize}
+				\item \textbf{num\ped{TVE}} = numero di test di validazione eseguiti
+				\item \textbf{num\ped{TVP}} = numero di test di validazione pianificati
+			\end{itemize}
+			
+			\begin{longtable}{>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm} | >{\centering\arraybackslash}p{5cm}}
+				\hline
+				\rowcolor{Gray}
+				\textbf{Metodo di calcolo} & \textbf{Range accettazione} & \textbf{Range ottimale} \\
+				\hline
+				\begin{math}
+					\frac{num\ped{TVE}}{num\ped{TVP}}*100
+				\end{math} & [95,100] in [0,100] & 100 in [0,100]
+				\\
+				\caption{Test di Validazione}
+			\end{longtable}
 			
 			\paragraph{Test superati}
-			\textbf{Id Metrica}: \hypertarget{MPC17}{MPC17}\\
+			\textbf{Id Metrica}: \hypertarget{MPC18}{MPC18}\\
 			\textbf{Descrizione}: indica la percentuale di test totali superati.
 			
 			\begin{itemize}
@@ -537,7 +558,7 @@
 					\hline
 					\begin{math}
 					\frac{num\ped{TS}}{num\ped{TE}}*100
-					\end{math}  & [85,100] in [0,100] & 100 in [0,100]
+					\end{math}  & [90,100] in [0,100] & 100 in [0,100]
 				\\
 				\caption{Test superati}
 			\end{longtable}
@@ -564,7 +585,7 @@
 		\subsubsection{Metriche}
 			
 			\paragraph{Indice Gulpease}
-			\textbf{Id Metrica}: \hypertarget{MPC18}{MPC18}\\
+			\textbf{Id Metrica}: \hypertarget{MPC19}{MPC19}\\
 			\textbf{Descrizione}: l'indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana.
 			Rispetto ad altri indici, questo ha il vantaggio di utilizzare la lunghezza delle parole in lettere, anziché in sillabe, semplificandone il calcolo automatico. L'indice Gulpease considera due variabili linguistiche:
 			\begin{itemize}
@@ -608,7 +629,7 @@
 		
 		\subsubsection{Metriche}
 			\paragraph{Code Coverage}
-			\textbf{Id Metrica}: \hypertarget{MPC19}{MPC19}\\
+			\textbf{Id Metrica}: \hypertarget{MPC20}{MPC20}\\
 			\textbf{Descrizione}: indica la percentuale di istruzioni che sono eseguite durante i test.
 			Un alto valore di questo indice implica un'alta probabilità che le componenti testate abbiano una ridotta quantità di errori.
 			Per ottenere un indice basso è necessario che l'implementazione dei metodi sia molto semplice, in modo da non richiedere alcuna attività di testing. Ad esempio, i metodi getter e setter.
