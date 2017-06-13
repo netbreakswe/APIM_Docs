@@ -1,9 +1,8 @@
 \newpage
 \section{Resoconto Qualità di Processo}
 
-In questa sezione del documento vengono descritti e analizzati gli esiti delle metriche previste per il controllo della qualità di processo, in base alla revisione di progetto.
-La prima tabella contiene le metriche con associato esito applicate sull'intero sistema.
-Le successive tabelle sono una per ogni metrica applicata ad un singolo modulo, metodo, funzione, procedura o classe che sia.
+In questa sezione del documento vengono descritti e analizzati gli esiti delle metriche previste per il controllo della qualità di processo, in base alla revisione di progetto.\\
+La prima tabella contiene le metriche con associato esito applicate sull'intero sistema, mentre le successive tabelle sono una per ogni metrica che si applica a singole componenti.
 
 	\subsection{Revisione di Qualifica}
 	
@@ -30,9 +29,9 @@ Le successive tabelle sono una per ogni metrica applicata ad un singolo modulo, 
 			\hline
 			\hyperlink{MPC16}{MPC16} & \textit{Test di Sistema} & 80\% & \textcolor{Green}{\textit{Superato}}\\
 			\hline
-			\hyperlink{MPC17}{MPC17} & \textit{Test superati} & 88\% & \textcolor{Green}{\textit{Superato}}\\
+			\hyperlink{MPC18}{MPC18} & \textit{Test superati} & 88\% & \textcolor{Green}{\textit{Superato}}\\
 			\hline
-			\hyperlink{MPC19}{MPC19} & \textit{Code Coverage} & 67\% & \textcolor{Green}{\textit{Superato}}\\
+			\hyperlink{MPC20}{MPC20} & \textit{Code Coverage} & 67\% & \textcolor{Green}{\textit{Superato}}\\
 			\hline
 		
 			\caption{Resoconto esiti metriche - Qualità di processo RQ}
@@ -420,39 +419,70 @@ La metrica \textit{Numero di attributi per classe} (\hyperlink{MPC10}{MPC10}), s
 	\rowcolor{Gray}
 	\textbf{Id} & \textbf{Metrica} & \textbf{Valore} & \textbf{Esito} \\
 	\hline
-	\hyperlink{MPC1}{MPC1} & \textit{Disponibilità \textit{NetBreakDB}} & xx\% & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC1}{MPC1} & \textit{Disponibilità \textit{NetBreakDB}} & 98\% & \textcolor{Green}{\textit{Superato}}\\
 	\hline
-	\hyperlink{MPC2}{MPC2} & \textit{Schedule Variance} & xx & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC2}{MPC2} & \textit{Schedule Variance} & 0 & \textcolor{Green}{\textit{Superato}}\\
 	\hline
 	\hyperlink{MPC3}{MPC3} & \textit{Budget Variance} & xx & \textcolor{Green}{\textit{Superato}}\\
 	\hline
-	\hyperlink{MPC4}{MPC4} & \textit{Rischi non preventivati} & xx & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC4}{MPC4} & \textit{Rischi non preventivati} & 1 & \textcolor{Green}{\textit{Superato}}\\
 	\hline
 	\hyperlink{MPC5}{MPC5} & \textit{Adempimento requisiti obbligatori} & 100\% & \textcolor{Green}{\textit{Superato}}\\
 	\hline
-	\hyperlink{MPC13}{MPC13} & \textit{Linee di commento} & xx\% & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC13}{MPC13} & \textit{Linee di commento} & 35\% & \textcolor{Green}{\textit{Superato}}\\
 	\hline
-	\hyperlink{MPC14}{MPC14} & \textit{Test di Unità} & xx\% & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC14}{MPC14} & \textit{Test di Unità} & 100\% & \textcolor{Green}{\textit{Superato}}\\
 	\hline
-	\hyperlink{MPC15}{MPC15} & \textit{Test di Integrazione} & xx\% & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC15}{MPC15} & \textit{Test di Integrazione} & 90\% & \textcolor{Green}{\textit{Superato}}\\
 	\hline
-	\hyperlink{MPC16}{MPC16} & \textit{Test di Sistema} & xx\% & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC16}{MPC16} & \textit{Test di Sistema} & 85\% & \textcolor{Green}{\textit{Superato}}\\
 	\hline
-	\hyperlink{MPC17}{MPC17} & \textit{Test superati} & xx\% & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC17}{MPC17} & \textit{Test di Validazione} & 100\% & \textcolor{Green}{\textit{Superato}}\\
 	\hline
-	\hyperlink{MPC19}{MPC19} & \textit{Code Coverage} & xx\% & \textcolor{Green}{\textit{Superato}}\\
+	\hyperlink{MPC18}{MPC18} & \textit{Test superati} & 94\% & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	\hyperlink{MPC20}{MPC20} & \textit{Code Coverage} & 85\% & \textcolor{Green}{\textit{Superato}}\\
 	\hline
 	
 	\caption{Resoconto esiti metriche - Qualità di processo RA}
 \end{longtable}
 
-%\hyperlink{MPC6}{MPC6} & \textit{Fan In} & xx & \textcolor{Green}{\textit{Superato}}\\
-%\hline
-%\hyperlink{MPC7}{MPC7} & \textit{Fan Out} & xx & \textcolor{Green}{\textit{Superato}}\\
-%\hline
+\subsubsection{Fan In}
+La metrica \textit{Fan In} (\hyperlink{MPC6}{MPC6}) si applica ad ogni modulo software per misurare e stabilire il livello di riuso implementato.\\
+Per una consultazione più semplice e rapida, di seguito viene riportata una tabella indicante il valore minimo di \textit{Fan In} individuato tra tutti i moduli implementati.
+
+\begin{longtable}{|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{3cm}|}
+	\hline
+	\rowcolor{Gray}
+	\textbf{Valore minimo} & \textbf{Esito} \\
+	\hline
+	
+	2 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	
+	\caption{Resoconto esiti metrica Fan In - RA}
+\end{longtable}
+
+\subsubsection{Fan Out}
+La metrica \textit{Fan Out} (\hyperlink{MPC7}{MPC7}) si applica ad ogni modulo software per misurare e stabilire il livello di accoppiamento implementato.\\
+Per una consultazione più semplice e rapida, di seguito viene riportata una tabella indicante il valore massimo di \textit{Fan Out} individuato tra tutti i moduli implementati.
+
+\begin{longtable}{|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{3cm}|}
+	\hline
+	\rowcolor{Gray}
+	\textbf{Valore massimo} & \textbf{Esito} \\
+	\hline
+	
+	4 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	
+	\caption{Resoconto esiti metrica Fan Out - RA}
+\end{longtable}
 
 \subsubsection{Numero di metodi per classe}
-La metrica \textit{Numero di metodi per classe} (\hyperlink{MPC8}{MPC8}), si applica ad ogni classe progettata ed implementata.
+La metrica \textit{Numero di metodi per classe} (\hyperlink{MPC8}{MPC8}) si applica ad ogni classe progettata ed implementata.\\
+Per una consultazione più semplice e rapida, di seguito viene riportata una tabella indicante il valore minimo, massimo e medio di \textit{Numero di metodi per classe}, individuati tra tutte le classe implementate.\\
+\textbf{N.B.:} nel caso in cui il valore massimo non rientri nel range di accettazione di tale metrica, verrà indicata la classe che necessita delle dovute correzioni.
 
 \begin{longtable}{|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
 	\hline
@@ -467,7 +497,9 @@ La metrica \textit{Numero di metodi per classe} (\hyperlink{MPC8}{MPC8}), si app
 \end{longtable}
 
 \subsubsection{Numero di parametri per metodo}
-La metrica \textit{Numero di parametri per metodo} (\hyperlink{MPC9}{MPC9}), si applica ad ogni metodo progettato ed implementato.
+La metrica \textit{Numero di parametri per metodo} (\hyperlink{MPC9}{MPC9}) si applica ad ogni metodo progettato ed implementato.\\
+Per una consultazione più semplice e rapida, di seguito viene riportata una tabella indicante il valore minimo, massimo e medio di \textit{Numero di parametri per metodo}, individuati tra tutti i metodi implementati.\\
+\textbf{N.B.:} nel caso in cui il valore massimo non rientri nel range di accettazione di tale metrica, verrà indicato il metodo (con relativa classe che lo contiene) che necessita delle dovute correzioni.
 
 \begin{longtable}{|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
 	\hline
@@ -475,14 +507,16 @@ La metrica \textit{Numero di parametri per metodo} (\hyperlink{MPC9}{MPC9}), si 
 	\textbf{Valore minimo} & \textbf{Valore massimo} & \textbf{Valore medio} & \textbf{Esito} \\
 	\hline
 	
-	xx & xx & xx & \textcolor{Green}{\textit{Superato}}\\
+	0 & 5 & 2 & \textcolor{Green}{\textit{Superato}}\\
 	\hline
 	
 	\caption{Resoconto esiti metrica Numero di parametri per metodo - RA}
 \end{longtable}
 
 \subsubsection{Numero di attributi per classe}
-La metrica \textit{Numero di attributi per classe} (\hyperlink{MPC10}{MPC10}), si applica per ogni classe progettata ed implementata.
+La metrica \textit{Numero di attributi per classe} (\hyperlink{MPC10}{MPC10}) si applica per ogni classe progettata ed implementata.\\
+Per una consultazione più semplice e rapida, di seguito viene riportata una tabella indicante il valore minimo, massimo e medio di \textit{Numero di attributi per classe}, individuati tra tutte le classi implementate.\\
+\textbf{N.B.:} nel caso in cui il valore massimo non rientri nel range di accettazione di tale metrica, verrà indicata la classe che necessita delle dovute correzioni.
 
 \begin{longtable}{|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
 	\hline
@@ -490,23 +524,42 @@ La metrica \textit{Numero di attributi per classe} (\hyperlink{MPC10}{MPC10}), s
 	\textbf{Valore minimo} & \textbf{Valore massimo} & \textbf{Valore medio} & \textbf{Esito} \\
 	\hline
 	
-	xx & xx & xx & \textcolor{Green}{\textit{Superato}}\\
+	0 & 13 & 4 & \textcolor{Green}{\textit{Superato}}\\
 	\hline
 	
 	\caption{Resoconto esiti metrica Numero di attributi per classe - RA}
 \end{longtable}
 
 \subsubsection{Complessità Ciclomatica}
-Le unità prese in considerazione per la valutazione della metrica \textit{Complessità Ciclomatica} (\hyperlink{MPC11}{MPC11}) possono essere metodi, funzioni, moduli, classi, etc..
+La metrica \textit{Complessità Ciclomatica} (\hyperlink{MPC11}{MPC11}) si applica a metodi, funzioni, moduli, classi, etc..\\
+Per una consultazione più semplice e rapida, di seguito viene riportata una tabella indicante il valore massimo di \textit{Complessità Ciclomatica}, individuato tra tutti/e i/le metodi, funzioni, moduli e classi implementati/e.\\
+\textbf{N.B.:} nel caso in cui il valore massimo non rientri nel range di accettazione di tale metrica, verrà indicato/a il metodo/funzione/classe/modulo che necessita delle dovute correzioni.
 
-\begin{longtable}{|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
+\begin{longtable}{|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{3cm}|}
 	\hline
 	\rowcolor{Gray}
-	\textbf{Unità} & \textbf{Valore} & \textbf{Esito} \\
+	\textbf{Valore massimo} & \textbf{Esito} \\
 	\hline
 
-	\textit{lorem ipsum} & xx & \textcolor{Green}{\textit{Superato}}\\
+	10 & \textcolor{Green}{\textit{Superato}}\\
 	\hline
 
 	\caption{Resoconto esiti metrica Complessità Ciclomatica - RA}
+\end{longtable}
+
+\subsubsection{Numero di livelli di annidamento}
+La metrica \textit{Numero di livelli di annidamento} (\hyperlink{MPC12}{MPC12}) si applica ad ogni metodo implementato.\\
+Per una consultazione più semplice e rapida, di seguito viene riportata una tabella indicante il valore massimo di \textit{Numero di livelli di annidamento}, individuato tra tutti i metodi implementati.\\
+\textbf{N.B.:} nel caso in cui il valore massimo non rientri nel range di accettazione di tale metrica, verrà indicato il metodo (con relativa classe che lo contiene) che necessita delle dovute correzioni.
+
+\begin{longtable}{|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{3cm}|}
+	\hline
+	\rowcolor{Gray}
+	\textbf{Valore massimo} & \textbf{Esito} \\
+	\hline
+	
+	6 & \textcolor{Green}{\textit{Superato}}\\
+	\hline
+	
+	\caption{Resoconto esiti metrica Numero di livelli di annidamento - RA}
 \end{longtable}
