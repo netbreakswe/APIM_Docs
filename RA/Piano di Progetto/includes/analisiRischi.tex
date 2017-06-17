@@ -1,8 +1,9 @@
 \newpage
+
+\newcolumntype{a}{>{\columncolor{Gray}}l}
+
 \section{Analisi dei rischi}
 In questa sezione del documento vengono elencati i potenziali rischi che potrebbero verificarsi durante la realizzazione del prodotto API Market e la metodologia adottata per la loro identificazione.
-
-\subsection{Metodologia}
 
 La procedura che il gruppo \textit{\gruppo} intende utilizzare per la gestione dei rischi è composta dalle seguenti fasi:
 \begin{itemize}
@@ -14,7 +15,6 @@ La procedura che il gruppo \textit{\gruppo} intende utilizzare per la gestione d
 
 \MakeUppercase{è} inoltre di fondamentale importanza riportare periodicamente ogni rischio serio all'attenzione del \textit{\RdP}.
 
-\subsection{Fattori di rischio}
 
 Per ogni rischio viene fornito il seguente elenco di informazioni, necessario per comprenderne la natura:
 \begin{itemize}
@@ -35,18 +35,19 @@ Inoltre vengono presentate le azioni correttive intraprese atte a mitigare il ve
 	\item Azioni correttive.
 \end{itemize}
 
-\textbf{N.B.:} le voci \textit{Occorrenza} e \textit{Pericolosità} possono assumere i valori \{1, 2, 3\}, che corrispondono rispettivamente a livello basso, medio e alto.\\\\
+\textbf{N.B.:} le voci \textit{Occorrenza} e \textit{Pericolosità} possono assumere i valori \{1, 2, 3\}, che corrispondono rispettivamente a livello basso, medio e alto.\\
 
 
-\subsubsection{Rischi tecnologici}
+\newpage
+\subsection{Rischi tecnologici}
 
 Nelle tabelle presentate di seguito, sono elencati e descritti i possibili scenari di rischi a livello tecnologico.
 
-\paragraph{Tecnologie adottate}
+\subsubsection{Tecnologie adottate}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Descrizione}	& Lo studio e l'utilizzo delle tecnologie web per la realizzazione del prodotto richiesto, può portare delle difficoltà al momento dell'integrazione con la tecnologia a microservizi. Inoltre, è possibile fare affidamento sul committente per problemi e/o incomprensioni riguardanti \textit{Jolie\ped{G}} e le sue features. \\
 			\hline
@@ -62,11 +63,11 @@ Nelle tabelle presentate di seguito, sono elencati e descritti i possibili scena
 	\caption{Tabella dei rischi riguardante le tecnologie adottate}
 	\end{center}
 \end{table}
-\subparagraph{Mitigazione rischio}
+\paragraph{Mitigazione rischio}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Conseguenze}	& I problemi sono emersi a causa di una scarsa conoscenza da parte del gruppo delle tecnologie e approcci richiesti per un architettura e un applicativo a microservizi. \\
 			\hline
@@ -80,11 +81,11 @@ Nelle tabelle presentate di seguito, sono elencati e descritti i possibili scena
 	\end{center}
 \end{table}
 
-\paragraph{Guasti hardware}
+\subsubsection{Guasti hardware}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Descrizione}	& Ogni componente del gruppo è dotato di computer portatili non professionali, quindi bisogna prendere in considerazione il rischio di rottura di uno di questi. \\
 			\hline
@@ -102,11 +103,11 @@ Nelle tabelle presentate di seguito, sono elencati e descritti i possibili scena
 \end{table}
 
 
-\paragraph{Malfunzionamenti del server}
+\subsubsection{Malfunzionamenti del server}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Descrizione}	& Il \textit{server\ped{G}} destinato ad ospitare il progetto presenta dei malfunzionamenti, il che mette a rischio l'intero lavoro per il gruppo. \\
 			\hline
@@ -123,16 +124,16 @@ Nelle tabelle presentate di seguito, sono elencati e descritti i possibili scena
 	\end{center}
 \end{table}
 
-
-\subsubsection{Rischi nei rapporti personali}
+\newpage
+\subsection{Rischi nei rapporti personali}
 
 Di seguito, sono elencati e descritti i possibili scenari di rischi a livello del personale.
 
-\paragraph{Problemi interni al team}
+\subsubsection{Problemi interni al team}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Descrizione}	& Dato che, per ogni membro del gruppo, si tratta della prima esperienza di lavoro in un team di queste dimensioni, è importante non sottovalutare gli eventuali problemi di collaborazione. Essi, infatti, potrebbero portare instabilità interna, con conseguenti ritardi nella presentazione del progetto. \\
 			\hline
@@ -149,11 +150,11 @@ Di seguito, sono elencati e descritti i possibili scenari di rischi a livello de
 	\end{center}
 \end{table}
 
-\paragraph{Problemi personali individuali}
+\subsubsection{Problemi personali individuali}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Descrizione}	& Possono verificarsi problemi organizzativi dovuti a sovrapposizioni di impegni e necessità proprie di ogni membro del gruppo. Ad esempio, un componente del team è anche un lavoratore presso un'azienda, quindi, occorre prestare attenzione alla gestione di casi simili. \\
 			\hline
@@ -170,11 +171,11 @@ Di seguito, sono elencati e descritti i possibili scenari di rischi a livello de
 	\end{center}
 \end{table}
 
-\subparagraph{Mitigazione problemi personali individuali}
+\paragraph{Mitigazione problemi personali individuali}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Conseguenze}	& I problemi si sono verificati a causa della corrispondenza di impegni didattici
 			(esami universitari) e lavorativi dei membri del gruppo. \\
@@ -191,15 +192,16 @@ Di seguito, sono elencati e descritti i possibili scenari di rischi a livello de
 	\end{center}
 \end{table}
 
-\subsubsection{Rischi nell'organizzazione del lavoro}
+\newpage
+\subsection{Rischi nell'organizzazione del lavoro}
 
 Di seguito, sono elencati e descritti i possibili scenari di rischi a livello organizzativo.
 
-\paragraph{Pianificazione errata}
+\subsubsection{Pianificazione errata}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Descrizione}	& Durante l'attività di Pianificazione, è possibile che i tempi per lo svolgimento di alcune attività vengano calcolati in modo errato. \\
 			\hline
@@ -216,15 +218,15 @@ Di seguito, sono elencati e descritti i possibili scenari di rischi a livello or
 	\end{center}
 \end{table}
 
-\subsubsection{Rischi su requisiti e rapporti con gli stakeholder}
+\subsection{Rischi su requisiti e rapporti con gli stakeholder}
 
 Di seguito, sono elencati e descritti i possibili scenari di rischi a livello dei requisiti.
 
-\paragraph{Incomprensioni sui requisiti}
+\subsubsection{Incomprensioni sui requisiti}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Descrizione}	& Alcuni requisiti individuati dagli \textit{\Anas} possono essere interpretati in modo errato oppure possono, a loro volta, implicare ulteriori requisiti. Inoltre, è possibile che alcuni requisiti vengano aggiunti, modificati o eliminati, a seconda degli accordi presi con il proponente. \\
 			\hline
@@ -241,11 +243,11 @@ Di seguito, sono elencati e descritti i possibili scenari di rischi a livello de
 	\end{center}
 \end{table}
 
-\subparagraph{Mitigazione per incompresioni sui requisiti}
+\paragraph{Mitigazione per incompresioni sui requisiti}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Conseguenze}	&  Il problema si è verificato in fase di progettazione. Alcuni aspetti, seppur
 			marginali, del progetto erano infatti stati travisati e han richiesto tempestive correzioni.	\\
@@ -261,17 +263,16 @@ Di seguito, sono elencati e descritti i possibili scenari di rischi a livello de
 	\end{center}
 \end{table}
 
-
-
-\subsubsection{Tempi e costi}
+\newpage
+\subsection{Tempi e costi}
 
 Di seguito, sono elencati e descritti i possibili scenari di rischi a livello di valutazione dei costi.
 
-\paragraph{Stime e previsioni}
+\subsubsection{Stime e previsioni}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Descrizione}	& I tempi stabiliti nella pianificazione delle attività per lo svolgimento del progetto vengono sovrastimate o sottostimate. Ciò può comportare una variazione sul costo preventivo presentato. \\
 			\hline
@@ -288,11 +289,11 @@ Di seguito, sono elencati e descritti i possibili scenari di rischi a livello di
 	\end{center}
 \end{table}
 
-\subparagraph{Mitigazione per stime e previsioni}
+\paragraph{Mitigazione per stime e previsioni}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l | p{11cm}|}
+		\begin{tabular}{|a| p{11cm}|}
 			\hline
 			\textbf{Conseguenze}	& Per motivi per lo più legati alla poca chiarezza negli aspetti di tecnologie
 			adottate, il lavoro di progettazione ha richiesto più ore del preventivato. \\
@@ -311,29 +312,30 @@ Di seguito, sono elencati e descritti i possibili scenari di rischi a livello di
 	
 \subsubsection{Tabella indici di rischio}
 
-Viene elencata di seguito una tabella che riassume gli indici di rischio individuati ai punti precedenti, indicati con il valore \textbf{Alto, Medio, Basso}. Essi permettono una rapida consultazione di quali sono i rischi individuati che presentano la maggior incidenza, nonchè quelli che potenzialmente possono provocare i maggiori inconvenienti. 
+Viene elencata di seguito una tabella che riassume gli indici di rischio individuati ai punti precedenti, indicati con il valore \textbf{Alto, Medio, Basso}. Essi permettono una rapida consultazione di quali sono i rischi individuati che presentano la maggior incidenza (e il numero effettivo di casi in cui si sono presentati), nonchè l'indice dei rischi che potenzialmente possono provocare i maggiori inconvenienti. Viene inoltre presentato un resoconto dell'occorrenza dei rischi e della loro mitigazione, ovvero le misure correttive attuate per ridurre nuove occorrenze del rischio citato. La tabella sottostante analizza le situazioni verificatesi e, qualora l'evento fosse occorso, l'impatto che esse hanno avuto ai fini del progetto. I dati analizzati in questa sede riguardano il periodo antecedente all'ultima approvazione del documento
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|p{5cm} | p{5cm} | p{5cm}|}
+		\begin{tabular}{|p{5cm} | p{4cm} | p{3cm}| p{2cm}|}
 			\hline
-			\textbf{Tipo di rischio}	& \textbf{Occorrenza} & \textbf{Pericolosità}\\
+			\rowcolor{Gray}
+			\textbf{Tipo di rischio}	& \textbf{Occorrenza (Num.)} & \textbf{Pericolosità} & \textbf{Impatto}\\
 			\hline
-			Tecnologie adottate	&	Media 	& 	Media	\\
+			Tecnologie adottate	&	Media (2) 	& 	Media &  Medio	\\
 			\hline
-			Guasti hardware	&	Bassa 	& 	Media	\\
+			Guasti hardware	&	Bassa (0)	& 	Media	&  \\
 			\hline
-			Malfunzionamento del server	&	Bassa 	& 	Alta	\\
+			Malfunzionamento del server	&	Bassa (0)	& 	Alta	&  \\
 			\hline
-			Problemi interni al team	&	Bassa 	& 	Alta	\\
+			Problemi interni al team	&	Bassa (0)	& 	Alta	&  \\
 			\hline
-			Problemi personali individuali	&	Alta 	& 	Alta	\\
+			Problemi personali individuali	&	Alta  (3)	& 	Alta	&  Alto\\
 			\hline
-			Pianificazione errata	&	Media 	& 	Alta	\\
+			Pianificazione errata	&	Media  (0)	& 	Alta	&  \\
 			\hline
-			Incomprensioni sui requisiti	&	Media 	& 	Alta	\\
+			Incomprensioni sui requisiti	&	Media (1)	& 	Alta	&  Medio\\
 			\hline
-			Stime e previsioni	&	Media 	& 	Media	\\
+			Stime e previsioni	&	Media (2)	& 	Media  &  Medio	\\
 			\hline
 		\end{tabular}
 		\caption{Tabella degli indici di rischio}
@@ -341,38 +343,6 @@ Viene elencata di seguito una tabella che riassume gli indici di rischio individ
 \end{table}
 \end{minipage}
 
-\subsection{Tracciamento di occorrenza rischi}
-In questa sezione viene presentato un resoconto dell'occorrenza dei rischi e della loro mitigazione, ovvero le misure correttive attuate per ridurre nuove occorrenze del rischio citato. La tabella sottostante analizza le situazioni verificatesi e l'eventuale impatto che esse hanno avuto ai fini del progetto. I dati analizzati in questa sede riguardano il periodo antecedente all'ultima approvazione del documento
-
-\begin{table}[H]
-	\begin{center}
-
-		\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}
-			\hline
-			\textbf{Tipo di rischio}	& \textbf{Occorrenze} & \textbf{Impatto}\\
-			\hline
-			Tecnologie adottate	&	2 	&  Medio	\\
-			\hline
-			Guasti hardware	&	0 	& 	\\
-			\hline
-			Malfunzionamento del server	&	0 	& 	\\
-			\hline
-			Problemi interni al team	&	0 	& 	\\
-			\hline
-			Problemi personali individuali	&	3 	&	Alto \\
-			\hline
-			Pianificazione errata	&	0 	& 	\\
-			\hline
-			Incomprensioni sui requisiti	&	1 	&	Medio	\\
-			\hline
-			Stime e previsioni	&	2 	&  Medio  \\
-			\hline
-		\end{tabular}
-		\vline
-		\caption{Tabella di occorrenza dei rischi elencati}
-			\vline
-	\end{center}
-\end{table}
 
 \begin{comment}
 
