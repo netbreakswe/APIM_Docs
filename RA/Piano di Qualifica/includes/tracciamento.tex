@@ -1,7 +1,7 @@
-\newpage
-\section{Tracciamento}
+\subsection{Tracciamento}
+Il team \gruppo\ ha deciso di utilizzare la piattaforma \textit{NetBreakDB} al fine di facilitare il tracciamento di classi, requisiti, casi d'uso, test, ecc.
 
-\subsection{Tracciamento Test di Unità - Metodi}
+\subsubsection{Tracciamento Test di Unità - Metodi}
 
 % TABELLA
 \normalsize
@@ -16,7 +16,7 @@
 \end{longtable}
 \clearpage
 
-\subsection{Tracciamento Metodi - Test di Unità}
+\subsubsection{Tracciamento Metodi - Test di Unità}
 
 % TABELLA
 \normalsize
@@ -31,7 +31,7 @@
 \end{longtable}
 \clearpage
 
-\subsection{Tracciamento Test di Integrazione - Componenti}
+\subsubsection{Tracciamento Test di Integrazione - Componenti}
 
 % TABELLA
 \normalsize
@@ -56,22 +56,47 @@
 \end{longtable}
 \clearpage
 
-\subsection{Tracciamento Componenti - Test di Integrazione}
+\subsubsection{Tracciamento Componenti - Test di Integrazione}
 
 % TABELLA
 \normalsize
-\begin{longtable}{|>{\centering}m{5cm}|m{5cm}<{\centering}|}
+\begin{longtable}{|>{\centering}m{8cm}|m{5cm}<{\centering}|}
 	\hline \rowcolor{Gray}
 	\textbf{Componenti} & \textbf{Test}\\
 	\hline
 	\endhead
+	APIM::FrontEnd::Index & \hyperlink{TI1}{TI1} \\ \hline
+	APIM::FrontEnd::App::Controllers & \hyperlink{TI2}{TI2} \\ \hline
+	APIM::BackEnd::Services & \hyperlink{TI3}{TI3} \\ \hline
+	APIM::FrontEnd::App::Models & \hyperlink{TI4}{TI4}\\
+	\hline
+	APIM::BackEnd::Services & \hyperlink{TI4}{TI4} \\ \hline
+	APIM::FrontEnd::App::Views & \hyperlink{TI5}{TI5} \\
+	\hline
+	APIM::FrontEnd::Controllers & \hyperlink{TI5}{TI5} \\
+	\hline
+	APIM::BackEnd::Services & \hyperlink{TI6}{TI6} \\ \hline
+	APIM::FrontEnd::node\_modules & \hyperlink{TI7}{TI7} \\
+	\hline
+	APIM::FrontEnd::App::AppRun & \hyperlink{TI7}{TI7} \\
+	\hline
+	APIM::FrontEnd::App::AppRouter & \hyperlink{TI8}{TI8} \\ \hline
+	APIM::BackEnd::Services & \hyperlink{TI8}{TI8} \\
+	\hline
+	APIM::BackEnd::Gateway & \hyperlink{TI8}{TI8} \\ \hline
+	APIM::FrontEnd::App::Controllers & \hyperlink{TI9}{TI9} \\
+	\hline
+	APIM::FrontEnd::App::Models & \hyperlink{TI10}{TI10} \\
+	\hline
+	APIM::FrontEnd::App::Controllers & \hyperlink{TI10}{TI10} \\
+	\hline
 	
 	\caption[Tracciamento Componenti-Test di Integrazione]{Tracciamento Componenti-Test di Integrazione}
 	\label{tabella:componenti-ti}
 \end{longtable}
 \clearpage
 
-\subsection{Tracciamento Test di Sistema - Requisiti}
+\subsubsection{Tracciamento Test di Sistema - Requisiti}
 
 % TABELLA
 \normalsize
@@ -133,7 +158,7 @@
 \end{longtable}
 \clearpage
 
-\subsection{Tracciamento Requisiti - Test di Sistema}
+\subsubsection{Tracciamento Requisiti - Test di Sistema}
 
 % TABELLA
 \normalsize
@@ -142,13 +167,61 @@
 	\textbf{Requisito} & \textbf{Test}\\
 	\hline
 	\endhead
+	RFO1 & \hyperlink{TSFO1}{TSFO1} \\ \hline
+	RFO2 & \hyperlink{TSFO2}{TSFO2} \\ \hline
+	RFD3 & \hyperlink{TSFD3}{TSFD3} \\ \hline
+	RFO4 & \hyperlink{TSFO4}{TSFO4} \\ \hline
+	RFO4.3 & \hyperlink{TSFO4.3}{TSFO4.3} \\ \hline
+	RFO5 & \hyperlink{TSFO5}{TSFO5} \\ \hline
+	RFO5.6 & \hyperlink{TSFO5.6}{TSFO5.6} \\ \hline
+	RFO5.7 & \hyperlink{TSFO5.7}{TSFO5.7} \\ \hline
+	RFO6.2 & \hyperlink{TSFO6.2}{TSFO6.2} \\ \hline
+	RFO7 & \hyperlink{TSFO7}{TSFO7} \\ \hline
+	RFO7.5.3 & \hyperlink{TSFO7.5.3}{TSFO7.5.3} \\ \hline
+	RFO8 & \hyperlink{TSFO8}{TSFO8} \\ \hline
+	RFO8.2 & \hyperlink{TSFO8.2}{TSFO8.2} \\ \hline
+	RFO8.2.4 & \hyperlink{TSFO8.2.4}{TSFO8.2.4} \\ \hline
+	RFO8.2.8 & \hyperlink{TSFO8.2.8}{TSFO8.2.8} \\ \hline
+	RFO8.2.9 & \hyperlink{TSFO8.2.9}{TSFO8.2.9} \\ \hline
+	RFO9 & \hyperlink{TSFO9}{TSFO9} \\ \hline
+	RFO10.1 & \hyperlink{TSFO10.1}{TSFO10.1} \\ \hline
+	RFO10.1.1 & \hyperlink{TSFO10.1.1}{TSFO10.1.1} \\ \hline
+	RFO10.1.2 & \hyperlink{TSFO10.1.2}{TSFO10.1.2} \\ \hline
+	RFD10.1.2.9 & \hyperlink{TSFD10.1.2.9}{TSFD10.1.2.9} \\ \hline
+	RFO10.2 & \hyperlink{TSFO10.2}{TSFO10.2} \\ \hline
+	RFO10.2.1 & \hyperlink{TSFO10.2.1}{TSFO10.2.1} \\ \hline
+	RFO10.2.2 & \hyperlink{TSFO10.2.2}{TSFO10.2.2} \\ \hline
+	RFO10.3 & \hyperlink{TSFO10.3}{TSFO10.3} \\ \hline
+	RFO10.3.2 & \hyperlink{TSFO10.3.2}{TSFO10.3.2} \\ \hline
+	RFO11 & \hyperlink{TSFO11}{TSFO11} \\ \hline
+	RFO12.1.1.1 & \hyperlink{TSFO12.1.1.1}{TSFO12.1.1.1} \\ \hline
+	RFO12.1.1.2 & \hyperlink{TSFO12.1.1.2}{TSFO12.1.1.2} \\ \hline
+	RFD12.1.1.3 & \hyperlink{TSFD12.1.1.3}{TSFD12.1.1.3} \\ \hline
+	RFO12.2.1.1 & \hyperlink{TSFO12.2.1.1}{TSFO12.2.1.1} \\ \hline
+	RFO12.2.1.2 & \hyperlink{TSFO12.2.1.2}{TSFO12.2.1.2} \\ \hline
+	RFO12.2.1.3 & \hyperlink{TSFO12.2.1.3}{TSFO12.2.1.3} \\ \hline
+	RFO12.2.1.5 & \hyperlink{TSFO12.2.1.5}{TSFO12.2.1.5} \\ \hline
+	RVO1 & \hyperlink{TSVO1}{TSVO1} \\ \hline
+	RVO2 & \hyperlink{TSVO2}{TSVO2} \\ \hline
+	RVO3 & \hyperlink{TSVO3}{TSVO3} \\ \hline
+	RVO4 & \hyperlink{TSVO4}{TSVO4} \\ \hline
+	RVO5 & \hyperlink{TSVO5}{TSVO5} \\ \hline
+	RVO6 & \hyperlink{TSVO6}{TSVO6} \\ \hline
+	RVO7 & \hyperlink{TSVO7}{TSVO7} \\ \hline
+	RVD8 & \hyperlink{TSVD8}{TSVD8} \\ \hline
+	RVD9 & \hyperlink{TSVD9}{TSVD9} \\ \hline
+	RVO10 & \hyperlink{TSVO10}{TSVO10} \\ \hline
+	RVO11 & \hyperlink{TSVO11}{TSVO11} \\ \hline
+	RVO12 & \hyperlink{TSVO12}{TSVO12} \\ \hline
+	RVF13 & \hyperlink{TSVF13}{TSVF13} \\ \hline
+	RVD14 & \hyperlink{TSVD14}{TSVD14} \\ \hline	
 
 	\caption[Tracciamento Requisiti-Test di Sistema]{Tracciamento Requisiti-Test di Sistema}
 	\label{tabella:requi-ts}
 \end{longtable}
 \clearpage
 
-\subsection{Tracciamento Test di Validazione - Requisiti}
+\subsubsection{Tracciamento Test di Validazione - Requisiti}
 
 % TABELLA
 \normalsize
