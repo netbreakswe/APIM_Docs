@@ -6,8 +6,17 @@ Sono presenti due categorie di utilizzo per l'utente. Esse permettono di acceder
 
 \begin{itemize}
 	\item \textbf{Utente non autenticato}: rappresenta l'utente che visita il sito per la prima volta oppure quando non ha effettuato il login nella piattaforma. All'utente non autenticato è permessa la visualizzazione dei prodotti inseriti nella piattaforma, così come la ricerca. Essi però non hanno accesso alle aree e funzionalità riservate;
-	\item \textbf{Utente autenticato}: un utente appartenente a questa categoria possiede le funzionalità di ricerca come per l'utenza non autenticata. Inoltre, ha a disposizione il proprio profilo utente ed è abilitato all'acquisto dei servizi offerti nel sito, con l'accesso alle relative funzionalità statistiche.
-	\item \textbf{Utente autenticato (sviluppatore)}: questa categoria di utente è una sottoclasse dell'utente autenticato, ma risulta abilitato all'inserimento e gestione dei propri servizi per la vendita ad altri utenti della piattaforma. 
+	\item \textbf{Utente autenticato}: un utente appartenente a questa categoria possiede le funzionalità di ricerca come per l'utenza non autenticata. Inoltre, ha a disposizione il proprio profilo utente ed è abilitato all'acquisto dei servizi offerti nel sito, con l'accesso alle relative funzionalità statistiche;
+	\item \textbf{Utente autenticato generico}: questa categoria di utente è una sottoclasse dell'utente autenticato, ma risulta abilitato all'inserimento e gestione dei propri servizi per la vendita ad altri utenti della piattaforma. 
+\end{itemize}
+
+Gli utenti registrati devono appartenere ad una categoria di utente. Queste categorie sono cliente, sviluppatore, amministratore.
+
+Per semplicità di lettura il documento è stato suddiviso in 3 sezioni, ognuna delle quali prende in esame le possibili azioni che un utente può svolgere nella piattaforma. Le categorie di utenti sono:
+\begin{itemize}
+	\item \textbf{Cliente}: rappresenta un utente registrato, che può acquistare ed utilizzare API;
+	\item \textbf{Sviluppatore}: rappresenta un utente registrato che oltre a poter svolgere le stesse operazioni di un cliente, può caricare le proprie API su \textit{API Market} e trasferire i profitti su un conto Paypal;
+	\item \textbf{Amministratore}: rappresenta un utente con priviliegi di moderazione che incidono sia su sviluppatori o clienti sia API.
 \end{itemize}
 
 \subsection{Requisiti di sistema}
@@ -16,3 +25,7 @@ L'hardware del dispositivo non è oggetto di vincolo all'utilizzo.
 
 \subsubsection{Browser supportati}
 Il software API Market supporta i \textit{browser\ped{G}} a partire dalle versioni: Google Chrome 56.0, Mozilla Firefox 51.0, Safari 10.0, Microsoft Edge 38.0, Android browser 5.1 e Safari per iOS 10.
+
+
+
+
