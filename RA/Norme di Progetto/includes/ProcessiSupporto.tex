@@ -207,18 +207,42 @@
 			\item \textbf{Contenuto}: questo documento ha lo scopo di fornire all'utente una guida dettagliata riguardo tutte le funzionalità offerte dal prodotto realizzato.
 		\end{itemize}
 
-	\subsection{Verifica e Validazione}
+	\subsection{Verifica}
 	Il processo di Verifica e Validazione ha lo scopo di controllare ed assicurare che documentazione e software prodotti rispecchino quanto previsto dai requisiti.\\
 	In particolare, la verifica serve a stabilire che il prodotto rispetti le specifiche, mentre la validazione accerta che le specifiche siano rispettate nel modo più consono.
 
-		\subsubsection{Indice Gulpease}
+		\subsubsection{Verifica documenti}
+		
+		\paragraph{Descrizione}
+		L'attività di verifica dei documenti è svolta dai Verificatori. Essi hanno il compito di segnalare ogni incongruenza o errore, facendo presente eventuali punti non chiari, in modo tale da permetterne la correzione. Ogni problema deve essere segnalato tramite gli strumenti di comunicazione e issue tracking internamente utilizzati, con una breve descrizione del problema e un riferimento alla posizione del documento da controllare. In alternativa, il Verificatore può effettuare precise annotazioni nei documenti PDF resi disponibili per il controllo, da consegnare in seguito alla persona responsabile di effettuare le modifiche nel documento.\\
+		Qualsiasi dubbio aggiuntivo può essere chiarito tramite gli strumenti di comunicazione abitualmente utilizzati dal Team.
+		
+		\paragraph{Strategia generale}
+		Si considerano, in aggiunta alle descrizioni e alle strategie descritte nella sottosezione corrente, le metodologie sottoriportate:
+		
+		\begin{itemize}
+			\item Si effettua un controllo preliminare della documentazione correlata ed eventuali aggiornamenti che possano essere rilevanti in fase di Verifica
+			\item Si valutano le Norme di Progetto in vigore
+			\item Si procede ad una correzione preliminare tramite controllo ortografico standard
+		\end{itemize}
+	
+		\paragraph{Obiettivi attesi}
+		Gli obbiettivi di qualità attesi dall'attività di verifica dei documenti sono:
+		
+		\begin{itemize}
+			\item L'ottemperanza delle Norme di Progetto per l'ultima versione del documento in fase di Verifica
+			\item L'eliminazione degli errori sintattici e ortografici
+			\item L'eliminazione di porzioni di difficile leggibilità
+			\item La corrispondenza con la restante documentazione
+		\end{itemize}
+				
+		\paragraph{Indice di Gulpease}
 		Per verificare l'indice di leggibilità dei documenti, così come definito nel documento \textsc{PianoDiQualifica 3\_0\_0.pdf}, si è deciso di utilizzare uno strumento realizzato da un gruppo degli anni precedenti.\\
 		Il calcolo dell'indice Gulpease è effettuato direttamente attraverso la piattaforma \textit{NetBreakDB}, la quale è in grado di analizzare i vari file \textit{.tex} all'interno di una cartella e restituire il nome del documento, il valore dell'indice e un'indicazione se il valore è superiore al minimo prefissato.\\
 		Questo script è un ottimo strumento per automatizzare il lavoro, in quanto, dopo alcune modifiche, è in grado di esportare i risultati in codice \LaTeX\ e semplificarne l'integrazione, indicando in quali documenti è necessario intervenire per migliorarne la leggibilità del testo.
 		
-		\subsubsection{Analisi}
-
-			\paragraph{Analisi statica}
+		\paragraph{Modalità di analisi}
+			\subparagraph{Analisi statica}
 			L'analisi statica è applicata ai documenti di testo, e consiste nel trovare errori sintattici ed ortografici. Una prima verifica viene effettuata dai \textit{\Vers} e, successivamente, dal \textit{\RdP}. Le due tecniche scelte sono la \textbf{\textit{Formal Walkthrough\ped{G}}} e la \textbf{\textit{Fagan Inspection\ped{G}}}.
 			\begin{itemize}
 				\item \textbf{Formal Walkthrough}: consiste nell'individuare quanti più errori di sintassi e di ortografia possibili, senza concentrarsi su particolari e specifici errori. Questa tecnica sarà utilizzata dai \textit{\Vers}, i quali annoteranno gli errori più frequenti in un'apposita lista, necessaria per la successiva tecnica di Fagan Inspection;
@@ -228,25 +252,44 @@
 			\paragraph{Analisi dinamica}
 			L'analisi dinamica è applicata esclusivamente sul software prodotto, in quanto consiste nell'effettuare dei test per verificare il corretto funzionamento dell'applicativo prodotto.
 	
-			
-		\subsubsection{Test}
+		\subsubsection{Verifica del codice}
+		
+		\paragraph{Descrizione}
+		L’attività di verifica del codice è effettuata tramite analisi statica e dinamica. In particolare, l'analisi dinamica viene applicata al codice solamente, poichè richiede la compilazione dello stesso e la sua esecuzione. Lo scopo di questa attività è che il software prodotto produca il risultato atteso.
+		
+		\paragraph{Strategia generale}
+		Si considerano, in aggiunta alle descrizioni e alle strategie descritte nella sottosezione corrente, le metodologie sottoriportate:
+		
+		\begin{itemize}
+			\item Il software viene analizzato secondo le metriche stabilite e ogni discrepanza dai risultati attesi viene segnalata tempestivamente ai titolari della porzione di codifica considerata 
+		\end{itemize}
+		
+		\paragraph{Obiettivi attesi}
+		Gli obbiettivi di qualità attesi dall'attività di verifica dei documenti sono:
+		
+		\begin{itemize}
+			\item I test effettuati devono essere quanto più estesi possibili, per coprire ogni caso d'uso del prodotto finale
+			\item I test devono avere l'apporto minimo da parte del verificatore, ed essere quindi quanto più automatizzati possibile.
+		\end{itemize}
+		
+		\paragraph{Test}
 		Il sistema adottato per testare l'operato prodotto, prende atto della struttura comune a tutto il software, decomponendo l'attività, a partire da elementi semplici fino a giungere ai test dell'intero sistema, seguendo opportune strategie di integrazione.
 		
-		\paragraph{Test di unità}
+		\subparagraph{Test di unità}
 		Questa tipologia di test è atta ad analizzare ogni piccola unità software singolarmente. Così facendo, si tende a minimizzare il numero di errori, a partire da ogni singola componente. Testando i singoli moduli, si rende necessaria la presenza di componenti fittizie per simulare parti di sistema incomplete e altrimenti non testabili singolarmente. Il codice utilizzato per denotare questa fase di test sarà:
 		
 		\begin{center}
 			TU[Identificativo test]
 		\end{center}
 	
-		\paragraph{Test di integrazione}
+		\subparagraph{Test di integrazione}
 		I test denominati di integrazione riguardano insiemi di moduli, che vengono testati una volta assemblati. Alternando passi di integrazione e di controllo, come in questo caso, significa necessariamente predisporre test su componenti ancora incomplete. Il codice utilizzato per denotare questa fase di test sarà:
 		
 		\begin{center}
 			TI[Identificativo test]
 		\end{center}
 		
-		\paragraph{Test di sistema}
+		\subparagraph{Test di sistema}
 		I test di sistema valutano ogni caratteristica di qualità di prodotto nella sua completezza. Il prodotto, sottoposto a questa tipologia di test, si ritiene giunto ad una realizzazione definitiva. I test riguardano numerosi aspetti cruciali, e si possono riassumere nelle seguenti categorie:
 		
 		\begin{itemize}
@@ -262,24 +305,24 @@
 			TS[Identificativo test]
 		\end{center}
 	
-		\paragraph{Test di regressione}
+		\subparagraph{Test di regressione}
 		Durante lo sviluppo, qualora si renda necessaria la modifica di alcune componenti, i test di regressione consistono nel rieseguire tutti i test riguardanti tale componente aggiornata. Il codice utilizzato per denotare questa fase di test sarà:
 		
 		\begin{center}
 			TR[Identificativo test]
 		\end{center}
 	
-		\paragraph{Test di validazione}
+		\subparagraph{Test di validazione}
 		Esso è il controllo ultimo e definitivo che il prodotto realizzato dal fornitore sia conforme alla richiesta del proponente. Il test è effettuato in presenza del proponente, ed in caso di esito positivo, il software può essere rilasciato.
 		Il codice utilizzato per denotare questa fase di test sarà:
 		
 		\begin{center}
 			TV[Identificativo test]
 		\end{center}
-	
-		\subsubsection{Strumenti}
+			
+		\paragraph{Strumenti}
 		
-		\paragraph{Strumenti per l'analisi statica}
+		\subparagraph{Strumenti per l'analisi statica}
 		
 		\begin{itemize}
 			\item \textbf{\textit{W3C Markup Validator Service\ped{G}}}: validatore online di codice \textit{HTML\ped{G}}, utile per trovare eventuali errori nel codice. L'indirizzo web di riferimento è: \url{https://validator.w3.org/};
@@ -289,9 +332,12 @@
 			\item \textbf{\textit{SQLFiddle\ped{G}}}: validatore online di codice \textit{SQL\ped{G}}, utile per verificare la consistenza del codice del database, e compatibile con \textit{MySQL\ped{G}} e \textit{PostgreSQL\ped{G}}. L'indirizzo web di riferimento è: \url{http://sqlfiddle.com/}.
 		\end{itemize}
 	
-	\paragraph{Strumenti per l'analisi dinamica}
+	\subparagraph{Strumenti per l'analisi dinamica}
 		\begin{itemize}
 			\item \textbf{\textit{Google Chrome DevTools\ped{G}}}: è uno strumento atto a controllare l'utilizzo di risorse del prodotto, l'usabilità su differenti dispositivi, nonchè simulare situazioni di carico della rete. L'indirizzo web di riferimento è: \url{https://www.google.it/chrome/};
 			\item \textbf{\textit{Jasmine\ped{G}}}: framework utile ad eseguire test di unità su codice JavaScript. L'indirizzo di riferimento è: \url{https://jasmine.github.io/};
 			\item \textbf{\textit{Protractor\ped{G}}}: framework per effettuare test su applicazioni sviluppate in AngularJS. L'indirizzo di riferimento è: \url{http://www.protractortest.org/#/}.
 		\end{itemize}
+	
+	\subsection{Validazione}
+	
