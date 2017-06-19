@@ -4,6 +4,14 @@
 
 	\subsection{Documentazione}
 	In questa sezione del documento verrà spiegata la struttura, la classificazione e il metodo di revisione dei documenti del gruppo \textit{\gruppo}.
+	L'attività di documentazione è di supporto a tutte le altre attività, difatti ogni cosa deve essere tracciata e documentata.
+	L'obiettivo prefissato è:
+	\begin{itemize}
+		\item Produrre documenti corretti grammaticalmente e sintatticamente;
+		\item Leggibili dal più largo numero di persone e nel rispetto dell'indice di Gulpease\ped{G};
+		\item Avere un glossario comune per evitare ambiguità di gergo;
+		\item Produrre documenti di struttura uniforme.
+	\end{itemize}
 	
 		\subsubsection{Nomenclatura e versione del documento}
 		Ogni documento deve rispettare una denominazione comune, il più possibile chiara, affinché venga individuato facilmente il nome e la versione del documento. Il team ha scelto di utilizzare la seguente nomenclatura:
@@ -21,20 +29,18 @@
 		\subsubsection{Classificazione del documento}
 		Per tutti i documenti redatti dal gruppo occorre sempre specificare una classe, che può essere:
 		\begin{itemize}
-		\item \textbf{Interna}: la consultazione è limitata al solo gruppo;
+		\item \textbf{Interna}: la consultazione è limitata al solo gruppo e comprende tutti i documenti riguardandi l'organizzazione del gruppo e le regole imposte ai membri e al team;
 		\item \textbf{Esterna}: la consultazione è destinata ad enti esterni al gruppo, quindi a proponente e committente.
 		\end{itemize} 
 	
 		\subsubsection{Ciclo di vita del documento}
 		Un documento può trovarsi in uno dei seguenti stati:
 		\begin{itemize}
-			\item \textbf{Bozza};
-			\item \textbf{In attesa di verifica};
-			\item \textbf{Approvato}.
+			\item \textbf{Bozza}:documento in fase di stesura dal relativo redattore;
+			\item \textbf{In attesa di verifica}: la stesura del documento è terminata e in attesa di verifica da parte del verificatore;
+			\item \textbf{Approvato}: il documento è nella sua versione finale.
 		\end{itemize}
-		
-		I documenti in stato di \textit{Bozza} sono quelli in fase di stesura da parte del redattore. Una volta terminata la stesura, il documento passa in stato di \textit{In attesa di verifica}, ovvero passa per i \textit{\Vers}. Infine, i documenti vengono consegnati al \textit{\RdP}, il quale ha il compito di approvarli in via definitiva.
-		
+				
 		\subsubsection{Strumenti di sviluppo del documento}
 		Per la stesura dei documenti è stato scelto di utilizzare \LaTeX, un linguaggio di markup utilizzato per la stesura di documenti scientifici. \LaTeX è un linguaggio semplice e modulare, in grado di evitare possibili conflitti provenienti dall'utilizzo di software e piattaforme differenti.
 	
@@ -72,9 +78,8 @@
 
 			\paragraph{Indice}
 			Ogni documento, ad eccezione dei verbali, deve possedere un indice contenente tutte le sezioni presenti nel documento. L'indice è ordinato nella sequenza in cui appaiono i capitoli, le sezioni e sottosezioni, e contiene il titolo di ognuna. 
-			\begin{comment}
+
 			Se nel documento sono presenti immagini o tabelle, occorre indicarle con il relativo indice.
-			\end{comment}
 			
 			\paragraph{Intestazione e piè di pagina}
 			Tutte le pagine del documento, ad eccezione della prima, hanno un'intestazione e un piè di pagina. L'intestazione è suddivisa in due parti:
@@ -92,6 +97,7 @@
 			Questa sezione del documento contiene i criteri riguardanti l'ortografia e la tipografia, utilizzate nel corso dello sviluppo della documentazione del progetto.
 
 				\subparagraph{Stili di testo e punteggiatura}
+				Stili:
 				\begin{itemize}
 					\item \textbf{Grassetto}: deve essere utilizzato per parole importanti, all’interno di frasi o elenchi puntati;
 					\item \textit{Corsivo}: deve essere utilizzato per:
@@ -104,8 +110,13 @@
 					\item MAIUSCOLO: viene utilizzato unicamente per scrivere acronimi e macro \LaTeX\ presenti nei documenti;
 					\item \textsc{maiuscoletto}: viene utilizzato per i riferimenti ad altri documenti;
 					\item \LaTeX: viene usato il comando \textbackslash{LaTeX} per ogni occorrenza del termine \LaTeX.
-					\item Punteggiatura: ogni simbolo di punteggiatura è seguito da uno spazio, ad eccezione del punto, del punto interrogativo e del punto esclamativo, che sono seguiti da uno spazio e lettera maiuscola. Ogni voce di un elenco puntato deve terminare con punto e virgola, ad eccezione dell'ultima che termina con un punto. 
 					\end{itemize}
+				Punteggiatura:
+				\begin{itemize}
+					\item Punteggiatura: non deve seguire spazi, ad eccezione del punto, del punto interrogativo e del punto esclamativo, che sono seguiti da uno spazio e lettera maiuscola.
+					\item elenchi puntati: Ogni voce di un elenco puntato deve terminare con punto e virgola, ad eccezione dell'ultima che termina con un punto. 
+					
+				\end{itemize}
 	
 				\subparagraph{Formato data}
 				All'interno di ogni documento, tutte le date seguiranno lo standard \textit{\textbf{ISO 8601:2004\ped{G}}}:
@@ -118,6 +129,17 @@
 					\item \textbf{MM}: indica il mese;
 					\item \textbf{DD}: indica il giorno.
 				\end{itemize}
+		
+			\subparagraph{Formato ora}
+			All'interno di ogni documento, tutti gli orari seguiranno lo standard \textit{\textbf{ISO 8601:2004\ped{G}}}:
+			\begin{center}
+				\textbf{hh-mm}
+			\end{center}
+			Dove:
+			\begin{itemize}
+				\item \textbf{hh}: l'ora;
+				\item \textbf{MM}: indica il minuto.
+			\end{itemize}
 		
 		\subsubsection{Documenti da consegnare}
 			\paragraph{\SdF}
