@@ -2,9 +2,70 @@
 \section{Configurazione software}
 \subsection{Pre-requisiti}
 
+\subsection{Installazione di Git}
+	\subsubsection{Windows 10}
+	Scaricare l’eseguibile di msysGit dal sito: http://msysgit.github.io/ e procedere con
+	l’installazione.
+	\subsubsection{Mac OSX}
+	Eseguire da terminale il seguente comando, dopo aver installato Homebrew (http://
+	brew.sh/):
+	
+	\begin{center}
+	  \verb| $ brew install git|
+	\end{center}
+
+	\subsubsection{Ubuntu 16.04 LTS}
+	Eseguire da terminale il seguente comando:
+	
+	\begin{center}
+	  \verb| $ apt install git|
+\end{center}
+
+\subsubsection{Installazione node.js}
+Scaricare l'installer corretto in base al proprio sistema operativo, reperibile alla pagina ufficiale di download di Node.js (https://nodejs.org/it/download/). Procedere dunquecon l’installazione di Node.js.
+
+\subsubsection{Download dei file da GitHub}
+Eseguire da terminale il seguente comando:
+\begin{center}
+	\verb| $  git clone ––recursive-submodules https://github.com/netbreakswe/APIM_Source|
+\end{center}
+
+
+\subsubsection{Installazione Java JDK}
+%Scaricare l’eseguibile compatibile con il proprio terminale di jdk8 dal sito: \hyphenation{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html} e procedere con l’installazione.
+
+\subsubsection{Installazione Jolie}
+Prima di eseguire questo passaggio è importante aver eseguito quanto descritto nella sezione precedente.
+
+Scaricare l’eseguibile di Jolie dal sito: http://www.jolie-lang.org/downloads.html. 
+\paragraph{Windows}
+Aprire un terminale con privilegi di amministratore nella cartella del download ed eseguire:
+	\begin{center}
+	 \verb| java -jar jolie-1.6.0.jar|
+	\end{center}
+\paragraph{Linux/MacOS}
+Aprire un terminale nella cartella del download ed eseguire:
+	\begin{center}
+	 \verb| sudo java -jar jolie-1.6.0.jar|
+	\end{center}
+\subsection{Installazione Dipendenze WebApp}
+Aprire il terminale nella cartella con il seguente percorso: \verb|*Download del punto 5.2.5*/Frontend| ed eseguire il seguente comando:
+	\begin{center}
+	\verb| npm install|
+\end{center}
+
+
 \subsection{Installazione piattaforma}
+ dire quali servizi avviare
+ - non ancora fatto per capire se si fa bath oppure no e bisogna avviare tutti i microservizi
 
 \subsection{Configurazione database}
 
+dire come configurare i database su heroku!!!!
+
 \subsection{Avvio dell'applicazione}
+Aprire il terminale nella cartella con il seguente percorso: \verb|*Download del punto 5.2.5*/Frontend| ed eseguire il seguente comando:
+\begin{center}
+	\verb| npm start|
+\end{center}
 
