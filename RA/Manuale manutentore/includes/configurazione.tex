@@ -56,15 +56,108 @@ Aprire il terminale nella cartella con il seguente percorso: \verb|*Download del
 
 
 \subsection{Installazione piattaforma}
- dire quali servizi avviare
- - non ancora fatto per capire se si fa bath oppure no e bisogna avviare tutti i microservizi
+In questa sezione è spiegato come avviare i microservizi neccessari per una corretta fruizione della web app e del gateway. Si suppone che la cartella di partenza sia la cartella scaricata al punto 5.2.5 del manuale corrente.
+\subsubsection{Microservizi relativi alla Web App}
+Di seguito saranno elencati i microservizi da avviare per una corretta funzione della web app. L'ordine di avvio non è rilevante e può avvenire in ordine casuale.
+	\paragraph{Microservizio per gestione utenti}
+	Per avviare il microservizio relativo alla gestione utenti è necesario recarsi nella cartella:
+	\begin{center}
+		\verb| \Backend\services\usersDB|
+	\end{center}
+	
+	ed eseguire da terminale il comando:
+	
+	\begin{center}
+		\verb| jolie user_db.ol |
+	\end{center}
+
+	\paragraph{Microservizio per il Service Level Agreement}
+	Per avviare il microservizio relativo al Service Level Agreement è necesario recarsi nella cartella:
+	\begin{center}
+		\verb| \Backend\services\slaDB|
+	\end{center}
+	
+	ed eseguire da terminale il comando:
+	
+	\begin{center}
+		\verb| jolie sla_db.ol |
+	\end{center}
+
+	\paragraph{Microservizio per la gestione di file}
+	Per avviare il microservizio relativo alla gestione di file è necesario recarsi nella cartella:
+	\begin{center}
+		\verb| \Backend\services\filehandlerDB|
+	\end{center}
+	
+	ed eseguire da terminale il comando:
+	
+	\begin{center}
+		\verb| jolie filehandler.ol |
+	\end{center}
+
+	\paragraph{Microservizio per la gestione di microservizi}
+	Per avviare il microservizio relativo alla gestione di microservizi è necesario recarsi nella cartella:
+	\begin{center}
+		\verb| \Backend\services\microservicesDB|
+	\end{center}
+	
+	ed eseguire da terminale il comando:
+	
+	\begin{center}
+		\verb| jolie microservices_db.ol |
+	\end{center}
+
+	\paragraph{Microservizio per la gestione delle transazioni}
+Per avviare il microservizio relativo alla gestione delle transazioni è necesario recarsi nella cartella:
+\begin{center}
+	\verb| \Backend\services\transactionsDB|
+\end{center}
+
+ed eseguire da terminale il comando:
+
+\begin{center}
+	\verb| jolie transactions_db.ol |
+\end{center}
+
+\subsubsection{Microservizi relativi all'API Gateway}
+Di seguito saranno elencati i microservizi da avviare per una corretta funzione dell'API Gateway. L'ordine di avvio  è rilevante e come prerequisito si richiede di aver avviato tutti i servizi elencati al punto 5.4.1.
+
+\paragraph{Microservizio per gestione microservizi del gateway}
+	Per avviare il microservizio relativo alla gestione delle transazioni è necesario recarsi nella cartella:
+	\begin{center}
+		\verb| \Backend\services\microservicesDB|
+	\end{center}
+	
+	ed eseguire da terminale il comando:
+	
+	\begin{center}
+		\verb| jolie serviceinteractionhandler.ol |
+	\end{center}
+
+
+\paragraph{Avvio del gateway}
+	Per avviare il microservizio relativo alla gestione delle transazioni è necesario recarsi nella cartella:
+	\begin{center}
+		\verb| \Backend\gateway|
+	\end{center}
+	
+	ed eseguire da terminale il comando:
+	
+	\begin{center}
+		\verb| jolie gateway.ol |
+	\end{center}
+
 
 \subsection{Configurazione database}
 
 dire come configurare i database su heroku!!!!
 
 \subsection{Avvio dell'applicazione}
-Aprire il terminale nella cartella con il seguente percorso: \verb|*Download del punto 5.2.5*/Frontend| ed eseguire il seguente comando:
+Aprire il terminale nella cartella con il seguente percorso:
+\begin{center}
+	\verb|\Frontend| 
+\end{center} 
+ed eseguire il seguente comando:
 \begin{center}
 	\verb| npm start|
 \end{center}
