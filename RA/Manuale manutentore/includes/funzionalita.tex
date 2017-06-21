@@ -1,6 +1,33 @@
 \newpage
 \section{Implementazione funzionalità}
+Per ragioni di tempo e di competenze, alcune funzionalità del software API Market non sono
+state implementate. In questa sezione vengono elencati tutti i punti di possibile estensione delle
+funzionalità e un loro possibile sviluppo.
 
-\subsection{Front-end}
+\subsection{Web App}
+\subsubsection{Autenticazione tramite social network}
+La Web App è stata sviluppata per essere utilizzata un numero elevato di persone e permettere il login tramite siti esterni come Facebook e Twitter snelirebbe la procedura di registrazione.
+Facebook è attualmente il più grande social network del mondo e rende disponibile il login tramite un SDK proprietario basato su Javascript. Facebook Login con l'SDK di Facebook per JavaScript consente agli utenti di accedere al sito web con le loro credenziali di Facebook. 
 
-\subsection{Back-end}
+\subsection{Rating e recensioni delle API}
+Una funzionalità molto diffusa nei market e in altre tipologlie di siti che offrono prodotti e servizi è la possibilità di recensire un prodotto, luogo o servizio. L'inserimento di una piattaforma di valutazione all'interno di API Market aiuterebbe il potenziale cliente a valutare la bontà dell'API e capire punti di forza o debolezza che l'autore non ha elencato. Solitamente ad ogni recensione è assegnata una valutazione sintetica da uno a cinque, dove uno è pessimo e cinque è ottimo, che permetterebbe di ordinare le API in base alle recensioni lasciate dagli acquirenti.
+
+\subsubsection{Q \& A}
+L'introduzione di una sezione di domande e risposte è un modo per dare l'opportunità a potenziali di clienti di avere una risposta ad una specifica domanda da parte dell'autore, riguardante l'API pubblicata. Se questo sistema venisse implementato ridurrebbe l'insoddisfazione da parte del cliente nel caso l'API non svolgesse l'azione che si era prefissato.
+
+\subsubsection{Aggiunta tipologie account}
+Si è scelto di realizzare tre tipologie di account, quelle fondamentali per la corretta fruizione dell'API Market, ma è possibile aggiungerne altre, ad esempio potrebbe essere interessante l'aggiunta di tipologie agevolate nell'acquisto e/o fruizione delle API, come studenti e professori associati a scuole e università tramite l'inserimento di un codice personale.
+
+
+\subsubsection{Aggiunta modalità di pagamento}
+Attualmente l'unica modalità di acquisto è tramite crediti che è possibile acquistare tramite la piattaforma Paypal. Un Market che dispone di solo un metodo di pagamento può essere limitativo e quindi l'aggiunta di altri metodi di pagamento può ampliare il bacino di utenti.
+
+\subsection{gateway}
+
+\subsubsection{Service Level Agreement}
+Il Service Level Agreement è un insieme di caratteristiche che un API deve rispettare. Al momento del rilascio, si è scelto di verificare se l'API rispetta il tempo massimo di risposta indicato al momento dell'acquisto. Questa scelta è stata fatta per non sovracaricare il gateway ma in futuro in una soluzione con gateway distribuito, sarà possibile accumulare più dati per creare una profilazione maggiore riguardante una API. Tra le caratteristiche che si posso aggiungere ci sono la dimensione dei dati inviata e ricevuta, la differenza di dimensione tra i dati inviati e ricevuti, la velocità di trasmissione.
+
+\subsubsection{Gateway distribuito}
+Durante la progettazione si è scelto di realizzare un gateway centralizzato, attraverso il quale passano tutte le richieste alle API. Si è tenuto conto che in futuro il gateway potrebbe essere distribuito, ovvero più gateway distribuiti. Questa soluzione distribuirebbe le richieste evitando di sovracaricare un unico gateway con troppe richieste e di conseguenza un rallentamento generale dell'infrastruttura. Un gateway distribuito permetterebbe di ampliare i dati ottenuti dal Service Level Agreement(SLA), limitati a solo il tempo di risposta in un gateway centralizzato.
+
+
