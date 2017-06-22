@@ -151,10 +151,41 @@ Di seguito saranno elencati i microservizi da avviare per una corretta funzione 
 		\verb| jolie gateway.ol |
 	\end{center}
 
-
+\newpage
 \subsection{Configurazione database}
 
-dire come configurare i database su heroku!!!!
+Per la configurazione dei database, è necessario avere accessi amministrativi al database che si intende utilizzare. Tramite un tool grafico (ad esempio PhpMyAdmin) o riga di comando, è necessario creare 5 database corrispondenti a ciascun microservizio. \\ Successivamente, in ciascun database deve venir eseguita un importazione dei file .sql forniti in dotazione con il software. Tale procedimento crea le tabelle necessarie per la corretta funzionalità dei servizi.
+
+Prima dell'avvio dell'applicazione, è necessario modificare i file interfaccia relativi ai servizi backend, affinchè essi puntino al database corrispondente. I file da modificare sono i seguenti:
+\begin{center}
+	\verb| filehandler.ol |
+	\verb| microservices_db.ol |
+	\verb| sla_db.ol |
+	\verb| transactions_db.ol |
+	\verb| user_db.ol |
+\end{center}
+
+Per la corretta impostazione, è necessario cercare le voci relative ai dati di connessione:
+
+\begin{center}
+	\verb| .host |
+	\verb| .driver |
+	\verb| .port |
+	\verb| .database |
+	\verb| .username |
+	\verb| .password |
+\end{center}
+
+In particolare, le diciture sopraelencate corrispondono ai seguenti valori:
+
+\begin{itemize}
+	\item \textbf{.host}: L'URL del database, al quale il servizio effettuerà la connessione
+	\item \textbf{.driver}: Il driver JDBC da utilizzare. In particolare, nel caso di installazione come da specifiche, dovrà essere utilizzato il driver \verb| mysql |.
+	\item \textbf{.port}: La porta di connessione al database. Di default tale valore è 3306 per i database MySQL.
+	\item \textbf{.database}: Il nome del database corrispondente al servizio considerato. Si presti particolare attenzione ad associare il servizio con l'opportuno database che ospita le tabelle corrispondenti.
+	\item \textbf{.username}: L'username con diritti di lettura e scrittura sul database
+	\item \textbf{.password}: La password per l'accesso al database.
+\end{itemize}
 
 \subsection{Avvio dell'applicazione}
 Aprire il terminale nella cartella con il seguente percorso:
