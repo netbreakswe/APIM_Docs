@@ -147,7 +147,7 @@ Nella parte front-end sono presenti i package \textit{node\_modules} e \textit{A
 		Si relaziona con le seguenti componenti: \textit{PasswordRecoveryController}.
 		
 		\item \textbf{\textit{API}}: view contenente i risultati della ricerca effettuata, che permette di selezionare un risultato presente al suo interno.\\
-		Si relaziona con le seguenti componenti: \textit{SearchController}.
+		Si relaziona con le seguenti componenti: \textit{APIController}.
 		
 		\item \textbf{\textit{ProfileManager}}: view contenente le informazioni del profilo personale di un utente registrato. Contiene, inoltre, l'informazione relativa al saldo del proprio conto virtuale.\\
 		Si relaziona con le seguenti componenti: \textit{ProfileManagerController}.
@@ -252,16 +252,16 @@ Nella parte front-end sono presenti i package \textit{node\_modules} e \textit{A
 	\item \textbf{Classi contenute}:
 	\begin{itemize}
 		\item \textbf{\textit{UserDetailsModel}}: classe che rappresenta un utente e che contiene tutte le informazioni necessarie alla presentazione del contenuto di un utente, sia nella visualizzazione che nella gestione di un profilo.\\
-		Si relaziona con le seguenti componenti: \textit{LoginController}, \textit{SearchController}, \textit{ProfileManagerController}, \textit{ResetPasswordController}, \textit{PasswordRecoveryController}.
+		Si relaziona con le seguenti componenti: \textit{LoginController}, \textit{APIController}, \textit{ProfileManagerController}, \textit{ResetPasswordController}, \textit{PasswordRecoveryController}.
 		
 		\item \textbf{\textit{MicroserviceModel}}: classe che rappresenta un microservizio e che contiene tutte le informazioni necessarie alla presentazione del contenuto di un microservizio, sia nella visualizzazione che nella gestione.\\
-		Si relaziona con le seguenti componenti: \textit{APIRegiteredController}, \textit{APIRegistrationController}, \textit{PolicyCall}, \textit{PolicyTime}, \textit{PolicyTraffic}, \textit{APIPurchasedController}, \textit{APIListController}.
+		Si relaziona con le seguenti componenti: \textit{APIRegiteredController}, \textit{APIRegistrationController}, \textit{PolicyCallController}, \textit{PolicyTimeController}, \textit{PolicyTrafficController}, \textit{APIPurchasedController}, \textit{APIListController}.
 		
 		\item \textbf{\textit{TransactionModel}}:  classe che rappresenta una transazione avvenuta e che contiene tutte le informazioni necessarie alla presentazione del contenuto di una transazione, sia nella visualizzazione che nella gestione.\\
 		Si relaziona con le seguenti componenti: \textit{TransactionsListController}, \textit{APIPurchasedController}.
 		
 		\item \textbf{\textit{SLAMicroserviceModel}}:  classe che rappresenta la SLA di un microservizio e che contiene tutte le informazioni necessarie alla presentazione del contenuto di SLA di un microservizio, sia nella visualizzazione che nella gestione.\\
-		Si relaziona con le seguenti componenti: \textit{PolicyCall}, \textit{PolicyTime}, \textit{PolicyTraffic}, \textit{APIRegistrationController}.
+		Si relaziona con le seguenti componenti: \textit{PolicyCallController}, \textit{PolicyTimeController}, \textit{PolicyTrafficController}, \textit{APIRegistrationController}.
 	\end{itemize}
 \end{itemize}
 	
@@ -286,7 +286,7 @@ Nella parte front-end sono presenti i package \textit{node\_modules} e \textit{A
 	\item \textbf{Classi contenute}:
 	\begin{itemize}
 		
-		\item \textbf{\textit{UserRegistrationController}}: classe che permette di gestire la registrazione di un utente al sistema, fornendone le funzionalità preposte.\\
+		\item \textbf{\textit{RegisterUserController}}: classe che permette di gestire la registrazione di un utente al sistema, fornendone le funzionalità preposte.\\
 		Si relaziona con le seguenti componenti: \textit{RegisterUser}.
 		
 		\item \textbf{\textit{LoginController}}: classe che permette di gestire il login di un utente alla piattaforma \progetto, fornendo le funzionalità di autenticazione al sistema, compresa la gestione di	situazioni di errore di autenticazione.\\
@@ -295,7 +295,7 @@ Nella parte front-end sono presenti i package \textit{node\_modules} e \textit{A
 		\item \textbf{\textit{PasswordRecoveryController}}: classe che permette di gestire il ripristino della password dimenticata da un utente, fornendo tutte le funzionalità per il recupero della password dopo aver verificato l'identità dell'utente.\\
 		Si relaziona con le seguenti componenti: \textit{UserDetailsModel}, \textit{PasswordRecovery}.
 		
-		\item \textbf{\textit{SearchController}}: classe che permette di gestire la ricerca di microservizi all'interno del marketplace \progetto, fornendo all'utente le funzionalità di ricerca tramite categorie e keywords per sviluppatori e microservizi.\\
+		\item \textbf{\textit{APIController}}: classe che permette di gestire la ricerca di microservizi all'interno del marketplace \progetto, fornendo all'utente le funzionalità di ricerca tramite categorie e keywords per sviluppatori e microservizi.\\
 		Si relaziona con le seguenti componenti: \textit{API}.
 		
 		\item \textbf{\textit{ProfileManagerController}}: classe che permette di gestire il profilo personale di un utente, fornendo le funzionalità all'utente per poter modificare i propri dati.\\
@@ -304,7 +304,7 @@ Nella parte front-end sono presenti i package \textit{node\_modules} e \textit{A
 		\item \textbf{\textit{ResetPasswordController}}: classe che permette di gestire il cambio password di un utente autenticato al sistema, fornendo le funzionalità per il salvataggio di una nuova password.\\
 		Si relaziona con le seguenti componenti: \textit{UserDetailsModel}, \textit{ResetPassword}.
 		
-		\item \textbf{\textit{APIRegistrationController}}: classe che permette di gestire l'inserimento di una API, fornendo tutte le funzionalità atte alla corretta esposizione di un microservizio di uno sviluppatore, utente della piattaforma \progetto.\\
+		\item \textbf{\textit{RegisterAPIController}}: classe che permette di gestire l'inserimento di una API, fornendo tutte le funzionalità atte alla corretta esposizione di un microservizio di uno sviluppatore, utente della piattaforma \progetto.\\
 		Si relaziona con le seguenti componenti: \textit{MicroserviceModel}, \textit{RegisterAPI}.
 				
 		\item \textbf{\textit{PolicyCallController}}: classe che permette di gestire le policy di vendita dei microservizi per chiamate.\\
@@ -362,8 +362,8 @@ Nella parte front-end sono presenti i package \textit{node\_modules} e \textit{A
 		\item \textbf{\textit{AdminLoginController}}: classe che permette di gestire il form necessario affinchè l'amministratore possa effettuare il login ed autenticarsi al sistema.\\
 		Si relaziona con le seguenti componenti: \textit{AdminLogin}.
 		
-		\item \textbf{\textit{Logout}}: classe che permette di gestire la conferma di logout dall'\progetto.\\
-		Si relaziona con le seguenti componenti: \textit{LogoutController}.
+		\item \textbf{\textit{LogoutController}}: classe che permette di gestire la conferma di logout dall'\progetto.\\
+		Si relaziona con le seguenti componenti: \textit{Logout}.
 		
 		\item \textbf{\textit{UpdateInfoAPIController}}: classe che permette di gestire il form dedicato modifica delle informazioni di una API presente nel marketplace \progetto.\\
 		Si relaziona con le seguenti componenti: \textit{UpdateInfoAPI}.
@@ -371,7 +371,7 @@ Nella parte front-end sono presenti i package \textit{node\_modules} e \textit{A
 		\item \textbf{\textit{RechargeCreditsController}}: classe che permette di gestire la possibilità di scegliere quanti crediti ricaricare sul conto personale tra i tagli disponibili.\\
 		Si relaziona con le seguenti componenti: \textit{RechargeCredits}.
 		
-		item \textbf{\textit{ShowUserDetalisController}}: classe che permette di gestire le informazioni personali di un utente visualizzabili da altri fruitori del marketplace \progetto.\\
+		\item \textbf{\textit{ShowUserDetalisController}}: classe che permette di gestire le informazioni personali di un utente visualizzabili da altri fruitori del marketplace \progetto.\\
 		Si relaziona con le seguenti componenti: \textit{ShowUserDetalis}
 		
 		
