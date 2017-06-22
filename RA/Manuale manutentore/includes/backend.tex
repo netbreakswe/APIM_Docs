@@ -1,2 +1,188 @@
 \newpage
 \section{Packages Back-end}
+
+\subsection{Gateway}
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{UML/DiagrammiPackage/gateway.png}
+	\caption{Package APIM::BackEnd::Gateway}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Padre}: BackEnd;
+	
+	\item \textbf{Descrizione}: package contenente la componente principale del lato back-end. Pur essendo integrato nella sistema, è un modulo che svolge funzioni separate alla piattaforma vera e propria: infatti, l'API Gateway si occupa di controllare e reindirizzare le chiamate effettuate dai clienti ai microservizi (prodotti) inseriti nel marketplace \progetto, verificandone la validità (credenziali, chiave) e monitorandone l'uso (SLA, utilizzi rimanenti).
+	
+	\item \textbf{Relazioni d'uso con altri componenti}: la classe \textit{Gateway} comunica con le classi contenute all'interno del package \textit{Services}. Inoltre, necessita delle interfacce contenute nel package \textit{Interfaces} e crea le sessioni \textit{couriers} Jolie, archiviandole nel package \textit{Couriers}.
+	
+	\item \textbf{Package contenuti}:
+	\begin{itemize}
+		\item \textbf{\textit{Couriers}}: package contenente l'archivio delle sessioni couriers dei microservizi Jolie. Le sessioni couriers vengono create dal gateway ed utilizzate da \textit{ServiceInteractionHandler}. Inoltre, forniscono i dati necessari al funzionamento del package \textit{Interfaces}.\\
+		Le sessioni \textit{couriers} permettono l'overloading dei messaggi inviati nelle chiamate dei microservizi al gateway, così da allegare alla richiesta le informazioni per raggiungere il microservizio target.
+		
+		\item \textbf{\textit{Interfaces}}: package contenente le interfacce necessarie al funzionamento dell'API Gateway. Si occupa dei dati riguardanti le chiamate ai microservizi, in particolar modo, il tipo di operazione richiesta e le informazioni riguardanti l'interfaccia del microservizio target.
+	\end{itemize}
+	\item \textbf{Classi contenute}:
+	\begin{itemize}
+		\item \textbf{\textit{Gateway}}: classe che rappresenta la struttura dell'API Gateway della piattaforma \progetto.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Services}
+Tale package contiene tutti i servizi appartenenti al lato back-end della piattaforma, eccezion fatta per il gateway già descritto nella sezione soprastante. \textit{Services} contiene tutte le classi di comunicazione con i database che permetteranno il corretto funzionamento dell'applicazione.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{UML/DiagrammiPackage/services.png}
+	\caption{Package APIM::BackEnd::Services}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Padre}: BackEnd;
+	
+	\item \textbf{Descrizione}: package che contiene tutti i package relativi ai microservizi del back-end dell'applicazione;
+	
+	\item \textbf{Relazioni d'uso con altri componenti}: questo package si relaziona con l'API Gateway;
+	
+	\item \textbf{Package contenuti}:
+	\begin{itemize}
+		\item \textbf{\textit{UsersDB}}: package contenente le classi che permettono la comunicazione con il database relativo agli utenti del sistema;
+		
+		\item \textbf{\textit{MicroservicesDB}}: package contenente le classi che permettono la comunicazione con il database relativo ai microservizi registrati sulla piattaforma;
+		
+		\item \textbf{\textit{TransactionsDB}}: package contenente le classi che permettono la comunicazione con il database relativo alle transazioni degli utenti del sistema;
+		
+		\item \textbf{\textit{SLADB}}: package contenente le classi che permettono la comunicazione con il database relativo alle informazioni di SLA dei microservizi utilizzati tramite l'API Gateway della piattaforma \progetto;
+		
+		\item \textbf{\textit{FileHandlerDB}}: package contenente le classi che permettono la gestione dei file.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{UsersDB}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{UML/DiagrammiPackage/UsersDB.png}
+	\caption{Package APIM::BackEnd::Services::UsersDB}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Padre}: Services;
+	
+	\item \textbf{Descrizione}: package che contiene le classi di comunicazione con il database dell'applicazione relativo alle informazioni (anagrafiche e personali) degli utenti (admin, clienti, sviluppatori) del sistema;
+	
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per permettere l'identificazione, l'autenticazione e la gestione degli utenti, clienti e sviluppatori della piattaforma \progetto;
+	
+	\item \textbf{Classi contenute}:
+	\begin{itemize}
+		\item \textbf{\textit{UsersDBInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database degli utenti;
+		
+		\item \textbf{\textit{UsersDB}}: classe che implementa l'interfaccia \textit{UsersDBInterface}.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{MicroservicesDB}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{UML/DiagrammiPackage/MicroservicesDB.png}
+	\caption{Package APIM::BackEnd::Services::MicroservicesDB}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Padre}: Services;
+	
+	\item \textbf{Descrizione}: package che contiene le classi di comunicazione con il database dell'applicazione relativo ai microservizi registrati nella piattaforma;
+	
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per permettere l'identificazione e l'utilizzo dei microservizi, e garantire correttezza, efficienza e validità delle chiamate;
+	
+	\item \textbf{Classi contenute}:
+	\begin{itemize}
+		\item \textbf{\textit{MicroservicesDBInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database dei microservizi;
+		
+		\item \textbf{\textit{MicroservicesDB}}: classe che implementa le interfacce \textit{MicroservicesDBInterface} e \textit{ServiceInteractionHandler}.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{TransactionsDB}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{UML/DiagrammiPackage/TransactionsDB.png}
+	\caption{Package APIM::BackEnd::Services::TransactionsDB}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Padre}: Services;
+	
+	\item \textbf{Descrizione}: package che contiene le classi di comunicazione con il database dell'applicazione che si occupa di immagazzinare i dati sulle transazioni;
+	
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per verificare la validità delle API Key e/o aggiornare i dati relativi (usi residui della chiave) alle chiamate ai microservizi effettuate;
+	
+	\item \textbf{Classi contenute}:
+	\begin{itemize}
+		\item \textbf{\textit{TransactionsDBInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database delle transazioni;
+		
+		\item \textbf{\textit{TransactionsDB}}: classe che implementa l'interfaccia \textit{TransactionsDBInterface}.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{SLADB}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{UML/DiagrammiPackage/SLADB.png}
+	\caption{Package APIM::BackEnd::Services::SLADB}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Padre}: Services;
+	
+	\item \textbf{Descrizione}: package che contiene le classi di comunicazione con il database che si occupa di immagazzinare e trattare i dati relativi al Service Level Agreement (SLA);
+	
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per aggiornare i dati delle performance di risposta di ogni microservizio utilizzato;
+	
+	\item \textbf{Classi contenute}:
+	\begin{itemize}
+		\item \textbf{\textit{SLADBInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database delle informazioni di SLA;
+		
+		\item \textbf{\textit{SLADB}}: classe che implementa l'interfaccia \textit{SLADBInterface}.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{FileHandlerDB}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{UML/DiagrammiPackage/FileHandlerDB.png}
+	\caption{Package APIM::BackEnd::Services::FileHandlerDB}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Padre}: Services;
+	
+	\item \textbf{Descrizione}: package che si occupa della gestione dei file, e presenta le classi di comunicazione con il database per tale finalità;
+	
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per recuperare i file legati alle interfacce dei microservizi;
+	
+	\item \textbf{Classi contenute}:
+	\begin{itemize}
+		\item \textbf{\textit{FileHandlerInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti la gestione dei file;
+		
+		\item \textbf{\textit{FileHandler}}: classe che implementa l'interfaccia \textit{FileHandlerInterface}.
+	\end{itemize}
+\end{itemize}
