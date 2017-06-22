@@ -106,6 +106,29 @@
 		\end{itemize}
 \end{itemize}
 
+\paragraph{Redirector}
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/BackEnd/Classi/redirector.png}
+	\caption{Package APIM::BackEnd::Gateway::Redirector}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} Il package Gateway contiene le componenti del lato back-end dell'applicazione web.
+	\item \textbf{Relazioni:}
+	\begin{itemize}
+		\item \textbf{xxxxxxx:} xxxxxxxxxxxxxxxxxxxx
+		\item \textbf{xxxxxxx:} xxxxxxxxxxxxxxxxxxxx
+	\end{itemize}
+	\item \textbf{Operazioni:}
+	\begin{itemize}
+		\item \textbf{xxxxxxx:} xxxxxxxxxxxxxxxxxxxx
+		\item \textbf{xxxxxxx:} xxxxxxxxxxxxxxxxxxxx
+	\end{itemize}
+\end{itemize}
+
 \paragraph{ServiceInteractionHandler}
 \begin{figure}[H]
 	\centering
@@ -204,7 +227,6 @@
 		\item \textbf{TransactionsDB:} package riguardante la comunicazione con il database delle transazioni in API Market.
 		\item \textbf{SLADB:} package riguardante la comunicazione con il database della SLA in API Market.
 		\item \textbf{FileHandlerDB:} package riguardante la comunicazione con il database dei file in API Market.
-		\item \textbf{FrontEndMS:} package riguardante la comunicazione tra il front-end ed i vari database di API Market.
 	\end{itemize}
 \end{itemize}
 
@@ -811,7 +833,7 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/filehandlerInterface.png}
+	{images/APIM/BackEnd/Interfacce/fileHandlerInterface.png}
 	\caption{Package APIM::BackEnd::Services::FilehandlerDB::FilehandlerInterface}
 \end{figure}
 
@@ -826,7 +848,7 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/filehandler.png}
+	{images/APIM/BackEnd/Classi/fileHandler.png}
 	\caption{Package APIM::BackEnd::Services::FilehandlerDB::Filehandler}
 \end{figure}
 
@@ -834,8 +856,7 @@
 	\item \textbf{Descrizione:} La classe Filehandler implementa l'interfaccia contenuta in APIM::BackEnd::Services::Filehandler\_dbInterface.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
-			\item La classe Filehandler\_db implementa l'interfaccia Filehandler\_dbInterface;
-			\item La classe Filehandler\_db espone le proprie operazioni alla classe FrontendMS.
+			\item La classe FilehandlerDB implementa l'interfaccia FilehandlerDBInterface;
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
