@@ -4,6 +4,7 @@
 \section{Tracciamento}
 
 \subsection{Tracciamento Classi - Requisiti}
+\normalsize
 \begin{longtable}{ p{12cm} | p{4cm} }
 	\hline \rowcolor{Gray}
 	\textbf{Nome Classe} & \textbf{Codice Requisito} \\
@@ -42,6 +43,9 @@
 	& RFO2.1.2 \\
 	& RFO2.1.3 \\
 	& RFO2.1.4 \\
+	\hline
+	APIM::FrontEnd::App::Views::Logout
+	& RFO11 \\
 	\hline
 	APIM::FrontEnd::App::Views::PasswordRecovery
 	& RFD3 \\
@@ -112,6 +116,15 @@
 	& RFO10.1.2.8 \\
 	& RFD10.1.2.8 \\
 	& RFO10.2 \\
+	& RFO10.2.1 \\
+	& RFO10.2.2 \\
+	& RFO10.2.2.1 \\
+	& RFO10.2.2.2 \\
+	& RFO10.3.3 \\
+	& RFO10.3.3.1 \\
+	& RFO10.3.3.2 \\
+	& RFO10.3.3.3 \\
+	& RFO10.3.3.4 \\
 	& RFO11 \\
 	\hline
 	APIM::FrontEnd::App::Views::ResetPassword
@@ -140,7 +153,17 @@
 	& RFO9.12 \\
 	& RFD9.13 \\
 	\hline
-	APIM::FrontEnd::App::Views::SellingPolicy
+	APIM::FrontEnd::App::Views::PolicyCall
+	& RFD5.7.1 \\
+	& RFO5.8 \\
+	& RFO5.12 \\
+	\hline
+	APIM::FrontEnd::App::Views::PolicyTime
+	& RFD5.7.1 \\
+	& RFO5.8 \\
+	& RFO5.12 \\
+	\hline
+	APIM::FrontEnd::App::Views::PolicyTraffic
 	& RFD5.7.1 \\
 	& RFO5.8 \\
 	& RFO5.12 \\
@@ -243,18 +266,6 @@
 	& RF010.3.2.4 \\
 	& RF010.3.2.5 \\
 	\hline
-	APIM::FrontEnd::App::Views::VirtualAccount
-	& RFO10.2 \\
-	& RFO10.2.1 \\
-	& RFO10.2.2 \\
-	& RFO10.2.2.1 \\
-	& RFO10.2.2.2 \\
-	& RFO10.3.3 \\
-	& RFO10.3.3.1 \\
-	& RFO10.3.3.2 \\
-	& RFO10.3.3.3 \\
-	& RFO10.3.3.4 \\
-	\hline
 	APIM::FrontEnd::App::Views::AdminManager
 	& RFO12 \\
 	& RFO12.1 \\
@@ -276,7 +287,22 @@
 	& RFD12.1.1.3.2 \\
 	& RFO12.1.1.3.3 \\
 	\hline
-	APIM::FrontEnd::App::Views::AdminModeration
+	APIM::FrontEnd::App::Views::AdminUserManager
+	& RFO12.2 \\
+	& RFO12.2.1 \\
+	& RFO12.2.1.1 \\
+	& RFO12.2.1.1.1 \\
+	& RFO12.2.1.1.2 \\
+	& RFO12.2.1.2 \\
+	& RFO12.2.1.2.1 \\
+	& RFO12.2.1.2.2 \\
+	& RFO12.2.1.3 \\
+	& RFO12.2.1.4 \\
+	& RFO12.2.1.5 \\
+	& RFO12.2.1.5.1 \\
+	& RFO12.2.1.5.2 \\
+	\hline
+	APIM::FrontEnd::App::Views::AdminAPIManager
 	& RFO12.2 \\
 	& RFO12.2.1 \\
 	& RFO12.2.1.1 \\
@@ -454,7 +480,7 @@
 	& RFD5.7.1 \\
 	& RFO5.7.2 \\
 	\hline
-	APIM::FrontEnd::App::Controllers::UserRegistrationController
+	APIM::FrontEnd::App::Controllers::RegisterUserController
 	& RFO1 \\
 	& RFO1.1 \\
 	& RFO1.2 \\
@@ -475,6 +501,9 @@
 	& RFO2.1.3 \\
 	& RFO2.1.4 \\
 	\hline
+	APIM::FrontEnd::App::Controllers::LogoutController
+	& RFO11 \\
+	\hline
 	APIM::FrontEnd::App::Controllers::PasswordRecoveryController
 	& RFD3 \\
 	& RFD3.1 \\
@@ -482,7 +511,7 @@
 	& RFD3.3 \\
 	& RFD3.4 \\
 	\hline
-	APIM::FrontEnd::App::Controllers::SearchController
+	APIM::FrontEnd::App::Controllers::APIController
 	& RFO4.3.1 \\
 	& RFO4.3.2 \\
 	& RFO4.3.3 \\
@@ -511,6 +540,15 @@
 	& RFO10.1.2.8 \\
 	& RFD10.1.2.8 \\
 	& RFO10.2 \\
+	& RFO10.2.1 \\
+	& RFO10.2.2 \\
+	& RFO10.2.2.1 \\
+	& RFO10.2.2.2 \\
+	& RFO10.3.3 \\
+	& RFO10.3.3.1 \\
+	& RFO10.3.3.2 \\
+	& RFO10.3.3.3 \\
+	& RFO10.3.3.4 \\
 	& RFO11 \\
 	\hline
 	APIM::FrontEnd::App::Controllers::ResetPasswordController
@@ -520,7 +558,7 @@
 	& RFD3.3 \\
 	& RFD3.4 \\
 	\hline
-	APIM::FrontEnd::App::Controllers::APIRegistrationController
+	APIM::FrontEnd::App::Controllers::RegisterAPIController
 	& RFO9 \\
 	& RFO9.1 \\
 	& RFO9.2 \\
@@ -539,11 +577,21 @@
 	& RFO9.12 \\
 	& RFD9.13 \\
 	\hline
-	APIM::FrontEnd::App::Controllers::SellingPolicyController
+	APIM::FrontEnd::App::Controllers::PolicyCallController
 	& RFD5.7.1 \\
 	& RFO5.8 \\
 	& RFO5.12 \\
 	\hline
+	APIM::FrontEnd::App::Controllers::PolicyTimeController
+	& RFD5.7.1 \\
+	& RFO5.8 \\
+	& RFO5.12 \\
+	\hline\\
+	APIM::FrontEnd::App::Controllers::PolicyTrafficController
+	& RFD5.7.1 \\
+	& RFO5.8 \\
+	& RFO5.12 \\
+	\hline\\
 	APIM::FrontEnd::App::Controllers::APIRegisteredController
 	& RFO8 \\
 	& RFO8.1 \\
@@ -642,18 +690,6 @@
 	& RF010.3.2.4 \\
 	& RF010.3.2.5 \\
 	\hline
-	APIM::FrontEnd::App::Controllers::VirtualAccountController
-	& RFO10.2 \\
-	& RFO10.2.1 \\
-	& RFO10.2.2 \\
-	& RFO10.2.2.1 \\
-	& RFO10.2.2.2 \\
-	& RFO10.3.3 \\
-	& RFO10.3.3.1 \\
-	& RFO10.3.3.2 \\
-	& RFO10.3.3.3 \\
-	& RFO10.3.3.4 \\
-	\hline
 	APIM::FrontEnd::App::Controllers::AdminManagerController
 	& RFO12 \\
 	& RFO12.1 \\
@@ -675,7 +711,22 @@
 	& RFD12.1.1.3.2 \\
 	& RFO12.1.1.3.3 \\
 	\hline
-	APIM::FrontEnd::App::Controllers::AdminModerationController
+	APIM::FrontEnd::App::Controllers::AdminUserManagerController
+	& RFO12.2 \\
+	& RFO12.2.1 \\
+	& RFO12.2.1.1 \\
+	& RFO12.2.1.1.1 \\
+	& RFO12.2.1.1.2 \\
+	& RFO12.2.1.2 \\
+	& RFO12.2.1.2.1 \\
+	& RFO12.2.1.2.2 \\
+	& RFO12.2.1.3 \\
+	& RFO12.2.1.4 \\
+	& RFO12.2.1.5 \\
+	& RFO12.2.1.5.1 \\
+	& RFO12.2.1.5.2 \\
+	\hline
+	APIM::FrontEnd::App::Controllers::AdminAPIManagerController
 	& RFO12.2 \\
 	& RFO12.2.1 \\
 	& RFO12.2.1.1 \\
@@ -885,80 +936,73 @@
 	& APIM::FrontEnd::App::Index \\
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	\hline
 	RFO1.1
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
-	& APIM::FrontEnd::App::Views::RegisterUser \\
 	\hline	
 	RFO1.2
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
-	& APIM::FrontEnd::App::Views::RegisterUser \\
 	\hline
 	RFO1.3
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
-	& APIM::FrontEnd::App::Views::RegisterUser \\
 	\hline		
 	RFO1.3
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
-	& APIM::FrontEnd::App::Views::RegisterUser \\
 	\hline	
 	RFO1.4
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	\hline			
 	RFO1.5
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	\hline		
 	RFO1.6
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::BackEnd::Services::UsersDB \\
-	& APIM::FrontEnd::App::Views::RegisterUser \\
 	\hline
 	RFO1.7
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
-	& APIM::FrontEnd::App::Views::RegisterUser \\
 	\hline	
 	RFO1.8
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	\hline
 	RFO1.9
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	\hline	
 	RFO1.10
 	& APIM::FrontEnd::App::Views::RegisterUser \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
-	& APIM::FrontEnd::App::Controllers::UserRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterUserController \\
 	& APIM::BackEnd::Services::UsersDB \\
-	& APIM::FrontEnd::App::Views::RegisterUser \\
 	\hline		
 	RFO2
 	& APIM::FrontEnd::App::Index \\
@@ -966,7 +1010,6 @@
 	& APIM::FrontEnd::App::Controllers::LoginController \\
 	\hline		
 	RFO2.1
-	& APIM::FrontEnd::App::Views::Login \\
 	& APIM::FrontEnd::App::Views::Login \\
 	& APIM::FrontEnd::App::Controllers::LoginController \\
 	\hline		
@@ -979,7 +1022,7 @@
 	& APIM::FrontEnd::App::Controllers::LoginController \\
 	\hline			
 	RFO2.1.3
-	& APIM::FrontEnd::App::Views::Logi  \\
+	& APIM::FrontEnd::App::Views::Login  \\
 	& APIM::FrontEnd::App::Controllers::LoginController \\
 	\hline			
 	RFO2.1.4
@@ -1033,7 +1076,7 @@
 	& APIM::FrontEnd::App::Views::API \\
 	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::SearchController \\
+	& APIM::FrontEnd::App::Controllers::APIController \\
 	& APIM::FrontEnd::App::Controllers::APIListController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline
@@ -1042,16 +1085,16 @@
 	& APIM::FrontEnd::App::Views::API \\
 	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::SearchController \\
+	& APIM::FrontEnd::App::Controllers::APIController \\
 	& APIM::FrontEnd::App::Controllers::APIListController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline
 	RFO4.3.3
-	& APIM::FrontEnd::App::Index RFO1 \\
+	& APIM::FrontEnd::App::Index \\
 	& APIM::FrontEnd::App::Views::API \\
 	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::SearchController \\
+	& APIM::FrontEnd::App::Controllers::APIController \\
 	& APIM::FrontEnd::App::Controllers::APIListController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1060,7 +1103,7 @@
 	& APIM::FrontEnd::App::Views::API \\
 	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::SearchController \\
+	& APIM::FrontEnd::App::Controllers::APIController \\
 	& APIM::FrontEnd::App::Controllers::APIListController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1069,7 +1112,7 @@
 	& APIM::FrontEnd::App::Views::API \\
 	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::SearchController \\
+	& APIM::FrontEnd::App::Controllers::APIController \\
 	& APIM::FrontEnd::App::Controllers::APIListController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1086,7 +1129,7 @@
 	\hline		
 	RFO5.2
 	& APIM::FrontEnd::App::Views::API \\
-	& APIM::FrontEnd::App::Views::APIList RFO4.3.1 \\
+	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
 	& APIM::FrontEnd::App::Controllers::APIListController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
@@ -1161,11 +1204,15 @@
 	\hline		
 	RFD5.7.1
 	& APIM::FrontEnd::App::Views::API \\
-	& APIM::FrontEnd::App::Views::SellingPolicy \\
+	& APIM::FrontEnd::App::Views::PolicyCall \\
+	& APIM::FrontEnd::App::Views::PolicyTime \\
+	& APIM::FrontEnd::App::Views::PolicyTraffic \\
 	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
 	& APIM::FrontEnd::App::Models::SLAMicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::SellingPolicyController \\
+	& APIM::FrontEnd::App::Controllers::PolicyCallController \\
+	&APIM::FrontEnd::App::Controllers::PolicyTimeController \\
+	&APIM::FrontEnd::App::Controllers::PolicyTrafficController \\
 	& APIM::FrontEnd::App::Controllers::APIListController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	& APIM::BackEnd::Services::SLADB \\
@@ -1181,10 +1228,14 @@
 	\hline		
 	RFO5.8
 	& APIM::FrontEnd::App::Views::API \\
-	& APIM::FrontEnd::App::Views::SellingPolicy \\
+	& APIM::FrontEnd::App::Views::PolicyCall \\
+	& APIM::FrontEnd::App::Views::PolicyTime \\
+	& APIM::FrontEnd::App::Views::PolicyTraffic \\
 	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::SellingPolicyController \\
+	& APIM::FrontEnd::App::Controllers::PolicyCallController \\
+	&APIM::FrontEnd::App::Controllers::PolicyTimeController \\
+	&APIM::FrontEnd::App::Controllers::PolicyTrafficController \\
 	& APIM::BackEnd::Services::MicroservicesDB\\
 	\hline		
 	RFO5.9
@@ -1208,10 +1259,14 @@
 	\hline		
 	RFO5.12
 	& APIM::FrontEnd::App::Views::API \\
-	& APIM::FrontEnd::App::Views::SellingPolicy \\
+	& APIM::FrontEnd::App::Views::PolicyCall \\
+	& APIM::FrontEnd::App::Views::PolicyTime \\
+	& APIM::FrontEnd::App::Views::PolicyTraffic \\
 	& APIM::FrontEnd::App::Views::APIList \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::SellingPolicyController \\
+	& APIM::FrontEnd::App::Controllers::PolicyCallController \\
+	&APIM::FrontEnd::App::Controllers::PolicyTimeController \\
+	&APIM::FrontEnd::App::Controllers::PolicyTrafficController \\
 	& APIM::FrontEnd::App::Controllers::APIListController \\
 	\hline		
 	RFO5.13
@@ -1242,7 +1297,6 @@
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	& APIM::FrontEnd::App::Views::APIPurchased \\
 	& APIM::FrontEnd::App::Controllers::APIPurchasedController \\
-	
 	\hline		
 	RFO6.2
 	& APIM::FrontEnd::App::Views::APIPurchased \\
@@ -1524,7 +1578,7 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline			
@@ -1532,7 +1586,7 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1540,32 +1594,32 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	\hline			
 	RFO9.3
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	\hline		
 	RFO9.4
 	& APIM::FrontEnd::App::Views::RegisterAPI  \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
 	RFO9.5
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
 	RFD9.6
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1574,14 +1628,14 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
 	RFO9.8
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1589,7 +1643,7 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1597,7 +1651,7 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1605,7 +1659,7 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1613,7 +1667,7 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1621,7 +1675,7 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	& APIM::BackEnd::Services::FileHandlerDB \\
 	\hline		
@@ -1629,14 +1683,14 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
 	RFO9.12
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline		
@@ -1644,7 +1698,7 @@
 	& APIM::FrontEnd::App::Views::RegisterAPI \\
 	& APIM::FrontEnd::App::Views::APIRegistered \\
 	& APIM::FrontEnd::App::Models::MicroserviceModel \\
-	& APIM::FrontEnd::App::Controllers::APIRegistrationController \\
+	& APIM::FrontEnd::App::Controllers::RegisterAPIController \\
 	& APIM::FrontEnd::App::Controllers::APIRegisteredController \\
 	& APIM::BackEnd::Services::MicroservicesDB \\
 	\hline	
@@ -1722,220 +1776,217 @@
 	\hline	
 	RFO10.2
 	& APIM::FrontEnd::App::Views::ProfileManager \\
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
 	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	\hline	
 	RFO10.2.1
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO10.2.2
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO10.2.2.1
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO10.2.2.2
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO10.3.3
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO10.3.3.1
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO10.3.3.2
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO10.3.3.3
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO10.3.3.4
-	& APIM::FrontEnd::App::Views::VirtualAccount \\
+	& APIM::FrontEnd::App::Views::ProfileManager \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel \\
 	& APIM::FrontEnd::App::Models::TransactionModel \\
-	& APIM::FrontEnd::App::Controllers::VirtualAccountController \\
+	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
 	& APIM::BackEnd::Services::UsersDB \\
 	& APIM::BackEnd::Services::TransactionsDB \\
 	\hline	
 	RFO11
 	& APIM::FrontEnd::App::Index \\
-	& APIM::FrontEnd::App::Views::ProfileManager \\
+	& APIM::FrontEnd::App::Views::Logout \\
 	& APIM::FrontEnd::App::Models::UserDetailsModel\\
-	& APIM::FrontEnd::App::Controllers::ProfileManagerController \\
-	& APIM::BackEnd::Services::UsersDB \\
+	& APIM::FrontEnd::App::Controllers::LogoutController \\
 	\hline	
 	RFO12
 	& APIM::FrontEnd::App::Views::AdminManager \\
 	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
 	\hline	
 	RFO12.1
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	
 	\hline	
 	RFO12.1.1
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.1
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.1.1
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.1.2
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.1.3
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.1.4
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.1.5
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.1.5.1
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.1.5.2
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFD12.1.1.1.6
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.2
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.2.1
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.2.2
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.3
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.3.1
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.3.2
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline	
 	RFO12.1.1.3.3
-	& APIM::FrontEnd::App::Views::AdminManager \\
-	& APIM::FrontEnd::App::Controllers::AdminManagerController \\
+	& APIM::FrontEnd::App::Views::AdminAPIManager \\
+	& APIM::FrontEnd::App::Controllers::AdminAPIManagerController \\
 	\hline
 	RFO12.2	
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1	
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.1	
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.1.1
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.1.2
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.2
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.2.1
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.2.2	
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.3	
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.4
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.5
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.5.1
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	RFO12.2.1.5.2
-	& APIM::FrontEnd::App::Views::AdminModeration \\
-	& APIM::FrontEnd::App::Controllers::AdminModerationController \\
+	& APIM::FrontEnd::App::Views::AdminUserManager \\
+	& APIM::FrontEnd::App::Controllers::AdminUserManagerController \\
 	\hline
 	
 	\caption{Tracciamento Requisiti-Classi}

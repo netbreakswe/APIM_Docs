@@ -24,7 +24,7 @@ Nella parte back-end sono presenti i package \textit{Gateway} e \textit{Services
 	\end{itemize}
 	\item \textbf{Classi contenute}:
 		\begin{itemize}
-			\item \textbf{\textit{serviceInteractionHandler}}: interfaccia per la gestione delle comunicazioni dell'API Gateway e dei \textit{services}.
+			\item \textbf{\textit{ServiceInteractionHandler}}: interfaccia per la gestione delle comunicazioni dell'API Gateway e dei \textit{services}.
 		\end{itemize}
 \end{itemize}
 
@@ -46,8 +46,8 @@ Nella parte back-end sono presenti i package \textit{Gateway} e \textit{Services
 	
 	\item \textbf{Package contenuti}:
 	\begin{itemize}
-		\item \textbf{\textit{Couriers}}: package contenente l'archivio delle sessioni couriers dei microservizi Jolie. Le sessioni couriers vengono create dal gateway ed utilizzate da \textit{serviceinteractionhandler}. Inoltr, forniscono i dati necessari al funzionamento del package \textit{Interfaces}.\\
-		Le sessioni couriers permettono l'overloading dei messaggi inviati nelle chiamate dei microservizi al gateway, così da allegare alla richiesta le informazioni per raggiungere il microservizio desiderato.
+		\item \textbf{\textit{Couriers}}: package contenente l'archivio delle sessioni couriers dei microservizi Jolie. Le sessioni couriers vengono create dal gateway ed utilizzate da \textit{ServiceInteractionHandler}. Inoltre, forniscono i dati necessari al funzionamento del package \textit{Interfaces}.\\
+		Le sessioni \textit{couriers} permettono l'overloading dei messaggi inviati nelle chiamate dei microservizi al gateway, così da allegare alla richiesta le informazioni per raggiungere il microservizio target.
 		
 		\item \textbf{\textit{Interfaces}}: package contenente le interfacce necessarie al funzionamento dell'API Gateway. Si occupa dei dati riguardanti le chiamate ai microservizi, in particolar modo, il tipo di operazione richiesta e le informazioni riguardanti l'interfaccia del microservizio target.
 	\end{itemize}
@@ -85,9 +85,7 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 		
 		\item \textbf{\textit{SLADB}}: package contenente le classi che permettono la comunicazione con il database relativo alle informazioni di SLA dei microservizi utilizzati tramite l'API Gateway della piattaforma \progetto;
 		
-		\item \textbf{\textit{FileHandlerDB}}: package contenente le classi che permettono la gestione dei file;
-		
-		\item \textbf{\textit{FrontEndMS}}: package contenente le classi che si occupano delle operazioni più complesse, quali l'accesso a più di un database.
+		\item \textbf{\textit{FileHandlerDB}}: package contenente le classi che permettono la gestione dei file.
 	\end{itemize}
 \end{itemize}
 
@@ -106,13 +104,13 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 	
 	\item \textbf{Descrizione}: package che contiene le classi di comunicazione con il database dell'applicazione relativo alle informazioni (anagrafiche e personali) degli utenti (admin, clienti, sviluppatori) del sistema;
 	
-	\item \textbf{Relazioni d'uso con altri componenti}: questo package si relaziona con il sub-package \textit{FrontEndMS} del package padre, fornendogli i dati che esso richiede riguardo alle operazioni con il database delle informazioni degli utenti;
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per permettere l'identificazione, l'autenticazione e la gestione degli utenti, clienti e sviluppatori della piattaforma \progetto;
 	
 	\item \textbf{Classi contenute}:
 		\begin{itemize}
-			\item \textbf{\textit{Users\_dbInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database degli utenti;
+			\item \textbf{\textit{UsersDBInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database degli utenti;
 			
-			\item \textbf{\textit{Users\_db}}: classe che implementa l'interfaccia \textit{Users\_dbInterface}.
+			\item \textbf{\textit{UsersDB}}: classe che implementa l'interfaccia \textit{UsersDBInterface}.
 		\end{itemize}
 \end{itemize}
 
@@ -131,14 +129,13 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 	
 	\item \textbf{Descrizione}: package che contiene le classi di comunicazione con il database dell'applicazione relativo ai microservizi registrati nella piattaforma;
 	
-	\item \textbf{Relazioni d'uso con altri componenti}: questo package si relaziona con il package \textit{FrontendMS}, fornendogli i dati che esso richiede riguardo alle operazioni con il database delle informazioni dei microservizi.\\
-	Inoltre, comunica con il Gateway per permettere l'identificazione e l'utilizzo dei microservizi, e garantire correttezza, efficienza e validità delle chiamate;
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per permettere l'identificazione e l'utilizzo dei microservizi, e garantire correttezza, efficienza e validità delle chiamate;
 	
 	\item \textbf{Classi contenute}:
 	\begin{itemize}
-		\item \textbf{\textit{Microservices\_dbInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database dei microservizi;
+		\item \textbf{\textit{MicroservicesDBInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database dei microservizi;
 		
-		\item \textbf{\textit{Microservices\_db}}: classe che implementa le interfacce \textit{Microservices\_dbInterface} e \textit{serviceInteractionHandler}.
+		\item \textbf{\textit{MicroservicesDB}}: classe che implementa le interfacce \textit{MicroservicesDBInterface} e \textit{ServiceInteractionHandler}.
 	\end{itemize}
 \end{itemize}
 
@@ -157,14 +154,13 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 	
 	\item \textbf{Descrizione}: package che contiene le classi di comunicazione con il database dell'applicazione che si occupa di immagazzinare i dati sulle transazioni;
 	
-	\item \textbf{Relazioni d'uso con altri componenti}: questo package si relaziona con il package \textit{FrontendMS}, fornendogli i dati che esso richiede riguardo alle operazioni con il database delle informazioni delle transazioni.\\
-	Comunica inoltre con il Gateway per verificare la validità delle API Key e/o aggiornare i dati relativi (usi residui della chiave) alle chiamate ai microservizi effettuate;
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per verificare la validità delle API Key e/o aggiornare i dati relativi (usi residui della chiave) alle chiamate ai microservizi effettuate;
 	
 	\item \textbf{Classi contenute}:
 	\begin{itemize}
-		\item \textbf{\textit{Transactions\_dbInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database delle transazioni;
+		\item \textbf{\textit{TransactionsDBInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database delle transazioni;
 		
-		\item \textbf{\textit{Transactions\_db}}: classe che implementa l'interfaccia \textit{Transactions\_dbInterface}.
+		\item \textbf{\textit{TransactionsDB}}: classe che implementa l'interfaccia \textit{TransactionsDBInterface}.
 	\end{itemize}
 \end{itemize}
 
@@ -183,14 +179,13 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 	
 	\item \textbf{Descrizione}: package che contiene le classi di comunicazione con il database che si occupa di immagazzinare e trattare i dati relativi al Service Level Agreement (SLA);
 	
-	\item \textbf{Relazioni d'uso con altri componenti}: questo package si relaziona con il package \textit{FrontendMS}, fornendogli i dati che esso richiede riguardo alle operazioni con il database delle informazioni della SLA.\\
-	Inoltre, comunica con il Gateway per aggiornare i dati delle performance di risposta di ogni microservizio utilizzato;
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per aggiornare i dati delle performance di risposta di ogni microservizio utilizzato;
 	
 	\item \textbf{Classi contenute}:
 	\begin{itemize}
-		\item \textbf{\textit{SLA\_dbInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database delle informazioni di SLA;
+		\item \textbf{\textit{SLADBInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti il database delle informazioni di SLA;
 		
-		\item \textbf{\textit{SLA\_db}}: classe che implementa l'interfaccia \textit{SLA\_dbInterface}.
+		\item \textbf{\textit{SLADB}}: classe che implementa l'interfaccia \textit{SLADBInterface}.
 	\end{itemize}
 \end{itemize}
 
@@ -209,8 +204,7 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 	
 	\item \textbf{Descrizione}: package che si occupa della gestione dei file, e presenta le classi di comunicazione con il database per tale finalità;
 	
-	\item \textbf{Relazioni d'uso con altri componenti}: questo package si relaziona con il package \textit{FrontendMS}, fornendogli i dati che esso richiede riguardo alle operazioni con il database delle informazioni dei file.\\
-	Inoltre, comunica con il Gateway per recuperare i file legati alle interfacce dei microservizi;
+	\item \textbf{Relazioni d'uso con altri componenti}: comunica con il \textit{Gateway} per recuperare i file legati alle interfacce dei microservizi;
 	
 	\item \textbf{Classi contenute}:
 	\begin{itemize}
