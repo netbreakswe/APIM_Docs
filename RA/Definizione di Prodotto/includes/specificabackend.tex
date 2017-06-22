@@ -23,17 +23,17 @@
 
 \subsubsection{Interfacce}
 
-\paragraph{ServiceInteractionHandlerInterface}
+\paragraph{ServiceInteractionHandler}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/ServiceInteractionHandlerInterface.png}
-	\caption{Package APIM::BackEnd::ServiceInteractionHandlerInterface}
+	{images/APIM/BackEnd/Interfacce/serviceInteractionHandler.png}
+	\caption{Package APIM::BackEnd::ServiceInteractionHandler}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia ServiceInteractionHandlerInterface contiene le operazioni riguardanti la gestione delle sessioni couriers e dei metadati dei microservizi. Viene utilizzata dal Gateway e da MicroservicesDB.
+	\item \textbf{Descrizione:} L'interfaccia ServiceInteractionHandler contiene le operazioni riguardanti la gestione delle sessioni couriers e dei metadati dei microservizi. Viene utilizzata dal Gateway e da MicroservicesDB.
 \end{itemize}
 
 \subsection{APIMarket::Back-End::Gateway}
@@ -64,7 +64,7 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/apigateway.png}
+	{images/APIM/BackEnd/Classi/gateway.png}
 	\caption{Package APIM::BackEnd::Gateway::Gateway}
 \end{figure}
 
@@ -151,22 +151,6 @@
 		\end{itemize}
 \end{itemize}
 
-\subsection{APIMarket::Back-End::Gateway::Couriers}
-
-\subsubsection{Informazioni generali}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/Couriers.png}
-	\caption{Package APIM::BackEnd::Gateway::Couriers}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Descrizione:} Il package \textit{Couriers} archivia le sessioni couriers che si riferiscono ai singoli microservizi registrati su API Market. Le informazioni estese delle chiamate ai microservizi che esse contengono sono vitali per le classi Gateway e ServiceInteractionHandler. 
-	Viene omessa la descrizione delle singole classi couriers in quanto il loro numero e la loro struttura dipende dai microservizi presenti in API Market.
-\end{itemize}
 
 \subsection{APIMarket::Back-End::Gateway::GatewayInterfaces}
 
@@ -242,37 +226,37 @@
 
 \subsubsection{Interfacce}
 
-\paragraph{Microservices\_dbInterface}
+\paragraph{MicroservicesDBInterface}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/microservices_dbInterface.png}
-	\caption{Package APIM::BackEnd::Services::Microservices\_dbInterface}
+	{images/APIM/BackEnd/Interfacce/microservicesDBInterface.png}
+	\caption{Package APIM::BackEnd::Services::MicroservicesDBInterface}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia Microservices\_dbInterface contiene le operazioni riguardanti lettura e scrittura dei dati dei microservizi, delle interfacce, delle categorie dei microservizi. Viene utilizzata da FrontendMS e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia MicroservicesDB contiene le operazioni riguardanti lettura e scrittura dei dati dei microservizi, delle interfacce, delle categorie dei microservizi. Viene utilizzata da FrontendMS e dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
 
-\paragraph{Microservices\_db}
+\paragraph{MicroservicesDB}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/microservices_db.png}
-	\caption{Package APIM::BackEnd::Services::Microservices\_db}
+	{images/APIM/BackEnd/Classi/microservicesDB.png}
+	\caption{Package APIM::BackEnd::Services::MicroservicesDB}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe Microservices\_db implementa l'interfaccia contenuta in APIM::BackEnd::Services::Microservices\_dbInterface.
+	\item \textbf{Descrizione:} La classe MicroservicesDB implementa l'interfaccia contenuta in APIM::BackEnd::Services::Microservices\_dbInterface.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
-			\item La classe Microservices\_db implementa l'interfaccia Microservices\_dbInterface;
-			\item La classe Microservices\_db utilizza le operazioni esposte dall'interfaccia ServiceInteractionHandlerInterface;
-			\item La classe Microservices\_db espone le proprie operazioni alla classe FrontendMS.
+			\item La classe MicroservicesDB implementa l'interfaccia MicroservicesDBInterface;
+			\item La classe MicroservicesDB utilizza le operazioni esposte dall'interfaccia ServiceInteractionHandlerInterface;
+			\item La classe MicroservicesDB espone le proprie operazioni alla classe FrontendMS.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
@@ -446,31 +430,31 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/users_dbInterface.png}
-	\caption{Package APIM::BackEnd::Services::Users\_dbInterface}
+	{images/APIM/BackEnd/Interfacce/usersDBInterface.png}
+	\caption{Package APIM::BackEnd::Services::UsersDBInterface}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia Users\_dbInterface contiene le operazioni riguardanti lettura e scrittura dei dati degli utenti (sia admin che clienti), dei tipi di cliente, delle moderazioni attuate, dei tipi di moderazione. Viene utilizzata da FrontendMS e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia UsersDBInterface contiene le operazioni riguardanti lettura e scrittura dei dati degli utenti (sia admin che clienti), dei tipi di cliente, delle moderazioni attuate, dei tipi di moderazione. Viene utilizzata da FrontendMS e dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
 
-\paragraph{Users\_db}
+\paragraph{UsersDB}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/users_db.png}
-	\caption{Package APIM::BackEnd::Services::Users\_db}
+	{images/APIM/BackEnd/Classi/usersDB.png}
+	\caption{Package APIM::BackEnd::Services::UsersDB}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe Users\_db implementa l'interfaccia contenuta in APIM::BackEnd::Services::Users\_dbInterface.
+	\item \textbf{Descrizione:} La classe UsersDB implementa l'interfaccia contenuta in APIM::BackEnd::Services::Users\_dbInterface.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
-			\item La classe Users\_db implementa l'interfaccia Users\_dbInterface;
-			\item La classe Users\_db espone le proprie operazioni alla classe FrontendMS.
+			\item La classe UsersDB implementa l'interfaccia UsersDBInterface;
+			\item La classe UsersDB espone le proprie operazioni alla classe FrontendMS.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
@@ -622,13 +606,13 @@
 
 \subsubsection{Interfacce}
 
-\paragraph{Transactions\_dbInterface}
+\paragraph{TransactionsDBInterface}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/transactions_dbInterface.png}
-	\caption{Package APIM::BackEnd::Services::Transactions\_dbInterface}
+	{images/APIM/BackEnd/Interfacce/transactionsDBInterface.png}
+	\caption{Package APIM::BackEnd::Services::TransactionsDBInterface}
 \end{figure}
 
 \begin{itemize}
@@ -637,21 +621,21 @@
 
 \subsubsection{Classi}
 
-\paragraph{Transactions\_db}
+\paragraph{TransactionsDB}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/transactions_db.png}
-	\caption{Package APIM::BackEnd::Services::Transactions\_db}
+	{images/APIM/BackEnd/Classi/transactionsDB.png}
+	\caption{Package APIM::BackEnd::Services::TransactionsDB}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe Transactions\_db implementa l'interfaccia contenuta in APIM::BackEnd::Services::Transactions\_dbInterface.
+	\item \textbf{Descrizione:} La classe Transactions\_db implementa l'interfaccia contenuta in APIM::BackEnd::Services::TransactionsDBInterface.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
-			\item La classe Transactions\_db implementa l'interfaccia Transactions\_dbInterface;
-			\item La classe Transactions\_db espone le proprie operazioni alla classe FrontendMS.
+			\item La classe TransactionsDB implementa l'interfaccia TransactionsDBInterface;
+			\item La classe TransactionsDB espone le proprie operazioni alla classe FrontendMS.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
@@ -722,13 +706,13 @@
 
 \subsubsection{Interfacce}
 
-\paragraph{Sla\_dbInterface}
+\paragraph{SlaDBInterface}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/sla_dbInterface.png}
-	\caption{Package APIM::BackEnd::Services::Sla\_dbInterface}
+	{images/APIM/BackEnd/Interfacce/slaDBInterface.png}
+	\caption{Package APIM::BackEnd::Services::SlaDBInterface}
 \end{figure}
 
 \begin{itemize}
@@ -742,16 +726,16 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/sla_db.png}
-	\caption{Package APIM::BackEnd::Services::Sla\_db}
+	{images/APIM/BackEnd/Classi/slaDB.png}
+	\caption{Package APIM::BackEnd::Services::SlaDB}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe Sla\_db implementa l'interfaccia contenuta in APIM::BackEnd::Services::Sla\_dbInterface.
+	\item \textbf{Descrizione:} La classe SlaDB implementa l'interfaccia contenuta in APIM::BackEnd::Services::SlaDBInterface.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
-			\item La classe Sla\_db implementa l'interfaccia Sla\_dbInterface;
-			\item La classe Sla\_db espone le proprie operazioni alla classe FrontendMS.
+			\item La classe SlaDB implementa l'interfaccia SlaDBInterface;
+			\item La classe SlaDB espone le proprie operazioni alla classe FrontendMS.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
@@ -822,32 +806,32 @@
 
 \subsubsection{Interfacce}
 
-\paragraph{Filehandler\_dbInterface}
+\paragraph{FilehandlerInterface}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/filehandler_dbInterface.png}
-	\caption{Package APIM::BackEnd::Services::Filehandler\_dbInterface}
+	{images/APIM/BackEnd/Interfacce/filehandlerInterface.png}
+	\caption{Package APIM::BackEnd::Services::FilehandlerDB::FilehandlerInterface}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia Filehandler\_dbInterface contiene le operazioni riguardanti lettura e scrittura dei dati dei file. Viene utilizzata da FrontendMS e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia FilehandlerDBInterface contiene le operazioni riguardanti lettura e scrittura dei dati dei file. Viene utilizzata da FrontendMS e dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
 
-\paragraph{Filehandler\_db}
+\paragraph{FilehandlerDB}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/filehandler_db.png}
-	\caption{Package APIM::BackEnd::Services::Filehandler\_db}
+	{images/APIM/BackEnd/Classi/filehandler.png}
+	\caption{Package APIM::BackEnd::Services::FilehandlerDB::Filehandler}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe Filehandler\_db implementa l'interfaccia contenuta in APIM::BackEnd::Services::Filehandler\_dbInterface.
+	\item \textbf{Descrizione:} La classe Filehandler implementa l'interfaccia contenuta in APIM::BackEnd::Services::Filehandler\_dbInterface.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
 			\item La classe Filehandler\_db implementa l'interfaccia Filehandler\_dbInterface;
