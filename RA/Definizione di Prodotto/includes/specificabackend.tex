@@ -164,7 +164,7 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} Il package Couriers archivia le sessioni couriers che si riferiscono ai singoli microservizi registrati su API Market. Le informazioni estese delle chiamate ai microservizi che esse contengono sono vitali per le classi Gateway e ServiceInteractionHandler. 
+	\item \textbf{Descrizione:} Il package \textit{Couriers} archivia le sessioni couriers che si riferiscono ai singoli microservizi registrati su API Market. Le informazioni estese delle chiamate ai microservizi che esse contengono sono vitali per le classi Gateway e ServiceInteractionHandler. 
 	Viene omessa la descrizione delle singole classi couriers in quanto il loro numero e la loro struttura dipende dai microservizi presenti in API Market.
 \end{itemize}
 
@@ -232,7 +232,7 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/microservices_db.png}
+	{UML/DiagrammiPackage/microservicesDB.png}
 	\caption{Package APIM::BackEnd::Services::MicroservicesDB}
 \end{figure}
 
@@ -431,17 +431,17 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/users_db.png}
+	{UML/DiagrammiPackage/usersDB.png}
 	\caption{Package APIM::BackEnd::Services::UsersDB}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} Il package UsersDB contiene le componenti per la comunicazione con il database degli utenti di API Market.
+	\item \textbf{Descrizione:} Il package \textit{UsersDB} contiene le componenti per la comunicazione con il database degli utenti di API Market.
 \end{itemize}
 
 \subsubsection{Interfacce}
 
-\paragraph{Users\_dbInterface}
+\paragraph{UsersDBInterface}
 \begin{figure}[H]
 	\centering
 	\includegraphics
@@ -612,12 +612,12 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/transactions_db.png}
+	{UML/DiagrammiPackage/transactionsDB.png}
 	\caption{Package APIM::BackEnd::Services::TransactionsDB}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} Il package TransactionsDB contiene le componenti per la comunicazione con il database delle transazioni di API Market.
+	\item \textbf{Descrizione:} Il package \textit{TransactionsDB} contiene le componenti per la comunicazione con il database delle transazioni di API Market.
 \end{itemize}
 
 \subsubsection{Interfacce}
@@ -712,12 +712,12 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/sla_db.png}
+	{UML/DiagrammiPackage/SLADB.png}
 	\caption{Package APIM::BackEnd::Services::SLADB}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} Il package SLADB contiene le componenti per la comunicazione con il database della SLA di API Market.
+	\item \textbf{Descrizione:} Il package \textit{SLADB} contiene le componenti per la comunicazione con il database della SLA di API Market.
 \end{itemize}
 
 \subsubsection{Interfacce}
@@ -812,7 +812,7 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/filehandler_db.png}
+	{UML/DiagrammiPackage/filehandlerDB.png}
 	\caption{Package APIM::BackEnd::Services::FilehandlerDB}
 \end{figure}
 
@@ -872,80 +872,6 @@
 				\begin{itemize}
 					\item \textbf{string}.
 					\item \textbf{bool}.
-				\end{itemize}
-				
-		\end{itemize}
-\end{itemize}
-
-\subsection{APIMarket::Back-End::Services::FrontendMS}
-
-\subsubsection{Informazioni generali}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/frontendms.png}
-	\caption{Package APIM::BackEnd::Services::FrontendMS}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Descrizione:} Il package FrontendMS contiene le componenti per le operazioni complesse del front-end che possono prevedere la comunicazione con più database di API Market.
-\end{itemize}
-
-\subsubsection{Interfacce}
-
-\paragraph{FrontendMSInterface}
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/frontendmsInterface.png}
-	\caption{Package APIM::BackEnd::Services::FrontendMSInterface}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia FrontendMSInterface contiene le operazioni complesse del front-end riguardanti lettura e scrittura dei dati di uno o più database. Viene utilizzata dai controller del front-end.
-\end{itemize}
-
-\subsubsection{Classi}
-
-\paragraph{FrontendMS}
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/frontend_ms.png}
-	\caption{Package APIM::BackEnd::Services::FrontendMS}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Descrizione:} La classe FrontendMS implementa l'interfaccia contenuta in APIM::BackEnd::Services::FrontendMSInterface.
-	\item \textbf{Relazioni:}
-		\begin{itemize}
-			\item La classe FrontendMS implementa l'interfaccia FrontendMSInterface;
-			\item La classe FrontendMS utilizza le operazioni esposte dalle interfacce dei servizi dei vari database;
-			\item La classe FrontendMS espone le proprie operazioni ai controllers del front-end.
-		\end{itemize}
-	\item \textbf{Operazioni:}
-		\begin{itemize}
-		
-			\item \textbf{homepage\_ms\_list( void )( homepagemslist ):} Ricava la lista dei microservizi più recenti registrati in APIM Market con relative informazioni.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{void}.
-					\item \textbf{homepagemslist:} Lista dei microservizi più recenti registrati in API Market con relative informazioni.
-				\end{itemize}
-			
-			\item \textbf{homepage\_filter\_cat\_list( categoryid )( homepagemslist ):} Ricava la lista dei microservizi più recenti registrati in APIM Market con relative informazioni.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{categoryid:} Id della categoria.
-					\item \textbf{homepagemslist:} Lista dei microservizi più recenti registrati in API Market con relative informazioni.
 				\end{itemize}
 				
 		\end{itemize}
