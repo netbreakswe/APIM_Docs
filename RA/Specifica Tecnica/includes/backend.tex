@@ -97,7 +97,7 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/Users_db.png}
+	{UML/DiagrammiPackage/UsersDB.png}
 	\caption{Package APIM::BackEnd::Services::UsersDB}
 \end{figure}
 
@@ -148,7 +148,7 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/Transactions_db.png}
+	{UML/DiagrammiPackage/TransactionsDB.png}
 	\caption{Package APIM::BackEnd::Services::TransactionsDB}
 \end{figure}
 
@@ -174,7 +174,7 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/SLA_db.png}
+	{UML/DiagrammiPackage/SLADB.png}
 	\caption{Package APIM::BackEnd::Services::SLADB}
 \end{figure}
 
@@ -217,30 +217,5 @@ Tale package contiene tutti i servizi appartenenti al lato back-end della piatta
 		\item \textbf{\textit{FileHandlerInterface}}: interfaccia che raccoglie tutte le \textit{operation} riguardanti la gestione dei file;
 		
 		\item \textbf{\textit{FileHandler}}: classe che implementa l'interfaccia \textit{FileHandlerInterface}.
-	\end{itemize}
-\end{itemize}
-
-\paragraph{FrontendMS}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/FrontEndMS.png}
-	\caption{Package APIM::BackEnd::Services::FrontEndMS}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Padre}: Services;
-	
-	\item \textbf{Descrizione}: package che si occupa delle operazioni più complesse, che accedono a più database e devono rielaborarne i dati. La maggior parte delle funzionalità garantite dal front-end passano per questo servizio, in quanto occorre raccogliere dati da più database e/o raffinare le informazioni grezze dei \textit{services};
-	
-	\item \textbf{Relazioni d'uso con altri componenti}: questo package si relaziona con tutti gli altri package e relativi servizi del package padre, quali \textit{UsersDB}, \textit{MicroservicesDB}, \textit{TransactionsDB}, \textit{SLADB} e \textit{FileHandlerDB};
-	
-	\item \textbf{Classi contenute}:
-	\begin{itemize}
-		\item \textbf{\textit{FrontEndInterface}}: interfaccia che raccoglie tutte le \textit{operation} più complesse, come ad esempio la gestione della visualizzazione della home del marketplace;
-		
-		\item \textbf{\textit{FrontEndMS}}: classe che implementa l'interfaccia \textit{FrontEndInterface}.
 	\end{itemize}
 \end{itemize}
