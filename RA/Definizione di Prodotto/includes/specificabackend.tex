@@ -81,27 +81,27 @@
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
-			\item \textbf{setnewredirection( aservice )( string ):} Genera il file di courier di un microservizio e ne imposta la redirection.
+			\item \textbf{setNewRedirection( AService )( string ):} Genera il file di courier di un microservizio e ne imposta la redirection.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{aservice:} Dati del microservizio dal quale generare un file courier. 
+					\item \textbf{AService:} Dati del microservizio dal quale generare un file courier. 
 				\end{itemize}
-			\item \textbf{validate\_call( calldata )( bool ):} Valida la chiamata al microservizio, verificando utente e relativa apikey. 
+			\item \textbf{validateCall( CallData )( boolean ):} Valida la chiamata al microservizio, verificando utente e relativa apikey. 
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{calldata:} Dati della chiamata al microservizio.
+					\item \textbf{CallData:} Dati della chiamata al microservizio.
 				\end{itemize}
-			\item \textbf{random\_SLA\_survey( void )( bool ):} Algoritmo casuale per scegliere se effettuare un sondaggio della SLA.
-			\item \textbf{manage\_call( calldata )( bool ):} Gestisce la chiamata al microservizio.
+			\item \textbf{randomSLASurvey(  )( boolean ):} Algoritmo casuale per scegliere se effettuare un sondaggio della SLA.
+			\item \textbf{manageCall( CallData )( boolean ):} Gestisce la chiamata al microservizio.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{calldata:} Dati della chiamata al microservizio.
+					\item \textbf{CallData:} Dati della chiamata al microservizio.
 				\end{itemize}
 		\end{itemize}
 \end{itemize}
@@ -121,7 +121,7 @@
 	\item \textbf{Relazioni:}
 		\begin{itemize}
 			\item La classe ServiceInteractionHandler espone le proprie operazioni alla classe Gateway;
-			\item La classe ServiceInteractionHandler espone le proprie operazioni alla classe Microservices\_db.
+			\item La classe ServiceInteractionHandler espone le proprie operazioni alla classe MicroservicesDB.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
@@ -133,21 +133,21 @@
 					\item \textbf{CourierIdR:} Directory del file courier da cui estrarre le metainfo;
 					\item \textbf{MetaInfoAPIMService:} Metadati di un microservizio registrato in API Market.
 				\end{itemize}
-			\item \textbf{generateClientInterface( MetaInfoAPIMService )( clientinterface ):} Genera l'interfaccia esposta al client del microservizio.
+			\item \textbf{generateClientInterface( MetaInfoAPIMService )( ClientInterface ):} Genera l'interfaccia esposta al client del microservizio.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
 					\item \textbf{MetaInfoAPIMService:} Metadati di un microservizio registrato in API Market;
-					\item \textbf{clientinterface:} Rappresentazione come stringa dell'interfaccia esposta al client del microservizio.
+					\item \textbf{ClientInterface:} Rappresentazione come stringa dell'interfaccia esposta al client del microservizio.
 				\end{itemize}
-			\item \textbf{generateCourier( aservice )( courierservice ):} Genera la rappresentazione come stringa del file courier del microservizio.
+			\item \textbf{generateCourier( AService )( CourierService ):} Genera la rappresentazione come stringa del file courier del microservizio.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{aservice:} Dati del microservizio dal quale generare un file courier;
-					\item \textbf{courierservice:} Rappresentazione come stringa del file courier del microservizio.
+					\item \textbf{AService:} Dati del microservizio dal quale generare un file courier;
+					\item \textbf{CourierService:} Rappresentazione come stringa del file courier del microservizio.
 				\end{itemize}
 		\end{itemize}
 \end{itemize}
@@ -236,7 +236,7 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia MicroservicesDB contiene le operazioni riguardanti lettura e scrittura dei dati dei microservizi, delle interfacce, delle categorie dei microservizi. Viene utilizzata dal FrontEnd e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia MicroservicesDB contiene le operazioni riguardanti lettura e scrittura dei dati dei microservizi, delle interfacce, delle categorie dei microservizi. Viene utilizzata dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
@@ -279,7 +279,7 @@
 			\end{description}
 			\begin{itemize}
 				\item \textbf{Id:} Id del cliente di cui ricavare le informazioni;
-				\item \textbf{InfoInterf:} Info del cliente.
+				\item \textbf{InfoInterf:} informazioni del cliente.
 			\end{itemize}
 		
 			\item \textbf{homepageMSlist( void )( HomeMSList ):} Ricava le informazioni di ogni microservizio registrato in API Market.
@@ -288,6 +288,14 @@
 				\end{description}
 				\begin{itemize}
 					\item \textbf{HomeMSList:} Lista dei microservizi per la homepage.
+				\end{itemize}
+			
+			\item \textbf{retreiveAllMSInfo( void )( MSData ):} Ricava le informazioni di tutti microservizi.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{MSData:} Informazioni di tutti i  microservizi.
 				\end{itemize}
 				
 			\item \textbf{retreiveMSInfo( Id )( MSData ):} Ricava le informazioni del microservizio a partire dal suo id.
@@ -308,7 +316,7 @@
 					\item \textbf{bool.}
 				\end{itemize}
 			
-			\item \textbf{checkMSIsActive( Id )( boolean ):} controlla se un microsrvizio è attivo. 
+			\item \textbf{checkMSIsActive( Id )( boolean ):} controlla se un microservizio è attivo. 
 				\begin{description}
 					\item[\textbf{Parametri:}]
 				\end{description}
@@ -335,12 +343,12 @@
 				\item \textbf{IntfData:} ritorna le informazioni dell'interfaccia.
 			\end{itemize}
 				
-			\item \textbf{retrieveMSFromDeveloperId( Id )( MSDevList ):} Ricava le informazioni di un microservizio a partire dall'Id di uno sviluppatore.
+			\item \textbf{retrieveMSFromDeveloperId( StringId )( MSDevList ):} Ricava le informazioni di un microservizio a partire dall'Id di uno sviluppatore.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{Id:} Id del microservizio;
+					\item \textbf{StringId:} Id del microservizio;
 					\item \textbf{MSDevList:} informazioni microservizio.
 				\end{itemize}
 				
@@ -432,7 +440,7 @@
 				\item \textbf{MSUpData:} Informazioni aggiornate di un microservizio esistente.
 			\end{itemize}
 			
-			\item \textbf{interfaceUpdate( intfUpData )( void):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
+			\item \textbf{interfaceUpdate( intfUpData )( void ):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
 			\begin{description}
 				\item[\textbf{Parametri:}]
 			\end{description}
@@ -456,7 +464,7 @@
 				\item \textbf{CategoryDataW:} Id del microservizio e della categoria da rimuovergli.
 			\end{itemize}
 		
-			\item \textbf{updateClientInterfaceById( InfoInterfUpdate )( void):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
+			\item \textbf{updateClientInterfaceById( InfoInterfUpdate )( void ):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
 			\begin{description}
 				\item[\textbf{Parametri:}]
 			\end{description}
@@ -464,7 +472,7 @@
 				\item \textbf{InfoInterfUpdate:} Informazioni aggiornate di una interfaccia esistente.
 			\end{itemize}
 		
-			\item \textbf{changeIsActive( AvailabilityData )( void):} aggiorna lo stato di un microservizio.
+			\item \textbf{changeIsActive( AvailabilityData )( void ):} aggiorna lo stato di un microservizio.
 			\begin{description}
 				\item[\textbf{Parametri:}]
 			\end{description}
@@ -472,7 +480,7 @@
 				\item \textbf{AvailabilityData:} Informazioni di un microservizio.
 			\end{itemize}
 			
-			\item \textbf{deleteMS( Id )( bool):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
+			\item \textbf{deleteMS( Id )( bool ):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
 			\begin{description}
 				\item[\textbf{Parametri:}]
 			\end{description}
@@ -512,7 +520,7 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia UsersDBInterface contiene le operazioni riguardanti lettura e scrittura dei dati degli utenti (sia admin che clienti), dei tipi di cliente, delle moderazioni attuate, dei tipi di moderazione. Viene utilizzata da FrontendMS e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia UsersDBInterface contiene le operazioni riguardanti lettura e scrittura dei dati degli utenti (sia admin che clienti), dei tipi di cliente, delle moderazioni attuate, dei tipi di moderazione. Viene utilizzata dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
@@ -527,7 +535,12 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe UsersDB implementa l'interfaccia contenuta in APIM::BackEnd::Services::Users\_dbInterface.
+	\item \textbf{Descrizione:} La classe UsersDB implementa l'interfaccia contenuta in 
+	\begin{minipage}{\linewidth}
+			APIM::BackEnd::Services::UsersDBInterface.
+	\end{minipage}
+
+	
 	\item \textbf{Relazioni:}
 		\begin{itemize}
 			\item La classe UsersDB implementa l'interfaccia UsersDBInterface;
@@ -660,9 +673,7 @@
 			\begin{itemize}
 				\item \textbf{DevIdList:} informazioni di tutti gli sviluppatori.
 			\end{itemize}
-				
-				
-				
+								
 			\item \textbf{basicClientRegistration( BasicClientData )( void ):} Registra un nuovo account cliente di tipo base.
 				\begin{description}
     				\item[\textbf{Parametri:}]
@@ -760,7 +771,7 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia Transactions\_dbInterface contiene le operazioni riguardanti lettura e scrittura dei dati delle apikey, degli acquisti. Viene utilizzata da FrontendMS e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia TransactionsDBInterface contiene le operazioni riguardanti lettura e scrittura dei dati delle apikey, degli acquisti. Viene utilizzata dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
@@ -775,34 +786,120 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe Transactions\_db implementa l'interfaccia contenuta in APIM::BackEnd::Services::TransactionsDBInterface.
+	\item \textbf{Descrizione:} La classe TransactionsDB implementa l'interfaccia contenuta in 
+		\begin{minipage}{\linewidth}
+			APIM::BackEnd::Services::TransactionsDBInterface.
+	\end{minipage}
+
+	
+	
 	\item \textbf{Relazioni:}
 		\begin{itemize}
 			\item La classe TransactionsDB implementa l'interfaccia TransactionsDBInterface;
-			\item La classe TransactionsDB espone le proprie operazioni alla classe FrontendMS.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
+			
+			\item \textbf{checkAPIKeyExist( APIKey )( boolean ):} verifica che l'API Key esista.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{APIKey:} Informazioni dell'apikey;
+					\item \textbf{bool.}
+				\end{itemize}
 		
-			\item \textbf{retrieve\_apikey\_info( apikeyid )( apikey ):} Ricava le informazioni dell'apikey, a partire dal suo id.
+			\item \textbf{retrieveAPIKeyInfo( APIKeyLicense )( APIkeyData ):} Ricava le informazioni dell'apikey, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{apikeyid:} Id dell'apikey.
-					\item \textbf{apikey:} Informazioni dell'apikey.
+					\item \textbf{APIKeyLicense:} Id dell'apikey;
+					\item \textbf{APIkeyData:} Informazioni dell'apikey.
 				\end{itemize}
+			
+			item \textbf{checkAPIKeyIsActive( APIKeyActiveData )( boolean ):} verifica che l'API Key sia attiva.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{APIKey:} Informazioni dell'apikey;
+					\item \textbf{bool.}
+				\end{itemize}
+			
+			\item \textbf{retrieveActiveAPIKeyFromUserId( StringId )( APIKeyList ):} Ricava la lista con le api attive del cliente, a partire dal suo id.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{StringId:} Id del cliente;
+					\item \textbf{APIKeyList:} lista con le api attive del cliente.
+				\end{itemize}
+			
+			\item \textbf{retrieveAPIKeyFromMSIdAndClient( IdMSAndClient )( int ):} Ricava la lista delle API da un Id di un microservizio e del cliente.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{IdMSAndClient:} Id del microservizio e cliente.
+				\item \textbf{int.} 
+			\end{itemize}	
 				
-			\item \textbf{retrieve\_purchases\_list( clientid )( purchaseslist ):} Ricava la lista con relative informazioni delle transazioni del cliente, a partire dal suo id.
+			\item \textbf{retrieveActiveAPIKeyNumberFromMSId( Id )( APIKeyNumber ):} Ricava il numero di APIKey attive di un microservizio, a partire dal suo Id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{clientid:} Id del cliente.
-					\item \textbf{purchaseslist:} Lista delle transazioni del cliente con relative informazioni.
+					\item \textbf{Id:} Id del microservizio;
+					\item \textbf{APIKeyNumber:} numero di APIKey attive.
+				\end{itemize}
+			
+			\item \textbf{retrieveActiveAPIKeyUserFromMSId( StringId )( UserIdList ):} Ricavala lista di clienti con una API Key attiva di un microservizio, a partire dal suo Id.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{Id:} Id del microservizio;
+					\item \textbf{UserIdList:} utenti con una APIKey attive.
+				\end{itemize}
+			
+			\item \textbf{retrievePurchasesListFromUserId( StringId )( PurchasesList ):} Ricava la lista di microservizi acquistati da un cliente, a partire dal suo Id.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{StringId:} Id del cliente;
+					\item \textbf{UserIdList:} lista API acquistate.
+				\end{itemize}
+	
+			\item \textbf{retrievePurchasesSumFromMSId( StringId )( PurchasesSumData ):} recupera la somma dell'ammontare degli acquisti di un microservizio, a partire dal suo Id.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{StringId:} Id del microservizio;
+					\item \textbf{PurchasesSumData:} somma dell'ammontare degli acquisti.
+				\end{itemize}
+			
+			\item \textbf{retrieveMonthlyPurchasesSumFromMSId( StringId )( PurchasesSumData ):} recupera la somma dell'ammontare degli acquisti di un microservizio in un mese, a partire dal suo Id.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{StringId:} Id del microservizio;
+					\item \textbf{PurchasesSumData:} somma dell'ammontare degli acquisti mensile.
+				\end{itemize}
+		
+			\item \textbf{retrieveMSListFromClientId( StringId )( MSremainingList ):} recupera la lista dei microservizi con apikey attiva, a partire dall'id del cliente.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{StringId:} Id del cliente;
+					\item \textbf{MSremainingList:} sommalista microservizi con APIKey attiva.
 				\end{itemize}
 				
-			\item \textbf{apikey\_registration( apikeydataw )( bool ):} Registra una nuova apikey nel database delle transazioni.
+			\item \textbf{APIKeyRegistration( apikeydataw )( bool ):} Registra una nuova apikey nel database delle transazioni.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
@@ -811,7 +908,7 @@
 					\item \textbf{bool}.
 				\end{itemize}
 				
-			\item \textbf{purchase\_registration( purchasedata )( bool ):} Inserisce una nuova transazione nel database delle transazioni.
+			\item \textbf{purchaseRegistration( purchasedata )( bool ):} Inserisce una nuova transazione nel database delle transazioni.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
@@ -819,8 +916,16 @@
 					\item \textbf{purchasedata:} Informazioni della nuova transazione.
 					\item \textbf{bool}.
 				\end{itemize}
+			
+			\item \textbf{APIKeyUpdate( APIKeyUpdateData )( void ):} aggiorna l'apikey con una nuova apikey.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{APIKeyUpdateData:} nuova apikey registrata.
+			\end{itemize}
 				
-			\item \textbf{apikey\_remaining\_update( apikeyremainingdata )( bool ):} Aggiorna il Remaining della apikey, a partire dal suo id e dal valore del cambiamento.
+			\item \textbf{APIKeyRemainingUpdate( apikeyremainingdata )( bool ):} Aggiorna il Remaining della apikey, a partire dal suo id e dal valore del cambiamento.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
@@ -860,12 +965,12 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia Sla\_dbInterface contiene le operazioni riguardanti lettura e scrittura dei dati dei sondaggi SLA. Viene utilizzata da FrontendMS e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia SlaDBInterface contiene le operazioni riguardanti lettura e scrittura dei dati dei sondaggi SLA. Viene utilizzata dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
 
-\paragraph{Sla\_db}
+\paragraph{SlaDB}
 \begin{figure}[H]
 	\centering
 	\includegraphics
@@ -875,58 +980,66 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe SlaDB implementa l'interfaccia contenuta in APIM::BackEnd::Services::SlaDBInterface.
+	\item \textbf{Descrizione:} La classe SlaDB implementa l'interfaccia contenuta in // APIM::BackEnd::Services::SlaDBInterface.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
 			\item La classe SlaDB implementa l'interfaccia SlaDBInterface;
-			\item La classe SlaDB espone le proprie operazioni alla classe FrontendMS.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
 		
-			\item \textbf{retrieve\_apikey\_slasurvey\_list( apikeyid )( slasurveylist ):} Ricava la lista dei sondaggi SLA dell'apikey con relative informazioni, a partire dall'id dell'apikey.
+			\item \textbf{retrieveAPIKeySLASurveyList( Id )( SLASurveyList ):} Ricava la lista dei sondaggi SLA dell'apikey con relative informazioni, a partire dall'id dell'apikey.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{apikeyid:} Id dell'apikey.
-					\item \textbf{slasurveylist:} Lista dei sondaggi SLA con relative informazioni.
+					\item \textbf{apikeyid:} Id dell'apikey;
+					\item \textbf{SLASurveyList:} Lista dei sondaggi SLA con relative informazioni.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_ms\_slasurvey\_list( msid )( slasurveylistms ):} Ricava la lista dei sondaggi SLA del microservizio con relative informazioni, a partire dall'id del microservizio.
+			\item \textbf{retrieveMSSLASurveyList( Id )( SLASurveyListMS ):} Ricava la lista dei sondaggi SLA del microservizio con relative informazioni, a partire dall'id del microservizio.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{msid:} Id del microservizio.
-					\item \textbf{slasurveylistms:} Lista dei sondaggi SLA con relative informazioni.
+					\item \textbf{Id:} Id del microservizio;
+					\item \textbf{SLASurveyListMS:} Lista dei sondaggi SLA con relative informazioni.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_slasurvey\_info( slasurveyid )( slasurvey ):} Ricava le informazioni del sondaggio SLA, a partire dal suo id.
+			\item \textbf{retrieveSLASurveyInfo( Id )( SLASurvey ):} Ricava le informazioni del sondaggio SLA, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{slasurveyid:} Id del sondaggio SLA.
-					\item \textbf{slasurvey:} Informazioni del sondaggio SLA.
+					\item \textbf{Id:} Id del sondaggio SLA;
+					\item \textbf{SLASurvey:} Informazioni del sondaggio SLA.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_slasurvey\_iscompliant( slasurveyid )( bool ):} Ricava IsCompliant del sondaggio SLA, a partire dal suo id.
+			\item \textbf{retrieveSLASurveyIsCompliant( Id )( boolean ):} Ricava IsCompliant del sondaggio SLA, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{slasurveyid:} Id del sondaggio SLA.
+					\item \textbf{Id:} Id del sondaggio SLA;
 					\item \textbf{bool}.
 				\end{itemize}
 				
-			\item \textbf{slasurvey\_insert( slasurveydataw )( bool ):} Inserisce un nuovo sondaggio SLA nel database della SLA.
+			\item \textbf{retrieveAverageResponseTimeFromMSId( Id )( long ):} Ricava il tempo medio di risposta di un microservizio, a partire dal suo id.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{Id:} Id del microservizio;
+					\item \textbf{long}.
+				\end{itemize}
+			
+			
+			\item \textbf{SLASurveyInsert( SLASurveyDataW )( void ):} Inserisce un nuovo sondaggio SLA nel database della SLA.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{slasurveydataw:} Informazioni del nuovo sondaggio SLA.
-					\item \textbf{bool}.
+					\item \textbf{SLASurveyDataW:} Informazioni del nuovo sondaggio SLA.
 				\end{itemize}
 				
 		\end{itemize}
@@ -960,25 +1073,25 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia FilehandlerDBInterface contiene le operazioni riguardanti lettura e scrittura dei dati dei file. Viene utilizzata da FrontendMS e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia FilehandlerDBInterface contiene le operazioni riguardanti lettura e scrittura dei dati dei file. Viene utilizzata dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
 
-\paragraph{FilehandlerDB}
+\paragraph{FileHandlerDB}
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
 	{images/APIM/BackEnd/Classi/fileHandler.png}
-	\caption{Package APIM::BackEnd::Services::FilehandlerDB::Filehandler}
+	\caption{Package APIM::BackEnd::Services::FileHandlerDB::FileHandler}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe Filehandler implementa l'interfaccia contenuta in APIM::BackEnd::Services::Filehandler\_dbInterface.
+	\item \textbf{Descrizione:} La classe Filehandler implementa l'interfaccia contenuta in APIM::BackEnd::Services::FileHandlerDBInterface.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
-			\item La classe FilehandlerDB implementa l'interfaccia FilehandlerDBInterface;
+			\item La classe FileHandlerDB implementa l'interfaccia FileHandlerDBInterface.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
@@ -988,16 +1101,16 @@
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{SetFileRequest:} Informazioni del file.
+					\item \textbf{SetFileRequest:} Informazioni del file;
 					\item \textbf{string}.
 				\end{itemize}
 				
-			\item \textbf{filenameExists( string )( bool ):} Controlla se nel database dei file esista un file con il nome specificato.
+			\item \textbf{fileNameExists( string )( boolean ):} Controlla se nel database dei file esista un file con il nome specificato.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{string}.
+					\item \textbf{string};
 					\item \textbf{bool}.
 				\end{itemize}
 				
