@@ -138,7 +138,7 @@
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Views/views.png}
+	{images/APIM/FrontEnd/Views/Views.png}
 	\caption{APIM::FrontEnd::App::Views}
 \end{figure}
 
@@ -164,16 +164,12 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} View contenente il form dedicato alla registrazione di un utente,
-il quale può inserire i campi necessari e registrarsi così alla piattaforma. Contiene,
-inoltre, un link alla pagina di login;
+	\item \textbf{Descrizione:} View contenente le informazioni del profilo personale di un utente registrato. Contiene, inoltre, l'informazione relativa al saldo del proprio conto virtuale;
 	\item \textbf{Attributi:}
 		\begin{itemize}
-			\item \textbf{user : Object}\\
+			\item \textbf{user : UserDetails}\\
 			Campo dati contenente le informazioni di un utente;
-			\item \textbf{imageObject : Object}\\
-			Campo dati contenente le informazioni dell'avatar dell'utente;
-			\item \textbf{successChanges : string}\\
+			\item \textbf{successChanges : boolean}\\
 			Campo dati contenente la conferma delle modifiche;
 			\item \textbf{errorEmail : string}\\
 			Campo dati contenente l'eventuale errore di inserimento dell'email;
@@ -203,12 +199,12 @@ inoltre, un link alla pagina di login;
 	\item \textbf{Descrizione:} View contenente i risultati della ricerca effettuata, che permette di selezionare un risultato presente al suo interno.
 	\item \textbf{Attributi:}
 		\begin{itemize}
-			\item \textbf{searchValue : string}
+			\item \textbf{searchContent : string}
 			Campo dati contenente le keywords di ricerca dell'API.
 		\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
-		\item Interagisce con il controller \textbf{SearchController};
+		\item Interagisce con il controller \textbf{APIController};
 		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare una API.
 	\end{itemize}
 \end{itemize}
@@ -227,11 +223,11 @@ inoltre, un link alla pagina di login;
 	\item \textbf{Descrizione:} View contenente la lista delle API registrate dall'utente sulla piattaforma.
 	\item \textbf{Attributi:}
 		\begin{itemize}
-			\item \textbf{user : Object}\\
-			Campo dati contenente le informazioni di un utente;
-			\item \textbf{microservice : Object}\\
+			\item \textbf{developer : UserDetails}\\
+			Campo dati contenente le informazioni di un utente sviluppatore;
+			\item \textbf{microservice : Microservice}\\
 			Campo dati contenente le informazioni di un microservizio;
-			\item \textbf{successChanges : string}\\
+			\item \textbf{successChanges : boolean}\\
 			Campo dati contenente la conferma delle modifiche;
 			\item \textbf{errorName : string}\\
 			Campo dati contenente l'eventuale errore di inserimento del nome;
@@ -257,16 +253,12 @@ inoltre, un link alla pagina di login;
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} View contenente il form per l'inserimento di una API da parte di un
-utente sviluppatore. Lo sviluppatore può inserire tutti i dati relativi al microservizio
-che intende esporre su API Market.
+	\item \textbf{Descrizione:} View contenente il form per l'inserimento di una API da parte di un utente sviluppatore. Lo sviluppatore può inserire tutti i dati relativi al microservizio che intende esporre sul marketplace.
 	\item \textbf{Attributi:}
 		\begin{itemize}
-			\item \textbf{user : Object}\\
-			Campo dati contenente le informazioni di un utente;
-			\item \textbf{microservice : Object}\\
-			Campo dati contenente le informazioni di una API;
-			\item \textbf{successRegistration : string}\\
+			\item \textbf{developer : UserDetails}\\
+			Campo dati contenente le informazioni di un utente sviluppatore;
+			\item \textbf{successRegistration : boolean}\\
 			Campo dati contenente la conferma della registrazione;
 			\item \textbf{errorAPI : string}\\
 			Campo dati contenente l'eventuale errore di inserimento dell'API;
@@ -275,35 +267,86 @@ che intende esporre su API Market.
 		\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
-		\item Interagisce con il controller \textbf{APIRegistrationController};
+		\item Interagisce con il controller \textbf{RegisterAPIController};
 		\item Il model \textbf{UsersDetailModel} contiene le informazioni per rappresentare un utente;
 		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare una API.
 	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Views::SellingPolicy}
+\paragraph{APIM::FrontEnd::App::Views::PolicyCall}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Views/SellingPolicy.png}
-	\caption{APIM::FrontEnd::App::Views::SellingPolicy}
+	{images/APIM/FrontEnd/Views/PolicyCall.png}
+	\caption{APIM::FrontEnd::App::Views::PolicyCall}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} View contenente il form per la gestione delle differenti policy di vendita
-per un singolo microservizio.
+	\item \textbf{Descrizione:} View contenente le informazioni relative alla policy per chiamate.
 	\item \textbf{Attributi:}
 		\begin{itemize}
-			\item \textbf{microservice : Object}\\
-			Campo dati contenente le informazioni di una API;
-			\item \textbf{errorPolicy : string}\\
-			Campo dati contenente l'eventuale errore di inserimento della policy di vendita.
+			\item \textbf{policy : string}\\
+			Campo dati contenente la policy di una API;
+			\item \textbf{description : string}\\
+			Campo dati contenente la descrizione di una policy a chiamate.
 		\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
-		\item Interagisce con il controller \textbf{SellingPolicyController};
+		\item Interagisce con il controller \textbf{PolicyCallController};
+		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare una API.
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::PolicyTime}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/PolicyTime.png}
+	\caption{APIM::FrontEnd::App::Views::PolicyTime}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente le informazioni relative alla policy per tempo.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{policy : string}\\
+		Campo dati contenente la policy di una API;
+		\item \textbf{description : string}\\
+		Campo dati contenente la descrizione di una policy a tempo.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{PolicyTimeController};
+		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare una API.
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::PolicyTraffic}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/PolicyTraffic.png}
+	\caption{APIM::FrontEnd::App::Views::PolicyTraffic}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente le informazioni relative alla policy per traffico dati.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{policy : string}\\
+		Campo dati contenente la policy di una API;
+		\item \textbf{description : string}\\
+		Campo dati contenente la descrizione di una policy per traffico.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{PolicyTrafficController};
 		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare una API.
 	\end{itemize}
 \end{itemize}
@@ -322,11 +365,11 @@ per un singolo microservizio.
 	\item \textbf{Descrizione:} View contenente la lista delle API acquistate da un utente della piattaforma API Market.
 	\item \textbf{Attributi:}
 		\begin{itemize}
-			\item \textbf{user : Object}\\
+			\item \textbf{user : UserDetails}\\
 			Campo dati contenente le informazioni di un utente;
-			\item \textbf{microservice : Object}\\
+			\item \textbf{microservice : Microservice}\\
 			Campo dati contenente le informazioni di una API;
-			\item \textbf{successChanges : string}\\
+			\item \textbf{successChanges : boolean}\\
 			Campo dati contenente la conferma del rinnovo dell'API;
 			\item \textbf{errorCredits : string}\\
 			Campo dati contenente l'eventuale errore di rinnovo dell'API.
@@ -351,12 +394,12 @@ per un singolo microservizio.
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} View contenente la lista delle API in seguito ad una ricerca.
+	\item \textbf{Descrizione:} View contenente l'elenco delle API disponibili sul marketplace \progetto.
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		\item \textbf{user : Object}\\
+		\item \textbf{user : UserDetails}\\
 		Campo dati contenente le informazioni di un utente;
-		\item \textbf{microservice : Object}\\
+		\item \textbf{microservice : Microservice}\\
 		Campo dati contenente le informazioni di una API.
 	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
@@ -382,8 +425,10 @@ per un singolo microservizio.
 su API Market.
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		\item \textbf{user : Object}\\
+		\item \textbf{user : UserDetails}\\
 		Campo dati contenente le informazioni di un utente.
+		\item \textbf{transactions : List<Transaction>}\\
+		Campo dati contenente la lista delle transazioni di un utente.
 	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
@@ -408,10 +453,10 @@ quale può inserire i campi necessari e registrarsi così alla piattaforma. Cont
 inoltre, un link alla pagina di login;
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		\item \textbf{user : Object}\\
+		\item \textbf{user : UserDetails}\\
 		Campo dati contenente le informazioni di un utente;
-		\item \textbf{successRegistration : string}\\
-		Campo dati contenente il messaggio di successo della registrazione;
+		\item \textbf{successRegistration : boolean}\\
+		Campo dati contenente il flag di successo della registrazione;
 		\item \textbf{errorUser : string}\\
 		Campo dati contenente l'eventuale errore di inserimento delle informazioni dell'utente;
 		\item \textbf{errorPassword : string}\\
@@ -441,11 +486,11 @@ inoltre, un link alla pagina di login;
 API Market.
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		\item \textbf{user : Object}\\
-		Campo dati contenente le informazioni di un utente;
-		\item \textbf{successChanges : string}\\
+		\item \textbf{admin : UserAdmin}\\
+		Campo dati contenente le informazioni di un admin;
+		\item \textbf{successChanges : boolean}\\
 		Campo dati contenente il messaggio di successo delle modifiche;
-		\item \textbf{errorUser : string}\\
+		\item \textbf{errorEmail : string}\\
 		Campo dati contenente l'eventuale errore di inserimento delle informazioni dell'utente;
 		\item \textbf{errorPassword : string}\\
 		Campo dati contenente l'eventuale errore di inserimento della password;
@@ -473,9 +518,9 @@ API Market.
 	\item \textbf{Descrizione:} View contenente il form necessario affinchè l'utente possa effettuare il login ed autenticarsi al sistema. Contiene, inoltre, un link alla pagina di registrazione e uno alla pagina per il recupero della password
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		\item \textbf{user : Object}\\
+		\item \textbf{user : UserDetails}\\
 		Campo dati contenente le informazioni di un utente;
-		\item \textbf{successLogin : string}\\
+		\item \textbf{successLogin : boolean}\\
 		Campo dati contenente il messaggio di successo del login;
 		\item \textbf{errorUser : string}\\
 		Campo dati contenente l'eventuale errore di inserimento delle informazioni dell'utente;
@@ -489,33 +534,35 @@ API Market.
 	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Views::VirtualAccount}
+\paragraph{APIM::FrontEnd::App::Views::AdminAPIDetailsManager}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Views/VirtualAccount.png}
-	\caption{APIM::FrontEnd::App::Views::VirtualAccount}
+	{images/APIM/FrontEnd/Views/AdminAPIDetailsManager.png}
+	\caption{APIM::FrontEnd::App::Views::AdminAPIDetailsManager}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} View contenente le informazioni relative al conto virtuale personale
-associato al profilo utente.
+	\item \textbf{Descrizione:} View contenente le statistiche di una API dell'\progetto.\\
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		\item \textbf{user : Object}\\
-		Campo dati contenente le informazioni di un utente;
-		\item \textbf{successChanges : string}\\
-		Campo dati contenente il messaggio di successo della ricarica crediti;
-		\item \textbf{errorCredits : string}\\
-		Campo dati contenente l'eventuale errore di acquisto crediti.
+		\item \textbf{admin : UserAdmin}\\
+		Campo dati contenente le informazioni di un admin;
+		\item \textbf{microserviceInfo : Microservice}\\
+		Campo dati contenente le informazioni di un microservizio;
+		\item \textbf{users : List<UserDetails>}\\
+		Campo dati contenente la lista degli utenti per una relativa API.
+		\item \textbf{msgConfirmDeleteAPI : string}\\
+		Campo dati contenente il messaggio di conferma della cancellazione API.
+		\item \textbf{msgConfirmDeactivateAPI : string}\\
+		Campo dati contenente il messaggio di conferma della disattivazione API.
 	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
-		\item Interagisce con il controller \textbf{VirtualAccountController};
-		\item Il model \textbf{UserDetailsModel} contiene le informazioni per rappresentare un utente;
-		\item Il model \textbf{TransactionModel} contiene le informazioni per rappresentare una transazione.
+		\item Interagisce con il controller \textbf{AdminAPIDetailsManagerController};
+		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare un microservizio.
 	\end{itemize}
 \end{itemize}
 
@@ -535,8 +582,8 @@ associato al profilo utente.
 	\begin{itemize}
 		\item \textbf{email : string}\\
 		Campo dati contenente un indirizzo email;
-		\item \textbf{successRecovery : string}\\
-		Campo dati contenente il messaggio di successo del recupero password;
+		\item \textbf{successRecovery : boolean}\\
+		Campo dati contenente il flag di successo del recupero password;
 		\item \textbf{errorEmail : string}\\
 		Campo dati contenente l'eventuale errore di inserimento dell'indirizzo email.
 	\end{itemize}
@@ -562,10 +609,10 @@ associato al profilo utente.
 autenticato, il quale può inserire la nuova password che intende utilizzare per i futuri login al sistema.
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		\item \textbf{user : Object}\\
+		\item \textbf{user : UserDetails}\\
 		Campo dati contenente le informazioni di un utente;
-		\item \textbf{successReset : string}\\
-		Campo dati contenente il messaggio di successo del reset password;
+		\item \textbf{successReset : boolean}\\
+		Campo dati contenente il flag di successo del reset password;
 		\item \textbf{errorPassword : string}\\
 		Campo dati contenente l'eventuale errore di inserimento della password.
 		\item \textbf{errorPasswordCheck : string}\\
@@ -578,34 +625,379 @@ autenticato, il quale può inserire la nuova password che intende utilizzare per
 	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Views::AdminModeration}
+\paragraph{APIM::FrontEnd::App::Views::AdminUserManager}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Views/AdminModeration.png}
-	\caption{APIM::FrontEnd::App::Views::AdminModeration}
+	{images/APIM/FrontEnd/Views/AdminUserManager.png}
+	\caption{APIM::FrontEnd::App::Views::AdminUserManager}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} View contenente il form dedicato alla moderazione di un utente o di una API da parte di un amministratore della piattaforma API Market.
+	\item \textbf{Descrizione:} View contenente le operazioni di un ammistratore sugli utenti dell'\progetto.
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		\item \textbf{admin : Object}\\
-		Campo dati contenente le informazioni di un utente;
-		\item \textbf{successOperation : string}\\
-		Campo dati contenente il messaggio di successo dell'operazione di moderazione;
-		\item \textbf{errorOperation : string}\\
-		Campo dati contenente l'eventuale errore dell'operazione di moderazione.
+		\item \textbf{admin : UserAdmin}\\
+		Campo dati contenente le informazioni di un admin;
+		\item \textbf{users : List<UserDetails>}\\
+		Campo dati contenente la lista di utenti registrati nella piattaforma.
+		\item \textbf{microservices : List<Microservice>}\\
+		Campo dati contenente la lista dei microservizi registrati per ogni utente.
+		\item \textbf{msgConfirmDelete : string}\\
+		Campo dati contenente il messaggio di conferma eliminazione
 	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
-		\item Interagisce con il controller \textbf{AdminModerationController};
+		\item Interagisce con il controller \textbf{AdminUserManagerController};
 		\item Il model \textbf{UserDetailsModel} contiene le informazioni per rappresentare un utente.
+		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare un microservizio.
 	\end{itemize}
 \end{itemize}
 
+\paragraph{APIM::FrontEnd::App::Views::APIConfirmPurchase}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/APIConfirmPurchase.png}
+	\caption{APIM::FrontEnd::App::Views::APIConfirmPurchase}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente la conferma di un acquisto di una API.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{microservice : Microservice}\\
+		Campo dati contenente le informazioni di un microservizio;
+		\item \textbf{APIKey : string}\\
+		Campo dati contenente l'API key per il microservizio acquistato.
+		\item \textbf{successPurchase : string}\\
+		Campo dati contenente un messaggio di conferma per l'acquisto.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{APIConfirmPurchaseController};
+		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare un microservizio.
+	\end{itemize}
+\end{itemize}
+
+
+\paragraph{APIM::FrontEnd::App::Views::Category}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/Category.png}
+	\caption{APIM::FrontEnd::App::Views::Category}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente l'elenco delle categorie nell'\progetto
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{image : ImageCategory}\\
+		Campo dati contenente un immagine della categoria;
+		\item \textbf{name : string}\\
+		Campo dati contenente il nome della categoria;
+		\item \textbf{description : string}\\
+		Campo dati contenente la descrizione della categoria.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{CategoryController};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::ConfirmUpgradeToDeveloper}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/ConfirmUpgradeToDeveloper.png}
+	\caption{APIM::FrontEnd::App::Views::ConfirmUpgradeToDeveloper}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente la conferma dell'upgrade di un utente a sviluppatore nell'\progetto.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{msgUpgrade : string}\\
+		Campo dati contenente un messaggio per la procedura di upgrade;
+		\item \textbf{creditsNeeded : int}\\
+		Campo dati contenente il numero di crediti necessari all'upgrade.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{ConfirmUpgradeToDeveloperController};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::ConfirmLogin}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/ConfirmLogin.png}
+	\caption{APIM::FrontEnd::App::Views::ConfirmLogin}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente la conferma di login all'\progetto.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{msgWelcome : string}\\
+		Campo dati contenente un messaggio di benvenuto post autenticazione;
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{ConfirmLoginController};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::ConfirmUserRegistration}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/ConfirmUserRegistration.png}
+	\caption{APIM::FrontEnd::App::Views::ConfirmUserRegistration}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente la conferma di registrazione all'\progetto..
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{msgConfirmRegistration : string}\\
+		Campo dati contenente un messaggio di conferma registrazione;
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{ConfirmUserRegistrationController};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::ConfirmAPIRegistration}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/ConfirmAPIRegistration.png}
+	\caption{APIM::FrontEnd::App::Views::ConfirmAPIRegistration}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente la conferma di registrazione di una API all'\progetto.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{msgConfirmRegistration : string}\\
+		Campo dati contenente un messaggio di conferma registrazione API;
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{ConfirmAPIRegistrationController};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::UpgradeToDeveloper}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/UpgradeToDeveloper.png}
+	\caption{APIM::FrontEnd::App::Views::UpgradeToDeveloper}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente il modulo per diventare sviluppatore all'interno dell'\progetto.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{user : UserDetails}\\
+		Campo dati contenente le informazioni di un utente;
+		\item \textbf{credits : int}\\
+		Campo dati contenente i crediti personali di un utente;
+		\item \textbf{creditsNeeded : int}\\
+		Campo dati contenente i crediti necessari all'upgrade.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{UpgradeToDeveloperController};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::AdminAPIManager}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/AdminAPIManager.png}
+	\caption{APIM::FrontEnd::App::Views::AdminAPIManager}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente le operazioni dell'amministratore sulle API dell'\progetto.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{admin : UserAdmin}\\
+		Campo dati contenente le informazioni di un admin;
+		\item \textbf{microservices : List<Microservice>}\\
+		Campo dati contenente una lista di microservizi;
+		\item \textbf{msgConfirmDelete : string}\\
+		Campo dati contenente un messaggio di conferma eliminazione di un API.
+		\item \textbf{msgConfirmDeactivate : string}\\
+		Campo dati contenente un messaggio di conferma disattivazione di un API.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{AdminAPIManagerController};
+		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare un microservizio.
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::AdminLogin}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/AdminLogin.png}
+	\caption{APIM::FrontEnd::App::Views::AdminLogin}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente il form necessario affinchè l'amministratore possa effettuare il login ed autenticarsi al sistema.\\
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{admin : AdminDetails}\\
+		Campo dati contenente le informazioni di un admin;
+		\item \textbf{successLogin : boolean}\\
+		Campo dati contenente il flag per il login di un amministratore;
+		\item \textbf{errorAdmin : string}\\
+		Campo dati contenente un messaggio di errore di autenticazione dell'admin;
+		\item \textbf{errorPassword : string}\\
+		Campo dati contenente un messaggio di errore password errata.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{AdminLoginController};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::Logout}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/Logout.png}
+	\caption{APIM::FrontEnd::App::Views::Logout}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente la conferma di logout dall'\progetto.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{user : UserDetails}\\
+		Campo dati contenente le informazioni di un utente;
+		\item \textbf{msgLogout : string}\\
+		Campo dati contenente un messaggio di avvenuto logout dalla piattaforma;
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{LogoutController};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::UpdateInfoAPI}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/UpdateInfoAPI.png}
+	\caption{APIM::FrontEnd::App::Views::UpdateInfoAPI}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente il form dedicato modifica delle informazioni di una API presente nel marketplace \progetto.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{microserviceInfo : Microservice}\\
+		Campo dati contenente le informazioni di un microservizio;
+		\item \textbf{categoryInfo : category}\\
+		Campo dati contenente le informazioni della categoria di un microservizio;
+		\item \textbf{errorUpdate : string}\\
+		Campo dati contenente un messaggio di errore di modifica delle informazioni API;
+		\item \textbf{successUpdate : string}\\
+		Campo dati contenente un messaggio di avvenuta modifica delle informazioni.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{UpdateInfoAPIController};
+		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare un microservizio.
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::RechargeCredits}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/RechargeCredits.png}
+	\caption{APIM::FrontEnd::App::Views::RechargeCredits}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente la possibilità di scegliere quanti crediti ricaricare sul conto personale tra i tagli disponibili.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{msgConfirmRecharge : string}\\
+		Campo dati contenente un messaggio di conferma della ricarica crediti;
+		\item \textbf{optionsPurchase : List<OptionsCredits>}\\
+		Campo dati contenente le opzioni di acquisto dei crediti previste.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{RechargeCreditsController}.
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Views::ShowUserDetails}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Views/ShowUserDetails.png}
+	\caption{APIM::FrontEnd::App::Views::ShowUserDetails}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} View contenente le informazioni personali di un utente visualizzabili da altri fruitori del marketplace \progetto.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		\item \textbf{user : UserDetails}\\
+		Campo dati contenente i dati di utente;
+		\item \textbf{microservicesActive : List<Microservice>}\\
+		Campo dati contenente la lista dei microservizi attivi per il dato utente.
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Interagisce con il controller \textbf{ShowUserDetailsController};
+		\item Il model \textbf{MicroserviceModel} contiene le informazioni per rappresentare un microservizio;
+		\item Il model \textbf{UserDetailsModel} contiene le informazioni per rappresentare un utente.
+	\end{itemize}
+\end{itemize}
 
 %Fine views
 
