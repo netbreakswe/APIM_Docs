@@ -1054,13 +1054,13 @@ necessarie alla presentazione del contenuto di un utente, sia nella visualizzazi
 			Data di registrazione dell'utente;
 			\item \textbf{credits : int}\\
 			Crediti dell'utente;
-			\item \textbf{clienttype : int}\\
+			\item \textbf{clientType : int}\\
 			Tipo di account dell'utente;
-			\item \textbf{aboutme : string}\\
+			\item \textbf{aboutMe : string}\\
 			AboutMe dell'utente sviluppatore;
 			\item \textbf{citizenship : string}\\
 			Cittadinanza dell'utente sviluppatore;
-			\item \textbf{linktoself : string}\\
+			\item \textbf{linkToSelf : string}\\
 			Link al sito esterno dell'utente sviluppatore;
 			\item \textbf{paypal : string}\\
 			Email paypal dell'utente sviluppatore.
@@ -1068,12 +1068,10 @@ necessarie alla presentazione del contenuto di un utente, sia nella visualizzazi
 	\item \textbf{Relazioni con altre classi:}
 		\begin{itemize}
 			\item Interagisce con il controller \textbf{LoginController};
-			\item Interagisce con il controller \textbf{SearchController};
+			\item Interagisce con il controller \textbf{APIController};
 			\item Interagisce con il controller \textbf{ProfileManagerController};
 			\item Interagisce con il controller \textbf{ResetPasswordController};
 			\item Interagisce con il controller \textbf{PasswordRecoveryController};
-			\item Interagisce con il controller \textbf{Controller};
-			\item Interagisce con il controller \textbf{VirtualAccountController}.
 	\end{itemize}
 \end{itemize}
 
@@ -1095,9 +1093,9 @@ sia nella visualizzazione che nella gestione.
 		\begin{itemize}
 			\item \textbf{id : int}\\
 			Id della transazione;
-			\item \textbf{idapikey : int}\\
+			\item \textbf{idAPIKey : int}\\
 			Id dell'apikey;
-			\item \textbf{idclient : int}\\
+			\item \textbf{idClient : int}\\
 			Id del cliente;
 			\item \textbf{timestamp : int}\\
 			Data ed ora della transazione;
@@ -1136,30 +1134,32 @@ informazioni necessarie alla presentazione del contenuto di un microservizio, si
 			Descrizione del microservizio;
 			\item \textbf{version : string}\\
 			Versione corrente del microservizio;
-			\item \textbf{lastupdate : string}\\
+			\item \textbf{lastUpdate : string}\\
 			Data ultimo aggiornamento del microservizio;
-			\item \textbf{iddeveloper : string}\\
+			\item \textbf{idDeveloper : string}\\
 			Id dello sviluppatore del microservizio;
 			\item \textbf{logo : string}\\
 			Link al logo del microservizio;
-			\item \textbf{docpdf : string}\\
+			\item \textbf{docPDF : string}\\
 			Link al file PDF del microservizio;
-			\item \textbf{docext : string}\\
+			\item \textbf{docExt : string}\\
 			Link alla documentazione esterna del microservizio;
 			\item \textbf{profit : int}\\
 			Percentuale profitto dello sviluppatore del microservizio;
-			\item \textbf{isactive : bool}\\
+			\item \textbf{isActive : bool}\\
 			Funzionamento attuale del microservizio;
-			\item \textbf{slaguaranteed : double}\\
+			\item \textbf{SLAGuaranteed : double}\\
 			SLA garantita dal microservizio;
-			\item \textbf{idpolicy : int}\\
+			\item \textbf{idPolicy : int}\\
 			Id della policy di vendita del microservizio.
 		\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 		\begin{itemize}
-			\item Interagisce con il controller \textbf{APIRegiteredController};
-			\item Interagisce con il controller \textbf{APIRegistrationController};
-			\item Interagisce con il controller \textbf{SellingPolicyController};
+			\item Interagisce con il controller \textbf{APIRegisteredController};
+			\item Interagisce con il controller \textbf{RegisterAPIController}.	
+			\item Interagisce con il controller \textbf{PolicyCallController};
+			\item Interagisce con il controller \textbf{PolicyTimeController};
+			\item Interagisce con il controller \textbf{PolicyTrafficController};
 			\item Interagisce con il controller \textbf{APIPurchasedController};
 			\item Interagisce con il controller \textbf{APIListController}.
 		\end{itemize}
@@ -1184,19 +1184,21 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Id del sondaggio SLA;
 			\item \textbf{idapikey : int}\\
 			Id dell'apike attribuita al sondaggio SLA;
-			\item \textbf{idms : int}\\
+			\item \textbf{idMS : int}\\
 			Id del microservizio attribuito al sondaggio SLA;
 			\item \textbf{timestamp : string}\\
 			Data ed ora del sondaggio SLA;
-			\item \textbf{responsetime : int}\\
+			\item \textbf{responseTime : int}\\
 			Tempo di risposta del sondaggio SLA;
-			\item \textbf{iscompliant : boolean}\\
+			\item \textbf{isCompliant : boolean}\\
 			Indicatore del rispetto del sondaggio SLA.
 		\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 		\begin{itemize}
-			\item Interagisce con il controller \textbf{SellingPolicyController};
-			\item Interagisce con il controller \textbf{APIRegistrationController}.		
+			\item Interagisce con il controller \textbf{PolicyCallController};
+			\item Interagisce con il controller \textbf{PolicyTimeController};
+			\item Interagisce con il controller \textbf{PolicyTrafficController};
+			\item Interagisce con il controller \textbf{RegisterAPIController}.		
 		\end{itemize}
 \end{itemize}
 
