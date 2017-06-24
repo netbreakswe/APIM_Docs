@@ -15,7 +15,7 @@
 	\end{figure}
 	
 	\begin{itemize}
-		\item \textbf{Descrizione:} Il package BackEnd contiene le componenti del lato back-end dell'applicazione web.
+		\item \textbf{Descrizione:} Il package \textit{BackEnd} contiene le componenti del lato back-end dell'applicazione web.
 		\item \textbf{Packages contenuti:}
 		\begin{itemize}
 			\item \textbf{Gateway:} package riguardante la gestione delle chiamate ai microservizi;
@@ -35,7 +35,7 @@
 	\end{figure}
 	
 	\begin{itemize}
-		\item \textbf{Descrizione:} L'interfaccia ServiceInteractionHandler contiene le operazioni riguardanti la gestione delle sessioni couriers e dei metadati dei microservizi. Viene utilizzata dal Gateway e da MicroservicesDB.
+		\item \textbf{Descrizione:} L'interfaccia \textit{ServiceInteractionHandler} contiene le operazioni riguardanti la gestione delle sessioni couriers e dei metadati dei microservizi. Viene utilizzata dal \textit{Gateway} e da \textit{MicroservicesDB}.
 	\end{itemize}
 
 \subsection{APIMarket::Back-End::Gateway}
@@ -51,7 +51,7 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} Il package Gateway contiene le componenti del lato back-end dell'applicazione web.
+	\item \textbf{Descrizione:} Il package \textit{Gateway} contiene le componenti per l'API Gateway dell'applicazione web.
 	\item \textbf{Packages contenuti:}
 	\begin{itemize}
 		\item \textbf{Couriers:} package riguardante l'archiviazione delle sessioni couriers;
@@ -71,7 +71,8 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe Gateway genera le sessioni courier di ciascun microservizio presente in API Market al suo avvio, ed in seguito alla registrazione di un nuovo microservizio. Inoltre si occupa della verifica della chiamata al microservizio rispetto ai dati utente ed apikey, dei rilevamenti casuali di rispetto della SLA e della loro archiviazione, della redirection verso il microservizio e l'operazione desiderati.
+	\item \textbf{Descrizione:} La classe Gateway genera le sessioni couriers di ciascun microservizio presente in API Market al suo avvio, ed in seguito alla registrazione di un nuovo microservizio.\\
+	Inoltre, si occupa della verifica della chiamata al microservizio rispetto ai dati utente ed API Key, dei rilevamenti casuali di rispetto della SLA e della loro archiviazione, della redirection verso il microservizio e l'operazione desiderati.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
 			\item La classe Gateway implementa l'interfaccia RedirectorInterface;
