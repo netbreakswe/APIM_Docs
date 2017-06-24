@@ -1,40 +1,42 @@
+\newpage
+
 \section{Specifica Back-End}
 
 \subsection{APIMarket::Back-End}
 
-\subsubsection{Informazioni generali}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{UML/DiagrammiPackage/BackEnd.png}
-	\caption{Package APIM::BackEnd}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Descrizione:} Il package BackEnd contiene le componenti del lato back-end dell'applicazione web.
-	\item \textbf{Packages contenuti:}
+	\subsubsection{Informazioni generali}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics
+		[width=0.7\linewidth]
+		{UML/DiagrammiPackage/BackEnd.png}
+		\caption{Package APIM::BackEnd}
+	\end{figure}
+	
 	\begin{itemize}
-		\item \textbf{Gateway:} package riguardante la gestione delle chiamate ai microservizi.
-		\item \textbf{Services:} package riguardante la comunicazione con i database di API Market.
+		\item \textbf{Descrizione:} Il package BackEnd contiene le componenti del lato back-end dell'applicazione web.
+		\item \textbf{Packages contenuti:}
+		\begin{itemize}
+			\item \textbf{Gateway:} package riguardante la gestione delle chiamate ai microservizi;
+			\item \textbf{Services:} package riguardante la comunicazione con i database di API Market.
+		\end{itemize}
 	\end{itemize}
-\end{itemize}
-
-\subsubsection{Interfacce}
-
-\paragraph{ServiceInteractionHandler}
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Interfacce/serviceInteractionHandler.png}
-	\caption{Package APIM::BackEnd::ServiceInteractionHandler}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia ServiceInteractionHandler contiene le operazioni riguardanti la gestione delle sessioni couriers e dei metadati dei microservizi. Viene utilizzata dal Gateway e da MicroservicesDB.
-\end{itemize}
+	
+	\subsubsection{Interfacce}
+	
+	\paragraph{ServiceInteractionHandler}
+	\begin{figure}[H]
+		\centering
+		\includegraphics
+		[width=0.7\linewidth]
+		{images/APIM/BackEnd/Interfacce/serviceInteractionHandler.png}
+		\caption{Package APIM::BackEnd::ServiceInteractionHandler}
+	\end{figure}
+	
+	\begin{itemize}
+		\item \textbf{Descrizione:} L'interfaccia ServiceInteractionHandler contiene le operazioni riguardanti la gestione delle sessioni couriers e dei metadati dei microservizi. Viene utilizzata dal Gateway e da MicroservicesDB.
+	\end{itemize}
 
 \subsection{APIMarket::Back-End::Gateway}
 
@@ -52,7 +54,7 @@
 	\item \textbf{Descrizione:} Il package Gateway contiene le componenti del lato back-end dell'applicazione web.
 	\item \textbf{Packages contenuti:}
 	\begin{itemize}
-		\item \textbf{Couriers:} package riguardante l'archiviazione delle sessioni couriers.
+		\item \textbf{Couriers:} package riguardante l'archiviazione delle sessioni couriers;
 		\item \textbf{Interfaces:} package riguardante le interfacce necessarie alla classe Gateway.
 	\end{itemize}
 \end{itemize}
@@ -92,7 +94,6 @@
 				\end{description}
 				\begin{itemize}
 					\item \textbf{calldata:} Dati della chiamata al microservizio.
-					\item \textbf{bool}.
 				\end{itemize}
 			\item \textbf{random\_SLA\_survey( void )( bool ):} Algoritmo casuale per scegliere se effettuare un sondaggio della SLA.
 			\item \textbf{manage\_call( calldata )( bool ):} Gestisce la chiamata al microservizio.
@@ -101,33 +102,10 @@
 				\end{description}
 				\begin{itemize}
 					\item \textbf{calldata:} Dati della chiamata al microservizio.
-					\item \textbf{bool}.
 				\end{itemize}
 		\end{itemize}
 \end{itemize}
 
-\paragraph{Redirector}
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{images/APIM/BackEnd/Classi/redirector.png}
-	\caption{Package APIM::BackEnd::Gateway::Redirector}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Descrizione:} Il package Gateway contiene le componenti del lato back-end dell'applicazione web.
-	\item \textbf{Relazioni:}
-	\begin{itemize}
-		\item \textbf{xxxxxxx:} xxxxxxxxxxxxxxxxxxxx
-		\item \textbf{xxxxxxx:} xxxxxxxxxxxxxxxxxxxx
-	\end{itemize}
-	\item \textbf{Operazioni:}
-	\begin{itemize}
-		\item \textbf{xxxxxxx:} xxxxxxxxxxxxxxxxxxxx
-		\item \textbf{xxxxxxx:} xxxxxxxxxxxxxxxxxxxx
-	\end{itemize}
-\end{itemize}
 
 \paragraph{ServiceInteractionHandler}
 \begin{figure}[H]
@@ -139,7 +117,7 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe ServiceInteractionHandler implementa l'interfaccia contenuta in APIM::BackEnd::Gateway::ServiceInteractionHandlerInterface.
+	\item \textbf{Descrizione:} La classe ServiceInteractionHandler implementa l'interfaccia contenuta in APIM::BackEnd::Gateway::ServiceInteractionHandler.
 	\item \textbf{Relazioni:}
 		\begin{itemize}
 			\item La classe ServiceInteractionHandler espone le proprie operazioni alla classe Gateway;
@@ -147,12 +125,12 @@
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
-			\item \textbf{GetServiceMetaFromCourier( courierdir )( MetaInfoAPIMService ):} Ricava da una courier i metadati del servizio, cioè tipi utilizzati ed operazioni fornite.
+			\item \textbf{GetServiceMetaFromCourier( CourierIdR )( MetaInfoAPIMService ):} Ricava da una courier i metadati del servizio, cioè tipi utilizzati ed operazioni fornite.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{courierdir:} Directory del file courier da cui estrarre le metainfo.
+					\item \textbf{CourierIdR:} Directory del file courier da cui estrarre le metainfo;
 					\item \textbf{MetaInfoAPIMService:} Metadati di un microservizio registrato in API Market.
 				\end{itemize}
 			\item \textbf{generateClientInterface( MetaInfoAPIMService )( clientinterface ):} Genera l'interfaccia esposta al client del microservizio.
@@ -160,7 +138,7 @@
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{MetaInfoAPIMService:} Metadati di un microservizio registrato in API Market.
+					\item \textbf{MetaInfoAPIMService:} Metadati di un microservizio registrato in API Market;
 					\item \textbf{clientinterface:} Rappresentazione come stringa dell'interfaccia esposta al client del microservizio.
 				\end{itemize}
 			\item \textbf{generateCourier( aservice )( courierservice ):} Genera la rappresentazione come stringa del file courier del microservizio.
@@ -168,7 +146,7 @@
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{aservice:} Dati del microservizio dal quale generare un file courier.
+					\item \textbf{aservice:} Dati del microservizio dal quale generare un file courier;
 					\item \textbf{courierservice:} Rappresentazione come stringa del file courier del microservizio.
 				\end{itemize}
 		\end{itemize}
@@ -188,7 +166,7 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} Il package GatewayInterfaces contiene le interfacce necessarie al funzionamento del Gateway. In particolare si occupa delle attività di verifica, di gestione SLA e di redirection, trattando i dati riguardanti interfaccia ed operazione della chiamata ad un microservizio.
+	\item \textbf{Descrizione:} Il package GatewayInterfaces contiene l'interfaccia necessarie al funzionamento del Gateway. In particolare si occupa delle attività di verifica, di gestione SLA e di redirection, trattando i dati riguardanti interfaccia ed operazione della chiamata ad un microservizio.
 \end{itemize}
 
 \subsubsection{Interfacce}
@@ -199,7 +177,7 @@
 	\includegraphics
 	[width=0.7\linewidth]
 	{images/APIM/BackEnd/Interfacce/RedirectorInterface.png}
-	\caption{Package APIM::BackEnd::GatewayInterfaces/RedirectorInterface}
+	\caption{Package APIM::BackEnd::GatewayInterfaces::RedirectorInterface}
 \end{figure}
 
 \begin{itemize}
@@ -222,9 +200,9 @@
 	\item \textbf{Descrizione:} Il package Services contiene le componenti per la comunicazione con i database di API Market.
 	\item \textbf{Packages contenuti:}
 	\begin{itemize}
-		\item \textbf{MicroservicesDB:} package riguardante la comunicazione con il database dei microservizi registrati in API Market.
-		\item \textbf{UsersDB:} package riguardante la comunicazione con il database degli utenti in API Market.
-		\item \textbf{TransactionsDB:} package riguardante la comunicazione con il database delle transazioni in API Market.
+		\item \textbf{MicroservicesDB:} package riguardante la comunicazione con il database dei microservizi registrati in API Market;
+		\item \textbf{UsersDB:} package riguardante la comunicazione con il database degli utenti in API Market;
+		\item \textbf{TransactionsDB:} package riguardante la comunicazione con il database delle transazioni in API Market;
 		\item \textbf{SLADB:} package riguardante la comunicazione con il database della SLA in API Market.
 		\item \textbf{FileHandlerDB:} package riguardante la comunicazione con il database dei file in API Market.
 	\end{itemize}
@@ -258,7 +236,7 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} L'interfaccia MicroservicesDB contiene le operazioni riguardanti lettura e scrittura dei dati dei microservizi, delle interfacce, delle categorie dei microservizi. Viene utilizzata da FrontendMS e dal Gateway.
+	\item \textbf{Descrizione:} L'interfaccia MicroservicesDB contiene le operazioni riguardanti lettura e scrittura dei dati dei microservizi, delle interfacce, delle categorie dei microservizi. Viene utilizzata dal FrontEnd e dal Gateway.
 \end{itemize}
 
 \subsubsection{Classi}
@@ -273,159 +251,236 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} La classe MicroservicesDB implementa l'interfaccia contenuta in APIM::BackEnd::Services::Microservices\_dbInterface.
+	\item \textbf{Descrizione:} La classe MicroservicesDB implementa l'interfaccia contenuta in \\
+	\begin{minipage} 
+		{\linewidth} APIM::BackEnd::Services::MicroservicesInterface.
+	\end{minipage}
+
 	\item \textbf{Relazioni:}
 		\begin{itemize}
 			\item La classe MicroservicesDB implementa l'interfaccia MicroservicesDBInterface;
 			\item La classe MicroservicesDB utilizza le operazioni esposte dall'interfaccia ServiceInteractionHandlerInterface;
-			\item La classe MicroservicesDB espone le proprie operazioni alla classe FrontendMS.
+			\item La classe MicroservicesDB espone le proprie operazioni al FrontEnd.
 		\end{itemize}
 	\item \textbf{Operazioni:}
 		\begin{itemize}
 		
-			\item \textbf{retrieve\_all\_ms\_info( void )( listservices ):} Ricava le informazioni di ogni microservizio registrato in API Market.
+			\item \textbf{retrieveAllMSGatewayMeta( void )( ListServices ):} Ricava le informazioni dei microservizi per il gateway in API Market.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{ListServices:} Lista dei microservizi con relative informazioni.
+			\end{itemize}
+		
+			\item \textbf{retrieveClientInterfaceFromID( Id )( InfoInterf ):} Ricava le informazioni di ogni cliente tramite il suo ID in API Market.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{Id:} Id del cliente di cui ricavare le informazioni;
+				\item \textbf{InfoInterf:} Info del cliente.
+			\end{itemize}
+		
+			\item \textbf{homepageMSlist( void )( HomeMSList ):} Ricava le informazioni di ogni microservizio registrato in API Market.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{listservices:} Lista dei microservizi con relative informazioni.
+					\item \textbf{HomeMSList:} Lista dei microservizi per la homepage.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_ms\_info( msid )( msdata ):} Ricava le informazioni del microservizio a partire dal suo id.
+			\item \textbf{retreiveMSInfo( Id )( MSData ):} Ricava le informazioni del microservizio a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{msid:} Id del microservizio.
-					\item \textbf{msdata:} Informazioni del microservizio.
+					\item \textbf{Id:} Id del microservizio;
+					\item \textbf{MSData:} Informazioni del microservizio.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_intf\_info( intfid )( intfdata ):} Ricava le informazioni dell'interfaccia a partire dal suo id.
+			\item \textbf{checkMSIsCompliant( CompliantData )( boolean ):} controlla se un microsrvizio i soddisfa i rquisiti SLA. 
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{intfid:} Id dell'interfaccia.
-					\item \textbf{intfdata:} Informazioni dell'interfaccia.
+					\item \textbf{CompliantData:} Id del microservizio da controllare;
+					\item \textbf{bool.}
+				\end{itemize}
+			
+			\item \textbf{checkMSIsActive( Id )( boolean ):} controlla se un microsrvizio è attivo. 
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{CompliantData:} Id del microservizio da controllare;
+					\item \textbf{bool.}
+				\end{itemize}
+		
+			\item \textbf{retrieveMSPolicy( Id )( int ):} ritorna la policy del microservizio. 
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{Id:} Id del microservizio da controllare;
+				\item \textbf{int:} interno che identifica la policy.
+			\end{itemize}
+
+			\item \textbf{retrieveIntfInfo( Id )( IntfData ):} recupera tutte le informazioni dell'interfaccia. 
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{Id:} Id del microservizio da controllare;
+				\item \textbf{IntfData:} ritorna le informazioni dell'interfaccia.
+			\end{itemize}
+				
+			\item \textbf{retrieveMSFromDeveloperId( Id )( MSDevList ):} Ricava le informazioni di un microservizio a partire dall'Id di uno sviluppatore.
+				\begin{description}
+    				\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{Id:} Id del microservizio;
+					\item \textbf{MSDevList:} informazioni microservizio.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_interfaces\_of\_ms( msid )( intfidlist ):} Ricava gli id delle interfacce di un microservizio, a partire dal suo id.
+			\item \textbf{retrieveInterfacesOfMS( Id )( ListInterfaces ):} Ricava l'interfaccia del microservizio a partire dall'id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{msid:} Id del microservizio.
-					\item \textbf{intfidlist:} Lista degli id delle interfacce del microservizio.
+					\item \textbf{Id:} Id dell'interfaccia;
+					\item \textbf{ListInterfaces:} Interfaccia del microservizio.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_ms\_from\_interface( intfid )( msiddata ):} Ricava l'id del microservizio, a partire dall'id di una sua interfaccia.
+			\item \textbf{retrieveMSFromInterface( Id )( MSIdData ):} Ricava le informazioni di un microservizio a partire dalla sua interfaccia.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{intfid:} Id dell'interfaccia.
-					\item \textbf{msiddata:} Id del microservizio.
+					\item \textbf{Id:} Id dell'interfaccia;
+					\item \textbf{MSIdData:} Lista degli id dei microservizi appartenenti alla categoria.
+				\end{itemize}
+			
+			\item \textbf{retrieveCategoryInfo( Id )( CategoryData ):} Ricava le informazioni di una categoria a partire dal suo Id.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{Id:} Id della categoria;
+				\item \textbf{CategoryData:} informazioni di una categoria.
+			\end{itemize}
+				
+			\item \textbf{retrieveCategoryList( void )( CategoryList ):} Ricava le informazioni di una categoria a partire dal suo Id.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{CategoryList:} lista API della categoria.
+			\end{itemize}
+				
+			\item \textbf{retrieveCategoryOfMS( Id )( CategoryDataList ):} Ricava gli id delle categorie attribuite al microservizio, a partire dall'id del microservizio.
+				\begin{description}
+    				\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{Id:} Id del microservizio;
+					\item \textbf{CategoryDataList:} Lista degli id delle categorie attribuite al microservizio.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_msidlist\_from\_category( categoryid )( msidbycatlist ):} Ricava gli id dei microservizi appartenenti ad una categoria, a partire dall'id della categoria.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{categoryid:} Id della categoria.
-					\item \textbf{msidbycatlist:} Lista degli id dei microservizi appartenenti alla categoria.
-				\end{itemize}
-				
-			\item \textbf{retrieve\_category\_info( categoryid )( categorydata ):} Ricava le informazioni di una categoria, a partire dal suo id.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{categoryid:} Id della categoria.
-					\item \textbf{categorydata:} Informazioni della categoria.
-				\end{itemize}
-				
-			\item \textbf{retrieve\_categories\_of\_ms( msid )( categoryidlist ):} Ricava gli id delle categorie attribuite al microservizio, a partire dall'id del microservizio.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{msid:} Id del microservizio.
-					\item \textbf{categoryidlist:} Lista degli id delle categorie attribuite al microservizio.
-				\end{itemize}
-				
-			\item \textbf{retrieve\_last\_registered\_ms( shownumber )( lastmsreglist ):} Ricava un numero specificato dei microservizi registrati più recentemente su API Market.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{shownumber:} La lunghezza della lista massima dei microservizi registrati più recentemente su API Market.
-					\item \textbf{lastmsreglist:} La lista dei microservizi registrati più recentemente su API Market con relative informazioni.
-				\end{itemize}
-				
-			\item \textbf{retrieve\_last\_registered\_ms\_info( idms )( lastmsregbyidlist ):} Ricava Nome, IdDeveloper e Logo del microservizio, a partire dal suo id.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{msid:} Id del microservizio.
-					\item \textbf{lastmsregbyidlist:} Name, IdDeveloper e Logo del microservizio.
-				\end{itemize}
-				
-			\item \textbf{microservice\_registration( msdataw )( bool ):} Registra un nuovo microservizio nel database dei microservizi.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{msdataw:} Informazioni del nuovo microservizio.
-					\item \textbf{bool}.
-				\end{itemize}
-				
-			\item \textbf{microservice\_update( msupdata )( bool ):} Aggiorna le informazioni di un microservizio esistente nel database dei microservizi.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{msupdata:} Informazioni aggiornate di un microservizio esistente.
-					\item \textbf{bool}.
-				\end{itemize}
-				
-			\item \textbf{interface\_registration( intfdataw )( bool ):} Registra una nuova interfaccia di un microservizio esistente nel database dei microservizi .
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{intfdataw:} Informazioni della nuova interfaccia.
-					\item \textbf{bool}.
-				\end{itemize}
-				
-			\item \textbf{interface\_update( intfupdata )( bool):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{intfupdata:} Informazioni aggiornate di una interfaccia esistente.
-					\item \textbf{bool}.
-				\end{itemize}
-				
-			\item \textbf{add\_category\_to\_ms( categorydataw )( bool ):} Attribuisce una categoria ad un microservizio.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{categorydataw:} Id del microservizio e della categoria da attribuirgli.
-					\item \textbf{bool}.
-				\end{itemize}
-				
-			\item \textbf{remove\_category\_from\_ms( categorydataw )( bool ):} Rimuove una categoria da un microservizio.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{categorydataw:} Id del microservizio e della categoria da rimuovergli.
-					\item \textbf{bool}.
-				\end{itemize}
-	
+			\item \textbf{retrieveMSNumberFromDevId( StringId )( int ):} Ricava il numero di microservizi registrati da un developer.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{StringId:} stringa Id associata a uno sviluppatore;
+				\item \textbf{int:} numero di microservizi registrati da un developer.
+			\end{itemize}	
+		
+			\item \textbf{retrieveActiveMSNumberFromDevId( StringId )( int ):} Ricava il numero di microservizi attivi di un developer.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{StringId:} stringa Id associata a uno sviluppatore;
+				\item \textbf{int:} numero di microservizi attivi di un developer.
+			\end{itemize}
+		
+			\item \textbf{retrieveInactiveMSNumberFromDevId( StringId )( int ):} Ricava il numero di microservizi inattivi di un developer.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{StringId:} stringa Id associata a uno sviluppatore;
+				\item \textbf{int:} numero di microservizi inattivi di un developer.
+			\end{itemize}	
+			
+			\item \textbf{microserviceRegistration( MSDataW )( int ):} Registra un nuovo microservizio nel database dei microservizi.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{MSDataW:} Informazioni del nuovo microservizio;
+				\item \textbf{int.}
+			\end{itemize}
+			
+			\item \textbf{microserviceUpdate( MSUpData )( void ):} Aggiorna le informazioni di un microservizio esistente nel database dei microservizi.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{MSUpData:} Informazioni aggiornate di un microservizio esistente.
+			\end{itemize}
+			
+			\item \textbf{interfaceUpdate( intfUpData )( void):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{intfupdata:} Informazioni aggiornate di una interfaccia esistente.
+			\end{itemize}
+			
+			\item \textbf{addCategoryToMS( CategoryDataW )( void ):} Attribuisce una categoria ad un microservizio.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{CategoryDataW:} Id del microservizio e della categoria da attribuirgli.
+			\end{itemize}
+		
+			\item \textbf{removeCategoryFromMS( CategoryDataW )( void ):} Rimuove una categoria da un microservizio.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{CategoryDataW:} Id del microservizio e della categoria da rimuovergli.
+			\end{itemize}
+		
+			\item \textbf{updateClientInterfaceById( InfoInterfUpdate )( void):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{InfoInterfUpdate:} Informazioni aggiornate di una interfaccia esistente.
+			\end{itemize}
+		
+			\item \textbf{changeIsActive( AvailabilityData )( void):} aggiorna lo stato di un microservizio.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{AvailabilityData:} Informazioni di un microservizio.
+			\end{itemize}
+			
+			\item \textbf{deleteMS( Id )( bool):} Aggiorna le informazioni di una interfaccia esistente nel database dei microservizi.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{Id:} Id del microservizio da eliminare;
+				\item \textbf{bool}.
+			\end{itemize}
+
 		\end{itemize}
 \end{itemize}
 
@@ -481,25 +536,52 @@
 	\item \textbf{Operazioni:}
 		\begin{itemize}
 		
-			\item \textbf{user\_exists( logininfo )( bool ):} Controlla se il cliente esista nel database utenti.
+			\item \textbf{emailExists( Email )( bool ):} Controlla se l'email esista nel database utenti.
 				\begin{description}
-    				\item[\textbf{Parametri:}]
+					\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{logininfo:} Email ed Password del cliente.
+					\item \textbf{Email:} Email del cliente;
 					\item \textbf{bool}.
 				\end{itemize}
-				
-			\item \textbf{retrieve\_admin\_info( adminid )( admindata ):} Ricava le informazioni dell'admin, a partire dal suo id.
+		
+			\item \textbf{userExists( LoginInfo )( bool ):} Controlla se il cliente esista nel database utenti.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{adminid:} Id dell'admin.
-					\item \textbf{admindata:} Informazioni dell'admin.
+					\item \textbf{LoginInfo:} Email ed Password del cliente;
+					\item \textbf{bool}.
 				\end{itemize}
+			
+			\item \textbf{adminExists( LoginInfo )( bool ):} Controlla se l'aaministratore esista nel database admin.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{LoginInfo:} Email ed Password dell'amministratore;
+					\item \textbf{bool}.
+				\end{itemize}
+
+			\item \textbf{retrieveAdminInfo( StringID )( AdminData ):} Ricava le informazioni dell'admin, a partire dal suo id.
+				\begin{description}
+    				\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{StringID:} Id dell'admin;
+					\item \textbf{AdminData:} Informazioni dell'admin.
+				\end{itemize}
+			
+			\item \textbf{retrieveAdminInfoFromEmail( Email )( AdminData ):} Ricava le informazioni dell'admin, a partire dalla sua email.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{Email:} email dell'admin;
+					\item \textbf{AdminData:} Informazioni dell'admin.
+				\end{itemize}	
 				
-			\item \textbf{retrieve\_client\_info( clientid )( clientdata ):} Ricava le informazioni del cliente, a partire dal suo id.
+			\item \textbf{retrieveClientInfo( StringId )( UserData ):} Ricava le informazioni del cliente, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
@@ -507,104 +589,144 @@
 					\item \textbf{clientid:} Id del cliente.
 					\item \textbf{clientdata:} Informazioni del cliente.
 				\end{itemize}
-				
-			\item \textbf{retrieve\_client\_fullname( clientid )( clientfullnamedata ):} Ricava Name e Surname del client, a partire dal suo id.
+			
+			\item \textbf{retrieveAllClientInfo( void )( AllUserData ):} Ricava tutte le informazioni dei clienti.
 				\begin{description}
-    				\item[\textbf{Parametri:}]
+					\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{clientid:} Id del cliente.
-					\item \textbf{clientfullnamedata:} Name e Surname del cliente.
-				\end{itemize}
-				
-			\item \textbf{retrieve\_client\_type( clientid )( typeiddata ):} Ricava il tipo di account del cliente, a partire dal suo id.
-				\begin{description}
-    				\item[\textbf{Parametri:}]
-				\end{description}
-				\begin{itemize}
-					\item \textbf{clientid:} Id del cliente.
-					\item \textbf{typeiddata:} Id del tipo di account del cliente.
+					\item \textbf{AllUserData:} Informazioni dei clienti.
 				\end{itemize}
 			
-			\item \textbf{retrieve\_moderation\_info( modentryid )( entrydata ):} Ricava le informazioni della moderazione, a partire dal suo id.
+			\item \textbf{retrieveClientInfoFromEmail( Email )( UserData ):} Ricava le informazioni del cliente, a partire dalla sua email.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{Email:} email del cliente;
+					\item \textbf{AdminData:} Informazioni del cliente.
+				\end{itemize}	
+			
+				
+			\item \textbf{retrieveClientAnagraphics ( StringId )( Anagraphics ):} Ricava Name e Surname del client, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{modentryid:} Id della moderazione.
-					\item \textbf{entrydata:} Informazioni della moderazione.
+					\item \textbf{StringId:} Id del cliente;
+					\item \textbf{Anagraphics:} anagrafica completa del cliente.
 				\end{itemize}
 				
-			\item \textbf{retrieve\_modtype\_info( modtypeid )( modtypedata ):} Ricava le informazioni del tipo di moderazione, a partire dal suo id.
+			\item \textbf{retrieveClientType( Id )( TypeIdData ):} Ricava il tipo di account del cliente, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{modtypeid:} Id del tipo di moderazione.
-					\item \textbf{modtypedata:} Informazioni del tipo di moderazione.
+					\item \textbf{Id:} Id del cliente;
+					\item \textbf{TypeIdData:} Id del tipo di account del cliente.
 				\end{itemize}
-				
-			\item \textbf{retrieve\_clienttype\_info( clienttypeid )( clienttypedata ):} Ricava le informazioni del tipo di account del cliente, a partire dal suo id.
+			
+			\item \textbf{retrieveModerationInfo( Id )( EntryData ):} Ricava le informazioni della moderazione, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{clienttypeid:} Id del tipo di account del cliente.
-					\item \textbf{clienttypedata:} Informazioni del tipo di account del cliente.
+					\item \textbf{Id:} Id della moderazione;
+					\item \textbf{EntryData:} Informazioni della moderazione.
 				\end{itemize}
 				
-			\item \textbf{basicclient\_registration( basicclientdata )( bool ):} Registra un nuovo account cliente di tipo base.
+			\item \textbf{retrieveModTypeInfo( Id )( ModTypeData ):} Ricava le informazioni del tipo di moderazione, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{basicclientdata:} Informazioni del nuovo cliente.
-					\item \textbf{bool}.
+					\item \textbf{Id:} Id del tipo di moderazione;
+					\item \textbf{ModTypeData:} Informazioni del tipo di moderazione.
 				\end{itemize}
 				
-			\item \textbf{developer\_upgrade( developerdata )( bool ):} Effettua l'upgrade ad account sviluppatore di un cliente.
+			\item \textbf{retrieveClientTypeInfo( Id )( ClientTypeData ):} Ricava le informazioni del tipo di account del cliente, a partire dal suo id.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{developerdata:} Informazioni dei campi aggiuntivi da sviluppatore.
-					\item \textbf{bool}.
+					\item \textbf{Id:} Id del tipo di account del cliente;
+					\item \textbf{ClientTypeData:} Informazioni del tipo di account del cliente.
 				\end{itemize}
+			
+			\item \textbf{RetrieveAllDevId( void )( DevIdList ):} Ricava le informazioni di tutti gli sviluppatori.
+			\begin{description}
+				\item[\textbf{Parametri:}]
+			\end{description}
+			\begin{itemize}
+				\item \textbf{DevIdList:} informazioni di tutti gli sviluppatori.
+			\end{itemize}
 				
-			\item \textbf{basicclient\_downgrade( clientid )( bool ):} Effettua il downgrade ad account base di un cliente sviluppatore.
+				
+				
+			\item \textbf{basicClientRegistration( BasicClientData )( void ):} Registra un nuovo account cliente di tipo base.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{clientid:} Id del cliente.
-					\item \textbf{bool}.
+					\item \textbf{BasicClientData:} Informazioni del nuovo cliente.
 				\end{itemize}
 				
-			\item \textbf{client\_moderation( entrydataw )( bool ):} Inserisce una nuova moderazione nel database degli utenti.
+			\item \textbf{developerUpgrade( StringId )( void ):} Effettua l'upgrade ad account sviluppatore di un cliente.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{entrydataw:} Informazioni della nuova moderazione.
-					\item \textbf{bool}.
+					\item \textbf{StringId:} Informazioni dei campi aggiuntivi da sviluppatore.
 				\end{itemize}
 				
-			\item \textbf{client\_update( userdata )( bool ):} Aggiorna le informazioni di un cliente.
+			\item \textbf{basicClientDowngrade( StringId )( void ):} Effettua il downgrade ad account base di un cliente sviluppatore.
+				\begin{description}
+    				\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{StringId:} Id del cliente.
+				\end{itemize}
+				
+			\item \textbf{clientModeration( SmallEntryData )( void ):} Inserisce una nuova moderazione nel database degli utenti.
+				\begin{description}
+    				\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{SmallEntryData:} Informazioni della nuova moderazione.
+				\end{itemize}
+				
+			\item \textbf{clientUpdate( UserUpData )( void ):} Aggiorna le informazioni di un cliente.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
 					\item \textbf{userdata:} Informazioni aggiornate del cliente.
-					\item \textbf{bool}.
 				\end{itemize}
+			
+			\item \textbf{clientePasswordChange( PassUpData )( void ):} Cambia la password di un utente.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{PassUpData:} Cambia la password di un utente.
+				\end{itemize}
+		
+			\item \textbf{clientePasswordRecovery( RecoverPassUpData )( void ):} avvia il recupero password di un cliente.
+				\begin{description}
+					\item[\textbf{Parametri:}]
+				\end{description}
+				\begin{itemize}
+					\item \textbf{RecoverPassUpData:} nuova password del cliente del cliente.
+				\end{itemize}
+			
+			
 				
-			\item \textbf{client\_delete( clientid )( bool ):} Elimina un cliente da API Market.
+			\item \textbf{clientDelete( StringId )( void ):} Elimina un cliente da API Market.
 				\begin{description}
     				\item[\textbf{Parametri:}]
 				\end{description}
 				\begin{itemize}
-					\item \textbf{clientid:} Id del cliente.
-					\item \textbf{bool}.
+					\item \textbf{clientDelete:} Id del cliente.
 				\end{itemize}
 					
 		\end{itemize}
