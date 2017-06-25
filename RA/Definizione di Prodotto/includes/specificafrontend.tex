@@ -1227,283 +1227,729 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 
 \subsubsection{Classi}
 
-\paragraph{APIM::FrontEnd::App::Controllers::ProfileManagerController}
+\paragraph{APIM::FrontEnd::App::Controllers::AdminAPIDetailsManagerController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/ProfileManagerController.png}
-	\caption{APIM::FrontEnd::App::Controllers::ProfileManagerController}
+	{images/APIM/FrontEnd/Controllers/AdminAPIDetailsManagerController.png}
+	\caption{APIM::FrontEnd::App::Controllers::AdminAPIDetailsManagerController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} ProfileManagerController permette di gestire il profilo personale di un
-utente, fornendo le funzionalità all'utente per poter modificare i propri dati.
+	\item \textbf{Descrizione:} AdminAPIDetailsManagerController permette di visualizzare le statistiche di un API, attivarla, disattivarla o eliminarla.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views l'oggetto UserDetailsModel;
-				
-			\item \textbf{\$timeout : \$timeout }\\
-			Campo dati contenente il riferimento all'oggetto globale \$timeout creato da AngularJS. Il valore di ritorno di una chiamata alla funzione di \$timeout è una promise, la quale
-sarà risolta quando avverrà il ritardo e la funzione di timeout eseguita;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{user : UserDetailsModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un utente.
-				
-		\end{itemize}
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$route : \$route }\\
+		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		
+		\item \textbf{\$mdDialog : \$mdDialog }\\
+		Campo dati contenente il riferimento all'oggetto globale \$mdDialog creato da AngularJS. Viene utilizzato per creare finestre di popup;
+		
+		\item \textbf{\$routeParams : \$routeParams }\\
+		Campo dati contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST;
+		
+		
+	\end{itemize}
 	\item \textbf{Metodi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{ProfileManagerController(\$scope : \$scope, \$rootScope : \$rootScope, user : UserDetailsModel) : void}\\
-			Metodo costruttore della classe;
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope : \$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$rootScope : \$rootScope}\\
-				Parametro che contiene il riferimento all'oggetto globale \$rootScope di AngularJS. Viene utilizzato per rendere accessibile a view e controller l'oggetto UserDetailsModel.
-				
-				\item \textbf{user: UserDetailsModel}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{confirm(user : Object, imageObject : Object) : void}\\
-			Metodo per confermare le modifiche desiderate al proprio profilo. Per attuare le modifiche, si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente;
-				
-				\item \textbf{imageObject}\\
-				Parametro che rappresenta un file immagine.
-			\end{itemize}
-			
-			\item \textbf{getUserDetails(email : string) : UserDetailsModel}\\
-			Metodo per recuperare i propri dati personali. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email.
-			\end{itemize}
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{AdminAPIDetailsManagerController(\$scope : \$scope, \$http : \$http, \$route : \$route, \$mdDialog : \$mdDialog, \$routeParams : \$routeParams)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{ProfileManager};
-			\item Il model \textbf{UsersDetailModel} che contiene le informazioni per rappresentare un utente.
-		\end{itemize}
-\end{itemize}
-
-\paragraph{APIM::FrontEnd::App::Controllers::APIRegistrationController}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics
-	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/APIRegistrationController.png}
-	\caption{APIM::FrontEnd::App::Controllers::APIRegistrationController}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Descrizione:} APIRegistrationController permette di gestire l'inserimento di una API, fornendo tutte le funzionalità atte alla corretta esposizione di un microservizio di uno sviluppatore, utente della piattaforma API Market.
-	\item \textbf{Attributi:}
-		\begin{itemize}
-		
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$route : \$route}\\
+			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di oruting.
+			
+			\item \textbf{\$mdDialog : \$mdDialog}\\
+			Parametro che contiene il riferimento all'oggetto globale \$mdDialog di AngularJS. Viene utilizzato per creare finestre di popup.
 			
 			\item \textbf{\$routeParams : \$routeParams}\\
-			Parametro contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Tale servizio permette di recuperare il set di variabili presenti nell'URL;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{microservice : MicroserviceModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un microservizio.
-				
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+			
 		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
 		
-			\item \textbf{APIRegistrationController(\$scope : \$scope, \$routeParams : \$routeParams, microservice : MicroserviceModel) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$routeParams}\\
-				Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Permette di recuperare il set di variabili presenti nell'url;
-				
-				\item \textbf{microservice}\\
-				Parametro che rappresenta un microservizio.
-			\end{itemize}
-			
-			\item \textbf{insertMicroservice(microserviceDetails : MicroserviceModel) : void}\\
-			Metodo per registrare un nuovo microservizio in API Market. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{microserviceDetails}\\
-				Parametro che rappresenta un microservizio.
-			\end{itemize}
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{getRemainingSuffix(policyId : int) : void}\\
+		Metodo per identificare la tipologia di policy dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{RegisterAPI};
-			\item Il model \textbf{MicroserviceModel} che contiene le informazioni per rappresentare un microservizio.
+			\item \textbf{policyId : int}\\
+			Identificativo del tipo di policy;
 		\end{itemize}
+		
+		\item \textbf{deactivateAPI(IdMS : int) : void}\\
+		Metodo per disattivare l'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+		\end{itemize}
+		
+		\item \textbf{activateAPI(IdMS : int) : void}\\
+		Metodo per attivare l'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+		\end{itemize}
+		
+		\item \textbf{deleteAPI(IdMS : int) : void}\\
+		Metodo per eliminare l'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+		\end{itemize}
+		
+		\item \textbf{showConfirm(ev : TargetEvent, IdMS : int, isActivate : boolean) : void}\\
+		Metodo per mostrare una finestra di conferma di elimninazione dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{ev : TargetEvent}\\
+			Identifica il target che ha fatto scatenare l'evento di apertura del popup;
+			
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+			
+			\item \textbf{boolean : isActivate}\\
+			Idetifica lo stato dell'API;
+			
+		\end{itemize}
+		
+		
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{AdminAPIDetails};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::SellingPolicyController}
+\paragraph{APIM::FrontEnd::App::Controllers::AdminAPIManagerController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/SellingPolicyController.png}
-	\caption{APIM::FrontEnd::App::Controllers::SellingPolicyController}
+	{images/APIM/FrontEnd/Controllers/AdminAPIManagerController.png}
+	\caption{APIM::FrontEnd::App::Controllers::AdminAPIManagerController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} SellingPolicyController permette di gestire le policy di vendita dei
-microservizi.
+	\item \textbf{Descrizione:} AdminAPIManagerController permette di visualizzare la lista di tutte le API presenti e di effettuare alcune operazioni come attivazione e disattivazione ed eliminazione.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$route : \$route }\\
+		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		
+		\item \textbf{\$mdDialog : \$mdDialog }\\
+		Campo dati contenente il riferimento all'oggetto globale \$mdDialog creato da AngularJS. Viene utilizzato per creare finestre di popup;
+		
+		\item \textbf{\$routeParams : \$routeParams }\\
+		Campo dati contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST;
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{AdminAPIManagerController(\$scope : \$scope, \$http : \$http, \$route : \$route, \$mdDialog : \$mdDialog, \$routeParams : \$routeParams)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$route : \$route}\\
+			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di oruting.
+			
+			\item \textbf{\$mdDialog : \$mdDialog}\\
+			Parametro che contiene il riferimento all'oggetto globale \$mdDialog di AngularJS. Viene utilizzato per creare finestre di popup.
 			
 			\item \textbf{\$routeParams : \$routeParams}\\
-			Parametro contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Tale servizio permette di recuperare il set di variabili presenti nell'URL;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP.
-				
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+			
 		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
 		
-			\item \textbf{SellingPolicyController(\$scope : \$scope, \$routeParams : \$routeParams) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$routeParams}\\
-				Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Permette di recuperare il set di variabili presenti nell'url.
-			\end{itemize}
-			
-			\item \textbf{selectPolicy(idMicroservice : string) : void}\\
-			Metodo per selezionare una policy di vendita.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{idMicroservice}\\
-				Parametro che contiene l'id di un microservizio.
-			\end{itemize}
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{getRemainingSuffix(policyId : int) : void}\\
+		Metodo per identificare la tipologia di policy dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Gestisce il funzionamento della view \textbf{SellingPolicy}.
+			\item \textbf{policyId : int}\\
+			Identificativo del tipo di policy;
 		\end{itemize}
+		
+		\item \textbf{deactivateAPI(IdMS : int) : void}\\
+		Metodo per disattivare l'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+		\end{itemize}
+		
+		\item \textbf{activateAPI(IdMS : int) : void}\\
+		Metodo per attivare l'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+		\end{itemize}
+		
+		\item \textbf{deleteAPI(IdMS : int) : void}\\
+		Metodo per eliminare l'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+		\end{itemize}
+		
+		\item \textbf{showConfirm(ev : TargetEvent, IdMS : int, isActivate : boolean) : void}\\
+		Metodo per mostrare una finestra di conferma di elimninazione dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{ev : TargetEvent}\\
+			Identifica il target che ha fatto scatenare l'evento di apertura del popup;
+			
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+			
+			\item \textbf{boolean : isActivate}\\
+			Idetifica lo stato dell'API;
+			
+		\end{itemize}
+		
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{AdminAPIDetails};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::UserRegistrationController}
+\paragraph{APIM::FrontEnd::App::Controllers::AdminLoginController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/UserRegistrationController.png}
-	\caption{APIM::FrontEnd::App::Controllers::SignUpController}
+	{images/APIM/FrontEnd/Controllers/AdminLoginController.png}
+	\caption{APIM::FrontEnd::App::Controllers::AdminLoginController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} UserRegistrationController permette di gestire la registrazione di un
-utente al sistema, fornendone le funzionalità preposte.
+	\item \textbf{Descrizione:} AdminLoginController permette di effettuare il login all'area di amministrazione.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{AdminLoginController(\$scope : \$scope, \$http : \$http, \$location : \$location)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
 			
 			\item \textbf{\$location : \$location}\\
-			Campo dati contenente un riferimento al servizio creato da AngularJS che permette di accedere alla barra degli indirizzi del browser, i cambiamenti all'URL nella barra degli indirizzi si riflettono in questo oggetto e viceversa;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{user : UserDetailsModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un utente.
-				
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per le funzioni di oruting.
+			
 		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
 		
-			\item \textbf{UserRegistrationController(\$scope : \$scope, \$location : \$location, newUser : UserDetailsModel) : void}\\
-			Metodo costruttore della classe;
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$location}\\
-				Parametro che contiene un riferimento al servizio di AngularJS che permette di accedere alla barra degli indirizzi del browser, così da controllarne i cambiamenti;
-				
-				\item \textbf{newUser}\\
-				Parametro che rappresenta un nuovo utente.
-			\end{itemize}
-			
-			\item \textbf{signUp(user : Object) : void}\\
-			Metodo per registrare un nuovo cliente in API Market. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{login() : void}\\
-			Metodo per effettuare il login. Per controllare la validità dei dati immessi, si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{login() : void}\\
+		Metodo per effettuare il login. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{RegisterUser};
-			\item Il model \textbf{UsersDetailModel} che contiene le informazioni per rappresentare un utente.
+			\item \textbf{void}\\
 		\end{itemize}
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{AdminLogin};
+	\end{itemize}
+\end{itemize}
+
+
+\paragraph{APIM::FrontEnd::App::Controllers::AdminUserManagerController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/AdminUserManagerController.png}
+	\caption{APIM::FrontEnd::App::Controllers::AdminUserManagerController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} AdminUserManagerController permette di gestire un utente e di eliminarlo.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$route : \$route }\\
+		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		
+		\item \textbf{\$mdDialog : \$mdDialog }\\
+		Campo dati contenente il riferimento all'oggetto globale \$mdDialog creato da AngularJS. Viene utilizzato per creare finestre di popup;
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{AdminUserManagerController(\$scope : \$scope, \$http : \$http, \$route : \$route, \$mdDialog : \$mdDialog)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$route : \$route}\\
+			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di oruting.
+			
+			\item \textbf{\$mdDialog : \$mdDialog}\\
+			Parametro che contiene il riferimento all'oggetto globale \$mdDialog di AngularJS. Viene utilizzato per creare finestre di popup.
+			
+		\end{itemize}
+		
+		
+		\item \textbf{showConfirm(ev : TargetEvent, IdClient : int, isActivate : boolean) : void}\\
+		Metodo per mostrare una finestra di conferma di elimninazione dell'utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{TargetEvent : ev}\\
+			Identifica il target che ha fatto scatenare l'evento di apertura del popup;
+			
+			\item \textbf{IdClient : int}\\
+			Identificativo dell'utente;
+			
+			\item \textbf{numActive : int}\\
+			Numero di API attive per quel utente;
+			
+		\end{itemize}
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{AdminUserManager};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::APIConfirmPurchaseController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/APIConfirmPurchaseController.png}
+	\caption{APIM::FrontEnd::App::Controllers::APIConfirmPurchaseController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} APIConfirmPurchaseController permette effettuare l'acquisto di una licenza per una API da parte di un cliente.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		
+		\item \textbf{\$routeParams : \$routeParams}\\
+		Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{APIConfirmPurchaseController(\$scope : \$scope, \$http : \$http, \$route : \$route, \$location : \$location, \$routeParams : \$routeParams)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$routeParams : \$routeParams}\\
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+			
+		\end{itemize}			
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{APIConfirmPurchase};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::APIController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/APIController.png}
+	\caption{APIM::FrontEnd::App::Controllers::APIController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} APIController permette di ricavare tutte le informazioni riguardanti un API e di effettuare l'acquisto di una licenza.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		
+		\item \textbf{\$routeParams : \$routeParams}\\
+		Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{APIController(\$scope : \$scope, \$http : \$http, \$location : \$location, \$routeParams : \$routeParams)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$routeParams : \$routeParams}\\
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+			
+			\item \textbf{\$location : \$location}\\
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per le funzioni di routing.
+			
+		\end{itemize}		
+		
+		\item \textbf{isDeveloper() : boolean}\\
+		Metodo per verificare se l'utente che sta accedendo ai dati è il developer che la ha registrata;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		\item \textbf{changeIsActive() : void}\\
+		Metodo per attivare lo stato attivo/non attivo dell'API;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		\item \textbf{downloadClientInterface() : interface}\\
+		Metodo per scaricare il file contenente l'interfaccia dell'API;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		\item \textbf{copyToClipboard(elem : string) : void}\\
+		Metodo per copiare le informazioni dell'API;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		\item \textbf{totalCost() : int}\\
+		Metodo per calcolare il costo totale della licenza;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		\item \textbf{enoughCredits() : boolean}\\
+		Metodo per verificare se l'utente che vuole acquistare la licenza ha abbastanza crediti;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		\item \textbf{buyAPI() : void}\\
+		Metodo per verificare effettuare la procedura di acquisto dell'API;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{API};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::APIListController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/APIListController.png}
+	\caption{APIM::FrontEnd::App::Controllers::APIListController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} APIListController permette di ricavare la lista di tutte le API, di ordinare e di filtrare i risultati.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$routeParams : \$routeParams}\\
+		Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{APIListController(\$scope : \$scope, \$http : \$http, \$routeParams : \$routeParams)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$routeParams : \$routeParams}\\
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+			
+		\end{itemize}		
+		
+		\item \textbf{filterAll() : void}\\
+		Metodo per visualizzare tutt le categorie;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		\item \textbf{filterCategory(ev : Event) : void}\\
+		Metodo per filtrare solo le categorie selezionate;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+		\item \textbf{orderByName() : void}\\
+		Metodo per ordinare le API in modo alfabetico;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}		
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{APIList};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::APIPurchasedController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/APIPurchasedController.png}
+	\caption{APIM::FrontEnd::App::Controllers::APIPurchasedController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} APIPurchasedController permette di vedere lo stato di un API di cui si possiede una licenza.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;				
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{APIPurchasedController(\$scope : \$scope, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}		
+		
+		\item \textbf{getRemainingSuffix(policyId : int) : void}\\
+		Metodo per ricavare la tipologia di policy acquistata;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{policyId : int}\\
+			Idetifica la tipologia di policy.
+		\end{itemize}		
+		
+		\item \textbf{getNewAPIKey(oldAPIKey : String, IdMS : int) : String}\\
+		Metodo per generare una nuova API key;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{oldAPIKey : String}\\
+			Vecchia API key;
+		\end{itemize}		
+		\begin{itemize}
+			\item \textbf{IdMS : int}\\
+			Identificativo dell'API;
+		\end{itemize}		
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{APIAcquistate};
+	\end{itemize}
 \end{itemize}
 
 \paragraph{APIM::FrontEnd::App::Controllers::APIRegisteredController}
@@ -1517,459 +1963,239 @@ utente al sistema, fornendone le funzionalità preposte.
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} APIRegisteredController permette di gestire le informazioni di una
-API precedentemente inserita.
+	\item \textbf{Descrizione:} APIRegisteredController permette di ricavare lo stato di un API di cui si ha effettuato la registrazione.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$rootScope : \$rootScope}\\
+		Campo dati contenente un riferimento all'oggetto \$rootScope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;				
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{APIRegisteredController(\$scope : \$scope, \$rootScope : \$rootScope, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
 			
 			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views l'oggetto MicroserviceModel;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{microservice : MicroserviceModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un microservizio.
-				
-		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
+			Parametro che contiene un riferimento all'oggetto \$rootScope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}		
 		
-			\item \textbf{APIRegisteredController(\$scope : \$scope, \$rootScope : \$rootScope, microservice : MicroserviceModel) : void}\\
-			Metodo costruttore della classe;
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$rootScope}\\
-				Parametro che contiene il riferimento all'oggetto globale \$rootScope di AngularJS. Viene utilizzato per rendere accessibile a view e controller l'oggetto MicroserviceModel;
-				
-				\item \textbf{microservice}\\
-				Parametro che rappresenta un microservizio.
-			\end{itemize}
-			
-			\item \textbf{getMicroservicesDetails(email : string) : Array<MicroserviceModel>}\\
-			Metodo per visualizzare le informazioni di un proprio microservizio registrato. Si serve di un'operazione di un servizio esposto dal package \textbf{Services};
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email.
-			\end{itemize}
-			
-			\item \textbf{setMicroservice(newInfo : MicroserviceModel) : void}\\
-			Metodo per modificare le informazioni di un proprio microservizio registrato. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{newInfo}\\
-				Parametro che rappresenta un microservizio aggiornato.
-			\end{itemize}
-
-		\end{itemize}
+	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
-		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{APIRegistered};
-			\item Il model \textbf{MicroserviceModel} che contiene le informazioni per rappresentare un microservizio.
-		\end{itemize}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{APIRegistrate};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::SearchController}
+\paragraph{APIM::FrontEnd::App::Controllers::CategoryController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/SearchController.png}
-	\caption{APIM::FrontEnd::App::Controllers::SearchController}
+	{images/APIM/FrontEnd/Controllers/CategoryController.png}
+	\caption{APIM::FrontEnd::App::Controllers::CategoryController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} SearchController permette di gestire la ricerca di microservizi all'interno
-di API Market, fornendo all'utente le funzionalità di ricerca tramite
-categorie e keywords per sviluppatori e microservizi.
+	\item \textbf{Descrizione:} CategoryController permette di ricavare le API di una singola categoria.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$routeParams : \$routeParams }\\
+		Campo dati contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST;				
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{CategoryController(\$scope : \$scope, \$http : \$http, \$routeParams : \$routeParams)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
 			\item \textbf{\$routeParams : \$routeParams}\\
-			Parametro contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Tale servizio permette di recuperare il set di variabili presenti nell'URL.			
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
 			
-			\item \textbf{\$location : \$location}\\
-			Campo dati contenente un riferimento al servizio creato da AngularJS che permette di accedere alla barra degli indirizzi del browser, i cambiamenti all'URL nella barra degli indirizzi si riflettono in questo oggetto e viceversa;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views l'oggetto MicroserviceModel;
-			
-			\item \textbf{\$timeout : \$timeout }\\
-			Campo dati contenente il riferimento all'oggetto globale \$timeout creato da AngularJS. Il valore di ritorno di una chiamata alla funzione di \$timeout è una promise, la quale sarà risolta quando avverrà il ritardo e la funzione di timeout eseguita;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{microservice : MicroserviceModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un microservizio.
-				
-		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
+		\end{itemize}		
 		
-			\item \textbf{SearchController(\$scope : \$scope, \$location : \$location, \$routeParams : \$routeParams, microservice : MicroserviceModel) : void}\\
-			Metodo costruttore della classe;
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$location}\\
-				Parametro che contiene un riferimento al servizio di AngularJS che permette di accedere alla barra degli indirizzi del browser, così da controllarne i cambiamenti;
-				
-				\item \textbf{\$routeParams}\\
-				Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Permette di recuperare il set di variabili presenti nell'url;
-				
-				\item \textbf{microservice}\\
-				Parametro che rappresenta un microservizio.
-			\end{itemize}
-			
-			\item \textbf{searchMicroservice(stringSearch : string) : MicroserviceModel}\\
-			Metodo per la ricerca della lista di API che corrispondono alle keywords immesse. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{stringSearch}\\
-				Parametro che rappresenta una stringa di keywords di ricerca.
-			\end{itemize}
-			
-			\item \textbf{viewUser(idUser : int) : void}\\
-			Metodo per visualizzare la pagina dell'utente di una specifica API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{idUser}\\
-				Parametro che rappresenta l'id di un utente da visualizzare.
-			\end{itemize}
-			
-			\item \textbf{viewMicroserviceInfo(idMicroservice : string) : void}\\
-			Metodo per visualizzare la pagina dell'API di una specifica API della lista dei risultati della ricerca. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{idMicroservice}\\
-				Parametro che rappresenta l'id di un microservizio da visualizzare.
-			\end{itemize}
-			
-			\item \textbf{buyMicroservice(idMicroservice : string) : void}\\
-			Metodo per iniziare l'acquisto di una specifica API. Si serve della procedura di acquisto di PayPal.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{idMicroservice}\\
-				Parametro che rappresenta l'id di un microservizio da acquistare.
-			\end{itemize}
-			
-		\end{itemize}
+	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
-		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{API};
-			\item Il model \textbf{MicroserviceModel} che contiene le informazioni per rappresentare un microservizio.
-		\end{itemize}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{Categoria};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::TransactionsListController}
+\paragraph{APIM::FrontEnd::App::Controllers::ConfirmAPIRegistrationController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/TransactionsListController.png}
-	\caption{APIM::FrontEnd::App::Controllers::TransactionsListController}
+	{images/APIM/FrontEnd/Controllers/ConfirmAPIRegistrationController.png}
+	\caption{APIM::FrontEnd::App::Controllers::ConfirmAPIRegistrationController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} TransactionsListController permette di gestire lo storico delle transazioni
-di un utente di API Market.
+	\item \textbf{Descrizione:} ConfirmAPIRegistrationController permette di effettura la conferma di registrazione di un API da parte di uno sviluppatore.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$routeParams : \$routeParams }\\
+		Campo dati contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST;				
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{ConfirmAPIRegistrationController(\$scope : \$scope, \$http : \$http, \$routeParams : \$routeParams)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
 			\item \textbf{\$routeParams : \$routeParams}\\
-			Parametro contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Tale servizio permette di recuperare il set di variabili presenti nell'URL.			
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
 			
-			\item \textbf{\$location : \$location}\\
-			Campo dati contenente un riferimento al servizio creato da AngularJS che permette di accedere alla barra degli indirizzi del browser, i cambiamenti all'URL nella barra degli indirizzi si riflettono in questo oggetto e viceversa;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views l'oggetto TransactionModel;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{transaction : TransactionModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di una transazione.
-				
-		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
+		\end{itemize}		
 		
-			\item \textbf{TransactionsListController(\$scope : \$scope, \$location : \$location, \$routeParams : \$routeParams, user : UserDetailsModel) : void}\\
-			Metodo costruttore della classe;
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				\item \textbf{\$location}\\
-				Parametro che contiene un riferimento al servizio di AngularJS che permette di accedere alla barra degli indirizzi del browser, così da controllarne i cambiamenti;
-			
-				\item \textbf{\$routeParams}\\
-				Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Permette di recuperare il set di variabili presenti nell'url;
-				
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{getTransactions(email : string) : Array<TransactionModel>}\\
-			Metodo per visualizzare la lista delle transazioni di un utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che contiene un indirizzo email.
-			\end{itemize}
-			
-		\end{itemize}
+	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
-		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{TransactionsList};
-			\item Il model \textbf{UserDetailsModel} che contiene le informazioni per rappresentare un utente.
-			\item Il model \textbf{TransactionModel} che contiene le informazioni per rappresentare una transazione.
-		\end{itemize}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{ConfermaRegistrazione};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::AdminManagerController}
+\paragraph{APIM::FrontEnd::App::Controllers::ConfirmUpgradeToDeveloperController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/AdminManagerController.png}
-	\caption{APIM::FrontEnd::App::Controllers::AdminManagerController}
+	{images/APIM/FrontEnd/Controllers/ConfirmLoginController.png}
+	\caption{APIM::FrontEnd::App::Controllers::ConfirmLoginController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} AdminManagerController permette di gestire il profilo di un amministratore della piattaforma API Market, fornendo le funzionalità per poter modificare i propri dati e moderare utenti ed API.
+	\item \textbf{Descrizione:} ConfirmLoginController permette confermare l'upgrade da cliente a sviluppatore.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views l'oggetto UserDetailsModel;
-			
-			\item \textbf{\$timeout : \$timeout }\\
-			Campo dati contenente il riferimento all'oggetto globale \$timeout creato da AngularJS. Il valore di ritorno di una chiamata alla funzione di \$timeout è una promise, la quale sarà risolta quando avverrà il ritardo e la funzione di timeout eseguita;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{admin : UserDetailsModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un utente.
-				
-		\end{itemize}
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
 	\item \textbf{Metodi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{AdminManagerController(\$scope : \$scope, \$rootScope : \$rootScope, admin : UserDetailsModel) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$rootScope}\\
-				Parametro che contiene il riferimento all'oggetto globale \$rootScope di AngularJS. Viene utilizzato per rendere accessibile a view e controller l'oggetto UserDetailsModel;
-				
-				\item \textbf{admin}\\
-				Parametro che rappresenta un admin.
-			\end{itemize}
-			
-			\item \textbf{confirm(admin : Object, imageObject : Object) : void}\\
-			Metodo per confermare le modifiche desiderate al profilo admin. Si serve di un'operazione di un servizio esposto dal package \textbf{Services};
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{admin}\\
-				Parametro che rappresenta un admin;
-				
-				\item \textbf{imageObject}\\
-				Parametro che rappresenta un file immagine.
-			\end{itemize}
-			
-			\item \textbf{getAdminDetails(email : string) : UserDetailsModel}\\
-			Metodo per visualizzare le informazioni personali del profilo admin. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email;
-			\end{itemize}
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{ConfirmLoginControllerl(\$scope : \$scope, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{AdminManager};
-			\item Il model \textbf{UsersDetailModel} che contiene le informazioni per rappresentare un utente.
-		\end{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}		
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{xonfermaDiventaSviluppatore};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::AdminModerationController}
+\paragraph{APIM::FrontEnd::App::Controllers::ConfirmUserRegistrationController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/AdminModerationController.png}
-	\caption{APIM::FrontEnd::App::Controllers::AdminModerationController}
+	{images/APIM/FrontEnd/Controllers/ConfirmUserRegistrationController.png}
+	\caption{APIM::FrontEnd::App::Controllers::ConfirmUserRegistrationController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} AdminModerationController permette di gestire la moderazione di
-un utente (cliente o sviluppatore che sia) e di API, fornendo le funzionalità per la
-sospensione e rimozione.
+	\item \textbf{Descrizione:} ConfirmUserRegistrationController permette di confermare la registrazione di un utente.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views gli oggetti UserDetailsModel e MicroserviceModel;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{admin : UserDetailsModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un utente.
-			
-			\item \textbf{microservice : MicroserviceModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un microservizio.
-				
-		\end{itemize}
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+	\end{itemize}
 	\item \textbf{Metodi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{AdminManagerController(\$scope : \$scope, \$rootScope : \$rootScope, admin : UserDetailsModel) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$rootScope}\\
-				Parametro che contiene il riferimento all'oggetto globale \$rootScope di AngularJS. Viene utilizzato per rendere accessibile a view e controller l'oggetto UserDetailsModel;
-				
-				\item \textbf{admin}\\
-				Parametro che rappresenta un admin.
-			\end{itemize}
-			
-			\item \textbf{selectUser(email : string) : UserDetailsModel}\\
-			Metodo per selezionare un utente da moderare.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email.
-			\end{itemize}
-			
-			\item \textbf{selectMicroservice(idMicroservice : string) : MicroserviceModel}\\
-			Metodo per selezionare una API da moderare.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{idMicroservice}\\
-				Parametro che rappresenta l'id di un microservizio.
-			\end{itemize}
-			
-			\item \textbf{suspendUser(email : string) : void}\\
-			Metodo per sospendere l'utente selezionato. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email.
-			\end{itemize}
-			
-			\item \textbf{suspendMicroservice(idMicroservice : int) : void}\\
-			Metodo per sospendere l'API selezionata. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{idMicroservice}\\
-				Parametro che rappresenta l'id di un microservizio.
-			\end{itemize}
-			
-			\item \textbf{removeUser(email : string) : void}\\
-			Metodo per cancellare l'utente selezionato. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email.
-			\end{itemize}
-			
-			\item \textbf{removeMicroservice(idMicroservice : string) : void}\\
-			Metodo per disabilitare il microservizio selezionato. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{idMicroservice}\\
-				Parametro che rappresenta l'id di un microservizio.
-			\end{itemize}
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{ConfirmUserRegistrationController(\$scope : \$scope)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{AdminModeration};
-			\item Il model \textbf{UsersDetailModel} che contiene le informazioni per rappresentare un utente;
-			\item Il model \textbf{MicroserviceModel} che contiene le informazioni per rappresentare un microservizio.
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+		\end{itemize}		
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{xonfermaDiventaSviluppatore};
 	\end{itemize}
 \end{itemize}
 
@@ -1984,171 +2210,108 @@ sospensione e rimozione.
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} LoginController permette di gestire il login di un utente alla piattaforma
-API Market, fornendo le funzionalità di autenticazione al sistema, compresa la gestione di situazioni di errore di autenticazione.
+	\item \textbf{Descrizione:} LoginController permette di effettuare il login di clienti e sviluppatori.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{LoginController(\$scope : \$scope, \$location : \$location, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views l'oggetto UserDetailsModel;
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
 			
 			\item \textbf{\$location : \$location}\\
-			Campo dati contenente un riferimento al servizio creato da AngularJS che permette di accedere alla barra degli indirizzi del browser, i cambiamenti all'URL nella barra degli indirizzi si riflettono in questo oggetto e viceversa;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{newUser : UserDetailsModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un utente.
-				
-		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+		\end{itemize}	
 		
-			\item \textbf{LoginController(\$scope : \$scope, \$rootScope : \$rootScope, \$location : \$location, user : UserDetailsModel) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$rootScope}\\
-				Parametro che contiene il riferimento all'oggetto globale \$rootScope di AngularJS. Viene utilizzato per rendere accessibile a view e controller l'oggetto UserDetailsModel;
-				
-				\item \textbf{\$location}\\
-				Parametro che contiene un riferimento al servizio di AngularJS che permette di accedere alla barra degli indirizzi del browser, così da controllarne i cambiamenti;
-				
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{logIn(email : string, password : string) : void}\\
-			Metodo per effettuare il login. Per verificare la validità dei dati immessi, si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email;
-				
-				\item \textbf{password}\\
-				Parametro che rappresenta una password.
-			\end{itemize}
-			
-			\item \textbf{registration() : void}\\
-			Metodo per registrare un nuovo account utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			
-			\item \textbf{recoveryPassword() : void}\\
-			Metodo per recuperare la password di un utente. Per verificare l'esistenza dell'utente sbadato e per aggiornarne la password, si serve delle operazioni dei servizi esposti dal package \textbf{Services}.
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{login() : void}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{Login};
-			\item Il model \textbf{UsersDetailModel} che contiene le informazioni per rappresentare un utente.
-		\end{itemize}
+			\item \textbf{void}\\
+		\end{itemize}				
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{Login};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::VirtualAccountController}
+\paragraph{APIM::FrontEnd::App::Controllers::LogoutController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/VirtualAccountController.png}
-	\caption{APIM::Front-End::App::Controllers::VirtualAccountController}
+	{images/APIM/FrontEnd/Controllers/LogoutController.png}
+	\caption{APIM::FrontEnd::App::Controllers::LogoutController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} VirtualAccountController permette di gestire il conto virtuale associato
-al profilo di un utente, fornendo le funzionalità per la ricarica del saldo tramite PayPal.
+	\item \textbf{Descrizione:} LogoutController permette di effettuare il logout di clienti e sviluppatori.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing;
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{LogoutController(\$scope : \$scope, \$location : \$location)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views gli oggetti UserDetailsModel e TransactionModel;
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
 			
 			\item \textbf{\$location : \$location}\\
-			Campo dati contenente un riferimento al servizio creato da AngularJS che permette di accedere alla barra degli indirizzi del browser, i cambiamenti all'URL nella barra degli indirizzi si riflettono in questo oggetto e viceversa;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{user : UserDetailsModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un utente.
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
 			
-			\item \textbf{transaction : TransactionModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di una transazione.
-				
-		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
+		\end{itemize}	
 		
-			\item \textbf{VirtualAccountController(\$scope : \$scope, \$rootScope : \$rootScope, user : UserDetailsModel) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$rootScope}\\
-				Parametro che contiene il riferimento all'oggetto globale \$rootScope di AngularJS. Viene utilizzato per rendere accessibile a view e controller l'oggetto UserDetailsModel;
-				
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{confirm(user : Object) : void}\\
-			Metodo per confermare la ricarica dei crediti del conto virtuale dell'utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{getBalance(email : string) : int}\\
-			Metodo per visualizzare il saldo attuale dei crediti dell'utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email.
-			\end{itemize}
-			
-			\item \textbf{rechargeCredits(email : string, credits : int) : void}\\
-			Metodo per ricaricare i crediti del conto virtuale dell'utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email;
-				
-				\item \textbf{credits}\\
-				Parametro che rappresenta il numbero di crediti da acquistare;
-			\end{itemize}
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{login() : void}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{VirtualAccount};
-			\item Il model \textbf{UsersDetailModel} che contiene le informazioni per rappresentare un utente.
-		\end{itemize}
+			\item \textbf{void}\\
+		\end{itemize}				
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{Logout};
+	\end{itemize}
 \end{itemize}
 
 \paragraph{APIM::FrontEnd::App::Controllers::PasswordRecoveryController}
@@ -2162,204 +2325,850 @@ al profilo di un utente, fornendo le funzionalità per la ricarica del saldo tra
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} PasswordRecoveryController permette di gestire il ripristino della password
-dimenticata da un utente, fornendo tutte le funzionalità per il recupero della password dopo aver verificato l'identità dell'utente.
+	\item \textbf{Descrizione:} PasswordRecoveryController permette di effettuare il recupero password di clienti e sviluppatori.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views l'oggetto UserDetailsModel;
-			
-			\item \textbf{\$location : \$location}\\
-			Campo dati contenente un riferimento al servizio creato da AngularJS che permette di accedere alla barra degli indirizzi del browser, i cambiamenti all'URL nella barra degli indirizzi si riflettono in questo oggetto e viceversa;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{user : UserDetailsModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un utente.
-
-		\end{itemize}
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
 	\item \textbf{Metodi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{PasswordRecoveryController(\$scope : \$scope, \$location : \$location) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$location}\\
-				Parametro che contiene un riferimento al servizio di AngularJS che permette di accedere alla barra degli indirizzi del browser, così da controllarne i cambiamenti.
-				
-			\end{itemize}
-			
-			\item \textbf{passwordForgot() : void}\\
-			Metodo per recuperare la password dell'utente. Per aggiornare la nuova password, si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{PasswordRecoveryController(\$scope : \$scope, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{PasswordRecovery}.
-		\end{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}	
+		
+		\item \textbf{recoverPassword() : void}\\
+		Metodo che, attravreso la chiamata all'opportuno microservizio, avvia la procedura di una nuova generazione della password;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}				
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{RecuperoPassword};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::ResetPasswordController}
+\paragraph{APIM::FrontEnd::App::Controllers::PasswordRecoveryController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/ResetPasswordController.png}
-	\caption{APIM::FrontEnd::App::Controllers::ResetPasswordController}
+	{images/APIM/FrontEnd/Controllers/PasswordRecoveryController.png}
+	\caption{APIM::FrontEnd::App::Controllers::PasswordRecoveryController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} ResetPasswordController permette di gestire il cambio password di un
-utente autenticato al sistema, fornendo le funzionalità per il salvataggio di una nuova password.
+	\item \textbf{Descrizione:} PasswordRecoveryController permette di effettuare il recupero password di clienti e sviluppatori.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views l'oggetto UserDetailsModel;
-			
-			\item \textbf{\$location : \$location}\\
-			Campo dati contenente un riferimento al servizio creato da AngularJS che permette di accedere alla barra degli indirizzi del browser, i cambiamenti all'URL nella barra degli indirizzi si riflettono in questo oggetto e viceversa;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{user : UserDetailsModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un utente.
-				
-		\end{itemize}
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
 	\item \textbf{Metodi:}
-		\begin{itemize}
+	\begin{itemize}
 		
-			\item \textbf{ResetPasswordController(\$scope : \$scope, \$location : \$location, user : UserDetailsModel) : void) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$location}\\
-				Parametro che contiene un riferimento al servizio di AngularJS che permette di accedere alla barra degli indirizzi del browser, così da controllarne i cambiamenti;
-				
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{setNewPassword(user : UserDetailsModel) : void}\\
-			Metodo per scegliere ed impostare una nuova password. Per aggiornare la nuova password, si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{ confirmNewPassword() : void}\\
-			Metodo per confermare la nuova password. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{PasswordRecoveryController(\$scope : \$scope, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{ResetPassword};
-			\item Il model \textbf{UsersDetailModel} che contiene le informazioni per rappresentare un utente.
-		\end{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}	
+		
+		\item \textbf{recoverPassword() : void}\\
+		Metodo che, attravreso la chiamata all'opportuno microservizio, avvia la procedura di una nuova generazione della password;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}				
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{RecuperoPassword};
+	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::APIPurchasedController}
+\paragraph{APIM::FrontEnd::App::Controllers::PolicyCallController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/APIPurchasedController.png}
-	\caption{APIM::FrontEnd::App::Controllers::APIPurchasedController}
+	{images/APIM/FrontEnd/Controllers/PolicyCallController.png}
+	\caption{APIM::FrontEnd::App::Controllers::PolicyCallController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} APIPurchasedController permette di visualizzare la lista delle API comprate dall'utente ed accederne alla pagina delle informazioni dettagliate di ciascuna.
+	\item \textbf{Descrizione:} PolicyCallController permette di ricavare le informazioni riguardanti la tipologia di policy a chiamata.
 	\item \textbf{Attributi:}
-		\begin{itemize}
+	\begin{itemize}
 		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{PolicyCallController(\$scope : \$scope, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
 			\item \textbf{\$scope : \$scope}\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}				
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{PolicyChiamata};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::PolicyTimeController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/PolicyTimeController.png}
+	\caption{APIM::FrontEnd::App::Controllers::PolicyTimeController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} PolicyTimeController permette di ricavare le informazioni riguardanti la tipologia di policy a tempo.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{PolicyTimeController(\$scope : \$scope, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}				
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{PolicyTempo};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::PolicyTrafficController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/PolicyTrafficController.png}
+	\caption{APIM::FrontEnd::App::Controllers::PolicyTrafficController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} PolicyTrafficController permette di ricavare le informazioni riguardanti la tipologia di policy a tempo.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{PolicyTrafficController(\$scope : \$scope, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}				
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{PolicyTraffico};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::ProfileManagerController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/ProfileManagerController.png}
+	\caption{APIM::FrontEnd::App::Controllers::ProfileManagerController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} ProfileManagerController permette di gestire il profilo personale di un
+	utente, fornendo le funzionalità all'utente per poter modificare i propri dati.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$window : \$window}\\
+		Campo dati contenente il riferimento all'oggetto globale \$window creato da AngularJS. Viene utilizzato per riferisi all'oggetto window del browser;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{ProfileManagerController(\$scope : \$scope, \$location : \$location, \$http : \$http, \$window : \$window,}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$location : \$location}\\
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$window : \$window}\\
+			Parametro che contiene il riferimento all'oggetto globale \$window di AngularJS. Viene utilizzato per interagire con l'oggeto window del browser.
+		\end{itemize}
+		
+		\item \textbf{updateProfile() : void}\\
+		Metodo per aggiornare i dati del profilo utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+		\item \textbf{updateAvatar(element : image) : void}\\
+		Metodo per modificare l'avatar del profilo utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{email}\\
+			Parametro che rappresenta un indirizzo email.
+		\end{itemize}
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{ProfileManager};
+		\item Il model \textbf{UsersDetailModel} che contiene le informazioni per rappresentare un utente.
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::RechargedCreditsController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/RechargeCreditsController.png}
+	\caption{APIM::FrontEnd::App::Controllers::RechargeCreditsController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} RechargeCreditsController permette di effettuare la ricarica di crediti nel profilo di clienti e sviluppatori.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{RechargeCreditsController(\$scope : \$scope, \$location : \$location, \$http : \$http)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$location : \$location}\\
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+		\end{itemize}				
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{RicaricaCrediti};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::RegisterAPIController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/RegisterAPIController.png}
+	\caption{APIM::FrontEnd::App::Controllers::RegisterAPIController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} RegisterAPIController permette di effettuare tutte le operazioni per la registrazione di un API.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$window : \$window}\\
+		Campo dati contenente il riferimento all'oggetto globale \$window creato da AngularJS. Viene utilizzato per riferisi all'oggetto window del browser;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{RegisterAPIController(\$scope : \$scope, \$location : \$location, \$http : \$http, \$window : \$window,}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$location : \$location}\\
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$window : \$window}\\
+			Parametro che contiene il riferimento all'oggetto globale \$window di AngularJS. Viene utilizzato per interagire con l'oggeto window del browser.
+		\end{itemize}
+		
+		\item \textbf{addNewSubService() : boolean}\\
+		Metodo per aggiungere il riferimento ad un subservizio. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+		\item \textbf{removeSubService() : boolean}\\
+		Metodo per eliminare il riferimento ad un subservizio. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+		\item \textbf{saveInterface(element : Interface) : void}\\
+		Metodo per aggiungere il file di interfaccia del subservizio. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{element : Interface}\\
+			File di interfaccia del servizio.
+		\end{itemize}
+		
+		\item \textbf{uploadPDF(element : PDF) : void}\\
+		Metodo per aggiungere il file di documentazione. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{element : PDF}\\
+			File di documnetazione del servizio.
+		\end{itemize}
+		
+		\item \textbf{uploadPDF(element : Image) : void}\\
+		Metodo per aggiungere il logo. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{element : Image}\\
+			File imagine del logo del servizio.
+		\end{itemize}
+		
+		\item \textbf{uploadPDF() : void}\\
+		Metodo per effettuare la registrazione dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{RegistraAPI};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::RegisterUserController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/RegisterUserController.png}
+	\caption{APIM::FrontEnd::App::Controllers::RegisterUserController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} RegisterUserController permette di effettuare la registrazione di un utente.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$window : \$window}\\
+		Campo dati contenente il riferimento all'oggetto globale \$window creato da AngularJS. Viene utilizzato per riferisi all'oggetto window del browser;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{RegisterUserController(\$scope : \$scope, \$location : \$location, \$http : \$http, \$window : \$window,}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$location : \$location}\\
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$window : \$window}\\
+			Parametro che contiene il riferimento all'oggetto globale \$window di AngularJS. Viene utilizzato per interagire con l'oggeto window del browser.
+		\end{itemize}
+		
+		\item \textbf{submitForm() : void}\\
+		Invia il form con i dati per la registrazione. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+		\item \textbf{updateAvatar(element : image) : void}\\
+		Metodo per modificare l'avatar del profilo utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{email}\\
+			Parametro che rappresenta un indirizzo email.
+		\end{itemize}
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{RegistrazioneUtente};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::ShowUserDetailController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/ShowUserDetailsController.png}
+	\caption{APIM::FrontEnd::App::Controllers::ShowUserDetailsController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} ShowUserDetailsController permette di ricavare le informazioni di un utente.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$routeParams : \$routeParams }\\
+		Campo dati contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST;	
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{ShowUserDetailsController(\$scope : \$scope, \$http : \$http, \$routeParams : \$routeParams,}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
 			
 			\item \textbf{\$routeParams : \$routeParams}\\
-			Parametro contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Tale servizio permette di recuperare il set di variabili presenti nell'URL.
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
 			
-			\item \textbf{\$rootScope : \$rootScope}\\
-			Campo dati contenente il riferimento all'oggetto globale \$rootScope creato da AngularJS. Viene utilizzato per rendere accessibile a tutti i controllers e a tutte le views gli oggetti MicroserviceModel e TransactionModel;
+		\end{itemize}
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{VisualizzaUtente};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::TransactionListController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/TransactionsListController.png}
+	\caption{APIM::FrontEnd::App::Controllers::TransactionsListController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} TransactionsListController permette di ricavare la lista delle transazioni di una API.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{TransactionsListController(\$scope : \$scope, \$http : \$http, \$routeParams : \$routeParams,}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+		\end{itemize}
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{RegistroTransazioni};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::UpdateInfoAPIController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/UpdateInfoAPIController.png}
+	\caption{APIM::FrontEnd::App::Controllers::UpdateInfoAPIController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} UpdateInfoAPIController permette di effettuare tutte le operazioni per l'aggiornamento delle informazioni di una API.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$routeParams : \$routeParams }\\
+		Campo dati contenente il riferimento all'oggetto globale \$routeParams creato da AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST;	
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{UpdateInfoAPIController(\$scope : \$scope, \$location : \$location, \$http : \$http, \$window : \$window,}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			
+			\item \textbf{\$routeParams : \$routeParams}\\
+			Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
+		\end{itemize}
+		
+		\item \textbf{addNewCategory(event : Category) : void}\\
+		Metodo per aggiungere l'API alla categoria selezionata. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{event : Category}\\
+			Categoria a cui aggiungere l'API.
+		\end{itemize}
+		
+		\item \textbf{updateCategories() : void}\\
+		Metodo per aggiornare le categorie associate all'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+		\item \textbf{uploadPDF(element : PDF) : void}\\
+		Metodo per aggiungere il file di documentazione. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{element : PDF}\\
+			File di documnetazione del servizio.
+		\end{itemize}
+		
+		\item \textbf{uploadPDF(element : Image) : void}\\
+		Metodo per aggiungere il logo. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{element : Image}\\
+			File imagine del logo del servizio.
+		\end{itemize}
+		
+		\item \textbf{uploadPDF() : void}\\
+		Metodo per effettuare la registrazione dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+		\item \textbf{changeIsActive() : void}\\
+		Metodo per effettuare la commutazione dello stato (attivo/non attivo) dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{RegistraAPI};
+	\end{itemize}
+\end{itemize}
+
+\paragraph{APIM::FrontEnd::App::Controllers::UpgradeToDeveloperController}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics
+	[width=0.7\linewidth]
+	{images/APIM/FrontEnd/Controllers/UpgradeToDeveloperController.png}
+	\caption{APIM::FrontEnd::App::Controllers::UpgradeToDeveloperController}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Descrizione:} UpgradeToDeveloperController permette di effettuare l'aggiornamento di un cliente allo stato di sviluppatore.
+	\item \textbf{Attributi:}
+	\begin{itemize}
+		
+		\item \textbf{\$scope : \$scope}\\
+		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		
+		\item \textbf{\$http : \$http }\\
+		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
+		
+		\item \textbf{\$location : \$location }\\
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		
+		
+	\end{itemize}
+	\item \textbf{Metodi:}
+	\begin{itemize}
+		
+		\item \textbf{UpgradeToDeveloperController(\$scope : \$scope, \$http : \$http, \$location : \$location)}\\
+		Metodo costruttore della classe;
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{\$scope : \$scope}\\
+			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
+			
+			\item \textbf{\$http : \$http}\\
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
 			
 			\item \textbf{\$location : \$location}\\
-			Campo dati contenente un riferimento al servizio creato da AngularJS che permette di accedere alla barra degli indirizzi del browser, i cambiamenti all'URL nella barra degli indirizzi si riflettono in questo oggetto e viceversa;
-
-			\item \textbf{\$http : \$http }\\
-			Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
-				
-			\item \textbf{microservice : MicroserviceModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di un microservizio.
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per le funzioni di oruting.
 			
-			\item \textbf{transaction : TransactionModel }\\
-			Campo dati che si riferisce alla classe che rappresenta il modello di una transazione.
-				
 		\end{itemize}
-	\item \textbf{Metodi:}
-		\begin{itemize}
 		
-			\item \textbf{APIPurchasedController(\$scope : \$scope, \$location : \$location, \$routeParams : \$routeParams, user : UserDetailsModel) : void}\\
-			Metodo costruttore della classe.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{\$scope}\\
-				Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
-				
-				\item \textbf{\$location}\\
-				Parametro che contiene un riferimento al servizio di AngularJS che permette di accedere alla barra degli indirizzi del browser, così da controllarne i cambiamenti;
-			
-				\item \textbf{\$routeParams}\\
-				Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Permette di recuperare il set di variabili presenti nell'url;
-				
-				\item \textbf{user}\\
-				Parametro che rappresenta un utente.
-			\end{itemize}
-			
-			\item \textbf{getMicroservicesDetails(email : string) : Array<MicroserviceModel>}\\
-			Metodo per visualizzare le informazioni dei microservizi comprati dall'utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
-			\begin{description}
-    			\item[\textbf{Parametri:}]
-			\end{description}
-			\begin{itemize}
-				\item \textbf{email}\\
-				Parametro che rappresenta un indirizzo email.
-			\end{itemize}
-			
-		\end{itemize}
-	\item \textbf{Relazioni con altre classi:}
+		\item \textbf{enoughCredits() : boolean}\\
+		Metodo che verifica se il cliente possiede abbastanza crediti per effettuare l'upgrade. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
 		\begin{itemize}
-			\item Ricava i dati necessari dal package \textbf{Services};
-			\item Gestisce il funzionamento della view \textbf{APIPurchased};
-			\item Il model \textbf{MicroserviceModel} che contiene le informazioni per rappresentare un microservizio.
+			\item \textbf{void}\\
 		\end{itemize}
+		
+		\item \textbf{developerUpgrade() : boolean}\\
+		Metodo che effettua l'upgrade. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\begin{description}
+			\item[\textbf{Parametri:}]
+		\end{description}
+		\begin{itemize}
+			\item \textbf{void}\\
+		\end{itemize}
+		
+		
+		
+	\end{itemize}
+	\item \textbf{Relazioni con altre classi:}
+	\begin{itemize}
+		\item Ricava i dati necessari dal package \textbf{Services};
+		\item Gestisce il funzionamento della view \textbf{DiventaSviluppatore};
+	\end{itemize}
 \end{itemize}
 
 % Fine controllers
