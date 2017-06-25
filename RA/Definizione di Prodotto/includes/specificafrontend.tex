@@ -1238,10 +1238,9 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} AdminAPIDetailsManagerController permette di visualizzare le statistiche di un API, attivarla, disattivarla o eliminarla.
+	\item \textbf{Descrizione:} classe che permette di visualizzare le statistiche di un'API, attivarla, disattivarla o eliminarla.
 	\item \textbf{Attributi:}
 	\begin{itemize}
-		
 		\item \textbf{\$scope : \$scope}\\
 		Campo dati contenente un riferimento all'oggetto \$scope creato da AngularJS, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
 		
@@ -1249,7 +1248,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
 		
 		\item \textbf{\$route : \$route }\\
-		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di routing;
 		
 		\item \textbf{\$mdDialog : \$mdDialog }\\
 		Campo dati contenente il riferimento all'oggetto globale \$mdDialog creato da AngularJS. Viene utilizzato per creare finestre di popup;
@@ -1263,7 +1262,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\begin{itemize}
 		
 		\item \textbf{AdminAPIDetailsManagerController(\$scope : \$scope, \$http : \$http, \$route : \$route, \$mdDialog : \$mdDialog, \$routeParams : \$routeParams)}\\
-		Metodo costruttore della classe;
+		Metodo costruttore della classe.
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
@@ -1275,7 +1274,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
 			
 			\item \textbf{\$route : \$route}\\
-			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di oruting.
+			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di routing.
 			
 			\item \textbf{\$mdDialog : \$mdDialog}\\
 			Parametro che contiene il riferimento all'oggetto globale \$mdDialog di AngularJS. Viene utilizzato per creare finestre di popup.
@@ -1325,7 +1324,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Identificativo dell'API;
 		\end{itemize}
 		
-		\item \textbf{showConfirm(ev : TargetEvent, IdMS : int, isActivate : boolean) : void}\\
+		\item \textbf{showConfirm(ev : TargetEvent, IdMS : int, isActive : boolean) : void}\\
 		Metodo per mostrare una finestra di conferma di elimninazione dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
@@ -1337,12 +1336,10 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			\item \textbf{IdMS : int}\\
 			Identificativo dell'API;
 			
-			\item \textbf{boolean : isActivate}\\
-			Idetifica lo stato dell'API;
+			\item \textbf{boolean : isActive}\\
+			Identifica lo stato dell'API;
 			
 		\end{itemize}
-		
-		
 		
 	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
@@ -1363,7 +1360,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} AdminAPIManagerController permette di visualizzare la lista di tutte le API presenti e di effettuare alcune operazioni come attivazione e disattivazione ed eliminazione.
+	\item \textbf{Descrizione:} classe che permette di fornire la lista di tutte le API presenti e di effettuare alcune operazioni come attivazione, disattivazione ed eliminazione.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -1374,7 +1371,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
 		
 		\item \textbf{\$route : \$route }\\
-		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di routing;
 		
 		\item \textbf{\$mdDialog : \$mdDialog }\\
 		Campo dati contenente il riferimento all'oggetto globale \$mdDialog creato da AngularJS. Viene utilizzato per creare finestre di popup;
@@ -1400,7 +1397,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
 			
 			\item \textbf{\$route : \$route}\\
-			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di oruting.
+			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di routing.
 			
 			\item \textbf{\$mdDialog : \$mdDialog}\\
 			Parametro che contiene il riferimento all'oggetto globale \$mdDialog di AngularJS. Viene utilizzato per creare finestre di popup.
@@ -1450,7 +1447,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Identificativo dell'API;
 		\end{itemize}
 		
-		\item \textbf{showConfirm(ev : TargetEvent, IdMS : int, isActivate : boolean) : void}\\
+		\item \textbf{showConfirm(ev : TargetEvent, IdMS : int, isActive : boolean) : void}\\
 		Metodo per mostrare una finestra di conferma di elimninazione dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
@@ -1462,8 +1459,8 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			\item \textbf{IdMS : int}\\
 			Identificativo dell'API;
 			
-			\item \textbf{boolean : isActivate}\\
-			Idetifica lo stato dell'API;
+			\item \textbf{boolean : isActive}\\
+			Identifica lo stato dell'API;
 			
 		\end{itemize}
 		
@@ -1498,7 +1495,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
 		
 		\item \textbf{\$location : \$location }\\
-		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di routing;
 		
 		
 	\end{itemize}
@@ -1518,7 +1515,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
 			
 			\item \textbf{\$location : \$location}\\
-			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per le funzioni di oruting.
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per le funzioni di routing.
 			
 		\end{itemize}
 		
@@ -1551,7 +1548,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} AdminUserManagerController permette di gestire un utente e di eliminarlo.
+	\item \textbf{Descrizione:} classe che permette di gestire/moderare un utente (sostanzialmente eliminarlo).
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -1562,7 +1559,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
 		
 		\item \textbf{\$route : \$route }\\
-		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		Campo dati contenente il riferimento all'oggetto globale \$route creato da AngularJS. Viene utilizzato per le funzioni di routing;
 		
 		\item \textbf{\$mdDialog : \$mdDialog }\\
 		Campo dati contenente il riferimento all'oggetto globale \$mdDialog creato da AngularJS. Viene utilizzato per creare finestre di popup;
@@ -1585,7 +1582,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
 			
 			\item \textbf{\$route : \$route}\\
-			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di oruting.
+			Parametro che contiene il riferimento all'oggetto globale \$route di AngularJS. Viene utilizzato per le funzioni di routing.
 			
 			\item \textbf{\$mdDialog : \$mdDialog}\\
 			Parametro che contiene il riferimento all'oggetto globale \$mdDialog di AngularJS. Viene utilizzato per creare finestre di popup.
@@ -1599,10 +1596,10 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			\item[\textbf{Parametri:}]
 		\end{description}
 		\begin{itemize}
-			\item \textbf{TargetEvent : ev}\\
+			\item \textbf{ev : TargetEvent}\\
 			Identifica il target che ha fatto scatenare l'evento di apertura del popup;
 			
-			\item \textbf{IdClient : int}\\
+			\item \textbf{idClient : int}\\
 			Identificativo dell'utente;
 			
 			\item \textbf{numActive : int}\\
@@ -1629,7 +1626,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} APIConfirmPurchaseController permette effettuare l'acquisto di una licenza per una API da parte di un cliente.
+	\item \textbf{Descrizione:} classe che permette di effettuare l'acquisto di una licenza per una API da parte di un cliente.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -1640,7 +1637,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
 		
 		\item \textbf{\$location : \$location }\\
-		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di routing;
 		
 		\item \textbf{\$routeParams : \$routeParams}\\
 		Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
@@ -1686,7 +1683,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} APIController permette di ricavare tutte le informazioni riguardanti un API e di effettuare l'acquisto di una licenza.
+	\item \textbf{Descrizione:} APIController permette di ricavare tutte le informazioni riguardanti un'API e di effettuare l'acquisto di una licenza.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -1697,7 +1694,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
 		
 		\item \textbf{\$location : \$location }\\
-		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di routing;
 		
 		\item \textbf{\$routeParams : \$routeParams}\\
 		Parametro che contiene il riferimento all'oggetto globale \$routeParams di AngularJS. Viene utilizzato per riferirsi alle variabili GET e POST.
@@ -1948,7 +1945,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{APIAcquistate};
+		\item Gestisce il funzionamento della view \textbf{APIPurchased};
 	\end{itemize}
 \end{itemize}
 
@@ -2001,7 +1998,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{APIRegistrate};
+		\item Gestisce il funzionamento della view \textbf{APIRegistered};
 	\end{itemize}
 \end{itemize}
 
@@ -2054,7 +2051,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{Categoria};
+		\item Gestisce il funzionamento della view \textbf{Category};
 	\end{itemize}
 \end{itemize}
 
@@ -2069,7 +2066,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} ConfirmAPIRegistrationController permette di effettura la conferma di registrazione di un API da parte di uno sviluppatore.
+	\item \textbf{Descrizione:} ConfirmAPIRegistrationController permette di effettuare la conferma di registrazione di un API da parte di un utente sviluppatore.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -2107,7 +2104,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{ConfermaRegistrazione};
+		\item Gestisce il funzionamento della view \textbf{ConfirmAPIRegistration};
 	\end{itemize}
 \end{itemize}
 
@@ -2122,7 +2119,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} ConfirmLoginController permette confermare l'upgrade da cliente a sviluppatore.
+	\item \textbf{Descrizione:} ConfirmLoginController permette di confermare l'upgrade da utente cliente a utente sviluppatore.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -2154,7 +2151,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{xonfermaDiventaSviluppatore};
+		\item Gestisce il funzionamento della view \textbf{ConfirmUpgradeToDeveloper};
 	\end{itemize}
 \end{itemize}
 
@@ -2195,7 +2192,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{xonfermaDiventaSviluppatore};
+		\item Gestisce il funzionamento della view \textbf{ConfirmUserRegistration};
 	\end{itemize}
 \end{itemize}
 
@@ -2270,7 +2267,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} LogoutController permette di effettuare il logout di clienti e sviluppatori.
+	\item \textbf{Descrizione:} LogoutController permette di effettuare il logout di utenti autenticati alla piattaforma.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -2297,15 +2294,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
 			
 		\end{itemize}	
-		
-		\item \textbf{login() : void}\\
-		Metodo costruttore della classe;
-		\begin{description}
-			\item[\textbf{Parametri:}]
-		\end{description}
-		\begin{itemize}
-			\item \textbf{void}\\
-		\end{itemize}				
+					
 	\end{itemize}
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
@@ -2354,7 +2343,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		\end{itemize}	
 		
 		\item \textbf{recoverPassword() : void}\\
-		Metodo che, attravreso la chiamata all'opportuno microservizio, avvia la procedura di una nuova generazione della password;
+		Metodo che, attraverso la chiamata all'opportuno microservizio, avvia la procedura di generazione di una nuova password;
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
@@ -2365,22 +2354,22 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{RecuperoPassword};
+		\item Gestisce il funzionamento della view \textbf{PasswordRecovery};
 	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::PasswordRecoveryController}
+\paragraph{APIM::FrontEnd::App::Controllers::ResetPasswordController}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics
 	[width=0.7\linewidth]
-	{images/APIM/FrontEnd/Controllers/PasswordRecoveryController.png}
-	\caption{APIM::FrontEnd::App::Controllers::PasswordRecoveryController}
+	{images/APIM/FrontEnd/Controllers/ResetPasswordController.png}
+	\caption{APIM::FrontEnd::App::Controllers::ResetPasswordController}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} PasswordRecoveryController permette di effettuare il recupero password di clienti e sviluppatori.
+	\item \textbf{Descrizione:} classe che permette di effettuare il cambio password di clienti e sviluppatori autenticati al sistema.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -2390,11 +2379,14 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		\item \textbf{\$http : \$http }\\
 		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
 		
+		\item \textbf{\$location : \$location}\\
+		Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
+		
 	\end{itemize}
 	\item \textbf{Metodi:}
 	\begin{itemize}
 		
-		\item \textbf{PasswordRecoveryController(\$scope : \$scope, \$http : \$http)}\\
+		\item \textbf{ResetPasswordController(\$scope : \$scope, \$http : \$http, \$location : \$location)}\\
 		Metodo costruttore della classe;
 		\begin{description}
 			\item[\textbf{Parametri:}]
@@ -2404,12 +2396,15 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Parametro che contiene un riferimento all'oggetto \$scope di AngularJS, impiegato nella comunicazione tra i rispettivi view e controller. Contiene gli oggetti che definiscono i model dell'applicazione;
 			
 			\item \textbf{\$http : \$http}\\
-			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
+			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP;
+			
+			\item \textbf{\$location : \$location}\\
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per riferirsi all'URL ed interagire con il routing.
 			
 		\end{itemize}	
 		
-		\item \textbf{recoverPassword() : void}\\
-		Metodo che, attravreso la chiamata all'opportuno microservizio, avvia la procedura di una nuova generazione della password;
+		\item \textbf{changePassword() : void}\\
+		Metodo che consente di impostare una nuova password per l'utente;
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
@@ -2420,7 +2415,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{RecuperoPassword};
+		\item Gestisce il funzionamento della view \textbf{ResetPassword};
 	\end{itemize}
 \end{itemize}
 
@@ -2466,7 +2461,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{PolicyChiamata};
+		\item Gestisce il funzionamento della view \textbf{PolicyCall};
 	\end{itemize}
 \end{itemize}
 
@@ -2512,7 +2507,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{PolicyTempo};
+		\item Gestisce il funzionamento della view \textbf{PolicyTime};
 	\end{itemize}
 \end{itemize}
 
@@ -2527,7 +2522,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} PolicyTrafficController permette di ricavare le informazioni riguardanti la tipologia di policy a tempo.
+	\item \textbf{Descrizione:} PolicyTrafficController permette di ricavare le informazioni riguardanti la tipologia di policy a traffico dati.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -2558,7 +2553,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{PolicyTraffico};
+		\item Gestisce il funzionamento della view \textbf{PolicyTraffic};
 	\end{itemize}
 \end{itemize}
 
@@ -2574,7 +2569,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 
 \begin{itemize}
 	\item \textbf{Descrizione:} ProfileManagerController permette di gestire il profilo personale di un
-	utente, fornendo le funzionalità all'utente per poter modificare i propri dati.
+	utente, fornendogli le funzionalità per poter modificare i propri dati.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -2623,14 +2618,14 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			\item \textbf{void}\\
 		\end{itemize}
 		
-		\item \textbf{updateAvatar(element : image) : void}\\
+		\item \textbf{updateAvatar(element : Image) : void}\\
 		Metodo per modificare l'avatar del profilo utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
 		\begin{itemize}
-			\item \textbf{email}\\
-			Parametro che rappresenta un indirizzo email.
+			\item \textbf{element : Image}\\
+			Parametro che rappresenta l'immagine avatar dell'utente.
 		\end{itemize}
 		
 	\end{itemize}
@@ -2690,7 +2685,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{RicaricaCrediti};
+		\item Gestisce il funzionamento della view \textbf{RechargeCredits};
 	\end{itemize}
 \end{itemize}
 
@@ -2774,16 +2769,16 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		\end{itemize}
 		
 		\item \textbf{uploadPDF(element : PDF) : void}\\
-		Metodo per aggiungere il file di documentazione. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		Metodo per aggiungere il file di documentazione in formato PDF. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
 		\begin{itemize}
 			\item \textbf{element : PDF}\\
-			File di documnetazione del servizio.
+			File di documentazione del servizio.
 		\end{itemize}
 		
-		\item \textbf{uploadPDF(element : Image) : void}\\
+		\item \textbf{uploadLogo(element : Image) : void}\\
 		Metodo per aggiungere il logo. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
@@ -2793,7 +2788,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			File imagine del logo del servizio.
 		\end{itemize}
 		
-		\item \textbf{uploadPDF() : void}\\
+		\item \textbf{submit() : void}\\
 		Metodo per effettuare la registrazione dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
@@ -2806,7 +2801,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{RegistraAPI};
+		\item Gestisce il funzionamento della view \textbf{RegisterAPI};
 	\end{itemize}
 \end{itemize}
 
@@ -2870,13 +2865,13 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			\item \textbf{void}\\
 		\end{itemize}
 		
-		\item \textbf{updateAvatar(element : image) : void}\\
-		Metodo per modificare l'avatar del profilo utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\item \textbf{updloadAvatar(element : Image) : void}\\
+		Metodo per caricare l'avatar del profilo utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
 		\begin{itemize}
-			\item \textbf{email}\\
+			\item \textbf{element : Image}\\
 			Parametro che rappresenta un indirizzo email.
 		\end{itemize}
 		
@@ -2884,7 +2879,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{RegistrazioneUtente};
+		\item Gestisce il funzionamento della view \textbf{RegisterUser};
 	\end{itemize}
 \end{itemize}
 
@@ -2937,11 +2932,11 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{VisualizzaUtente};
+		\item Gestisce il funzionamento della view \textbf{ShowUserDetails};
 	\end{itemize}
 \end{itemize}
 
-\paragraph{APIM::FrontEnd::App::Controllers::TransactionListController}
+\paragraph{APIM::FrontEnd::App::Controllers::TransactionsListController}
 
 \begin{figure}[H]
 	\centering
@@ -2952,7 +2947,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Descrizione:} TransactionsListController permette di ricavare la lista delle transazioni di una API.
+	\item \textbf{Descrizione:} TransactionsListController permette di ricavare la lista delle transazioni per un utente.
 	\item \textbf{Attributi:}
 	\begin{itemize}
 		
@@ -2984,7 +2979,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{RegistroTransazioni};
+		\item Gestisce il funzionamento della view \textbf{TransactionsList};
 	\end{itemize}
 \end{itemize}
 
@@ -3052,27 +3047,27 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		\end{itemize}
 		
 		\item \textbf{uploadPDF(element : PDF) : void}\\
-		Metodo per aggiungere il file di documentazione. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		Metodo per aggiungere il file di documentazione in formato PDF. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
 		\begin{itemize}
 			\item \textbf{element : PDF}\\
-			File di documnetazione del servizio.
+			File di documentazione del microservizio.
 		\end{itemize}
 		
-		\item \textbf{uploadPDF(element : Image) : void}\\
-		Metodo per aggiungere il logo. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\item \textbf{uploadLogo(element : Image) : void}\\
+		Metodo per aggiungere il logo di un microservizio. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
 		\begin{itemize}
 			\item \textbf{element : Image}\\
-			File imagine del logo del servizio.
+			File immagine del logo del microservizio.
 		\end{itemize}
 		
-		\item \textbf{uploadPDF() : void}\\
-		Metodo per effettuare la registrazione dell'API. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\item \textbf{submit() : void}\\
+		Metodo per effettuare l'invio e la modifica delle nuove informazioni per l'API selezionata. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
@@ -3093,7 +3088,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{RegistraAPI};
+		\item Gestisce il funzionamento della view \textbf{UpdateInfoAPI};
 	\end{itemize}
 \end{itemize}
 
@@ -3119,7 +3114,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 		Campo dati che contiene un riferimento al servizio \$http che permette la comunicazione con il protocollo HTTP;
 		
 		\item \textbf{\$location : \$location }\\
-		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di oruting;
+		Campo dati contenente il riferimento all'oggetto globale \$location creato da AngularJS. Viene utilizzato per le funzioni di routing;
 		
 		
 	\end{itemize}
@@ -3139,7 +3134,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			Parametro che contiene il riferimento all'oggetto globale \$http di AngularJS. Viene utilizzato per la comunicazione con il protocollo HTTP.
 			
 			\item \textbf{\$location : \$location}\\
-			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per le funzioni di oruting.
+			Parametro che contiene il riferimento all'oggetto globale \$location di AngularJS. Viene utilizzato per le funzioni di routing.
 			
 		\end{itemize}
 		
@@ -3152,8 +3147,8 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 			\item \textbf{void}\\
 		\end{itemize}
 		
-		\item \textbf{developerUpgrade() : boolean}\\
-		Metodo che effettua l'upgrade. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
+		\item \textbf{developerUpgrade() : void}\\
+		Metodo che effettua l'upgrade dell'utente. Si serve di un'operazione di un servizio esposto dal package \textbf{Services}.
 		\begin{description}
 			\item[\textbf{Parametri:}]
 		\end{description}
@@ -3167,7 +3162,7 @@ contiene tutte le informazioni necessarie alla presentazione del contenuto di SL
 	\item \textbf{Relazioni con altre classi:}
 	\begin{itemize}
 		\item Ricava i dati necessari dal package \textbf{Services};
-		\item Gestisce il funzionamento della view \textbf{DiventaSviluppatore};
+		\item Gestisce il funzionamento della view \textbf{UpgradeToDeveloper};
 	\end{itemize}
 \end{itemize}
 
