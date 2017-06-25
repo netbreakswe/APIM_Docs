@@ -8,8 +8,8 @@
 	L'obiettivo prefissato è:
 	\begin{itemize}
 		\item Produrre documenti corretti grammaticalmente e sintatticamente;
-		\item Leggibili dal più largo numero di persone e nel rispetto dell'indice di Gulpease\ped{G};
-		\item Avere un glossario comune per evitare ambiguità di gergo;
+		\item Leggibili dal più largo numero di persone e nel rispetto dell'indice di Gulpease;
+		\item Avere un glossario comune per evitare ambiguità di nomenclatura tecnica;
 		\item Produrre documenti di struttura uniforme.
 	\end{itemize}
 	
@@ -20,9 +20,9 @@
 		\end{center}
 		All'interno del nome, \textit{X\_Y\_Z} indica la versione del documento nel seguente modo:
 		\begin{itemize}
-			\item \textit{X}: indica il numero di pubblicazioni del documento. Questo indice è incrementato esclusivamente dal \textit{\RdP} in seguito alla sua approvazione finale. L’incremento di tale indice, azzera automaticamente gli indici Y e Z;
-			\item \textit{Y}: indica il numero di verifiche e viene incrementato esclusivamente dai \textit{\Vers}. L'incremento di tale indice, azzera automaticamente l'indice Z;
-			\item \textit{Z}: indica il numero di aggiornamenti minori effettuati prima o in seguito a una verifica o approvazione. Viene incrementato progressivamente e viene azzerato solo in seguito a una modifica degli indici X e Y.
+			\item \textit{\textbf{X}}: indica il numero di pubblicazioni del documento. Questo indice è incrementato esclusivamente dal \textit{\RdP} in seguito alla sua approvazione finale. L’incremento di tale indice, azzera automaticamente gli indici Y e Z;
+			\item \textit{\textbf{Y}}: indica il numero di verifiche e viene incrementato esclusivamente dai \textit{\Vers}. L'incremento di tale indice, azzera automaticamente l'indice Z;
+			\item \textit{\textbf{Z}}: indica il numero di aggiornamenti minori effettuati prima o in seguito a una verifica o approvazione. Viene incrementato progressivamente e viene azzerato solo in seguito a una modifica degli indici X e Y.
 		\end{itemize}
 		Ogni modifica della versione del documento deve riflettersi nel changelog, nel nome del documento e nel frontespizio in corrispondenza della voce \textit{Versione}.
 	
@@ -40,12 +40,10 @@
 			\item \textbf{In attesa di verifica}: la stesura del documento è terminata e in attesa di verifica da parte del verificatore;
 			\item \textbf{Approvato}: il documento è nella sua versione finale.
 		\end{itemize}
-				
-		\subsubsection{Strumenti di sviluppo del documento}
-		Per la stesura dei documenti è stato scelto di utilizzare \LaTeX, un linguaggio di markup utilizzato per la stesura di documenti scientifici. \LaTeX è un linguaggio semplice e modulare, in grado di evitare possibili conflitti provenienti dall'utilizzo di software e piattaforme differenti.
 	
 		\subsubsection{Struttura del documento}
-		Ogni documento redatto dal gruppo avrà una struttura chiara e di facile comprensione per chiunque sia il lettore. Una struttura semplice aiuta nella lettura e nell'individuare immediatamente l'argomento trattato nello specifico documento e l'identità di chi ha redatto, verificato e approvato il documento.
+		Ogni documento redatto dal gruppo avrà una struttura chiara e di facile comprensione per chiunque sia il lettore.\\
+		Una struttura semplice aiuta nella lettura e nell'individuare immediatamente l'argomento trattato nello specifico documento e l'identità di chi ha redatto, verificato e approvato il documento.
 		Di seguito, viene riportata la struttura utilizzata nei documenti:
 
 			\paragraph{Frontespizio}
@@ -71,14 +69,16 @@
 			\paragraph{Changelog}
 			La seconda sezione del documento è una lista che raccoglie e tiene traccia di tutte le modifiche effettuate al documento, dalla sua creazione alla sua approvazione finale. Le modifiche sono indicate secondo questo schema:
 			\begin{itemize}
-				\item\textbf{Descrizione}: indica le aggiunte e/o modifiche effettuate al documento;
-				\item\textbf{Autore e ruolo}: indica l'autore e il ruolo di chi ha effettuato la modifica;
-				\item\textbf{Data e versione}: indica la data di modifica e la nuova versione del documento in questione.
+				\item \textbf{Versione}: indica la versione del documento;
+				\item \textbf{Data}: indica la data di modifica del documento;
+				\item\textbf{Autore}: indica l'autore della modifica effettuata;
+				\item \textbf{Ruolo}: indica il ruolo dell'autore che ha effettuato la modifica;
+				\item\textbf{Descrizione}: indica le aggiunte e/o modifiche effettuate al documento.
 			\end{itemize}	
 
 			\paragraph{Indice}
-			Ogni documento, ad eccezione dei verbali, deve possedere un indice contenente tutte le sezioni presenti nel documento. L'indice è ordinato nella sequenza in cui appaiono i capitoli, le sezioni e sottosezioni, e contiene il titolo di ognuna. 
-
+			Ogni documento, ad eccezione dei verbali, deve possedere un indice contenente tutte le sezioni presenti nel documento.\\
+			L'indice è ordinato nella sequenza in cui appaiono i capitoli, le sezioni e sottosezioni, e contiene il titolo di ognuna.\\
 			Se nel documento sono presenti immagini o tabelle, occorre indicarle con il relativo indice.
 			
 			\paragraph{Intestazione e piè di pagina}
@@ -206,38 +206,55 @@
 			\item \textbf{Destinazione}: gruppo, committente e proponente;
 			\item \textbf{Contenuto}: questo documento ha lo scopo di fornire all'utente una guida dettagliata riguardo tutte le funzionalità offerte dal prodotto realizzato.
 		\end{itemize}
+	
+		\paragraph{Manuale Manutentore}
+		\begin{itemize}
+			\item \textbf{Classificazione}: esterno;
+			\item \textbf{Destinazione}: gruppo, committente e proponente;
+			\item \textbf{Contenuto}: questo documento ha lo scopo di fornire agli sviluppatori e manutentori dell'applicazione, una guida dettagliata riguardo tutte le specifiche tecniche e tecnologiche per il mantenimento del prodotto.
+		\end{itemize}
+
+		\subsubsection{Strumenti utilizzati}
+		Per la stesura dei documenti è stato scelto di utilizzare \LaTeX, un linguaggio di markup utilizzato per la stesura di documenti scientifici.\\
+		\LaTeX è un linguaggio semplice e modulare, in grado di evitare possibili conflitti provenienti dall'utilizzo di software e piattaforme differenti.
+		\paragraph{TeXstudio}
+		In seguito a un breve periodo di test, la scelta del team per l'editor di documenti \textit{\LaTeX\ped{G}} è ricaduta su \textit{\textbf{TeXstudio\ped{G}}}. Esso è un noto fork di un altrettanto famoso editor, \textit{TexMaker\ped{G}}, ma con la peculiarità di essere completamente gratuito, open source e disponibile per i più diffusi sistemi operativi.\\ L'editor consente un semplice utilizzo dei file \textit{.tex} e una comoda gestione di inclusione e accorpamento di documenti. Tale caratteristica viene incontro alle esigenze del gruppo per via della predisposizione alla modularità dei documenti richiesti dal progetto.\\
+		L'editor scelto, inoltre, possiede numerose features rilevanti, quali l'autocompletamento e il controllo della sintassi e dell'ortografia, e l'anteprima in PDF incorporata. Per questi motivi, TeXstudio sarà il principale strumento tramite cui verranno redatti tutti i documenti.
+	
 	\newpage
 	\subsection{Verifica}
-	Il processo di Verifica e Validazione ha lo scopo di controllare ed assicurare che documentazione e software prodotti rispecchino quanto previsto dai requisiti.\\
+	Il processo di verifica ha lo scopo di controllare ed assicurare che documentazione e software prodotti rispecchino quanto previsto dai requisiti.\\
 	In particolare, la verifica serve a stabilire che il prodotto rispetti le specifiche, mentre la validazione accerta che le specifiche siano rispettate nel modo più consono.
 
 		\subsubsection{Verifica documenti}
 		
 		\paragraph{Descrizione}
-		L'attività di verifica dei documenti è svolta dai Verificatori. Essi hanno il compito di segnalare ogni incongruenza o errore, facendo presente eventuali punti non chiari, in modo tale da permetterne la correzione. Ogni problema deve essere segnalato tramite gli strumenti di comunicazione e issue tracking internamente utilizzati, con una breve descrizione del problema e un riferimento alla posizione del documento da controllare. In alternativa, il Verificatore può effettuare precise annotazioni nei documenti PDF resi disponibili per il controllo, da consegnare in seguito alla persona responsabile di effettuare le modifiche nel documento.\\
-		Qualsiasi dubbio aggiuntivo può essere chiarito tramite gli strumenti di comunicazione abitualmente utilizzati dal Team.
+		L'attività di verifica dei documenti è svolta dai \textit{Verificatori}. Essi hanno il compito di segnalare ogni incongruenza o errore, facendo presente eventuali punti non chiari, in modo tale da permetterne la correzione.\\
+		Ogni problema deve essere segnalato tramite gli strumenti di comunicazione e issue tracking internamente utilizzati, con una breve descrizione del problema e un riferimento alla posizione del documento da controllare.\\
+		In alternativa, il \textit{Verificatore} può effettuare precise annotazioni nei documenti PDF resi disponibili per il controllo, da consegnare in seguito alla persona responsabile di effettuare le modifiche nel documento.\\
+		Qualsiasi dubbio aggiuntivo può essere chiarito tramite gli strumenti di comunicazione abitualmente utilizzati dal team.
 		
 		\paragraph{Strategia generale}
 		Si considerano, in aggiunta alle descrizioni e alle strategie descritte nella sottosezione corrente, le metodologie sottoriportate:
 		
 		\begin{itemize}
-			\item Si effettua un controllo preliminare della documentazione correlata ed eventuali aggiornamenti che possano essere rilevanti in fase di Verifica
-			\item Si valutano le Norme di Progetto in vigore
-			\item Si procede ad una correzione preliminare tramite controllo ortografico standard
+			\item Si effettua un controllo preliminare della documentazione correlata ed eventuali aggiornamenti che possano essere rilevanti in attività di verifica;
+			\item Si valutano le \textit{Norme di Progetto} in vigore;
+			\item Si procede ad una correzione preliminare tramite controllo ortografico standard.
 		\end{itemize}
 	
 		\paragraph{Obiettivi attesi}
-		Gli obbiettivi di qualità attesi dall'attività di verifica dei documenti sono:
+		Gli obiettivi di qualità attesi dall'attività di verifica dei documenti sono:
 		
 		\begin{itemize}
-			\item L'ottemperanza delle Norme di Progetto per l'ultima versione del documento in fase di Verifica
-			\item L'eliminazione degli errori sintattici e ortografici
-			\item L'eliminazione di porzioni di difficile leggibilità
-			\item La corrispondenza con la restante documentazione
+			\item L'ottemperanza delle \textit{Norme di Progetto} per l'ultima versione del documento durante il processo di verifica;
+			\item L'eliminazione degli errori sintattici e ortografici;
+			\item L'eliminazione di porzioni di difficile leggibilità e comprensione;
+			\item La corrispondenza con la restante documentazione.
 		\end{itemize}
 				
-		\paragraph{Indice di Gulpease}
-		Per verificare l'indice di leggibilità dei documenti, così come definito nel documento \textsc{PianoDiQualifica 3\_0\_0.pdf}, si è deciso di utilizzare uno strumento realizzato da un gruppo degli anni precedenti.\\
+		\paragraph{Indice Gulpease}
+		Per verificare l'indice di leggibilità dei documenti, così come definito nel documento \textsc{PianoDiQualifica 4\_0\_0.pdf}, si è deciso di utilizzare uno strumento realizzato da un gruppo degli anni precedenti.\\
 		Il calcolo dell'indice Gulpease è effettuato direttamente attraverso la piattaforma \textit{NetBreakDB}, la quale è in grado di analizzare i vari file \textit{.tex} all'interno di una cartella e restituire il nome del documento, il valore dell'indice e un'indicazione se il valore è superiore al minimo prefissato.\\
 		Questo script è un ottimo strumento per automatizzare il lavoro, in quanto, dopo alcune modifiche, è in grado di esportare i risultati in codice \LaTeX\ e semplificarne l'integrazione, indicando in quali documenti è necessario intervenire per migliorarne la leggibilità del testo.
 		
@@ -255,21 +272,22 @@
 		\subsubsection{Verifica del codice}
 		
 		\paragraph{Descrizione}
-		L’attività di verifica del codice è effettuata tramite analisi statica e dinamica. In particolare, l'analisi dinamica viene applicata al codice solamente, poichè richiede la compilazione dello stesso e la sua esecuzione. Lo scopo di questa attività è che il software prodotto produca il risultato atteso.
+		L’attività di verifica del codice è effettuata tramite analisi statica e dinamica. In particolare, l'analisi dinamica viene applicata al codice solamente, poichè richiede la compilazione dello stesso e la sua esecuzione.\\
+		Lo scopo di questa attività è che il software prodotto fornisca i risultati attesi.
 		
 		\paragraph{Strategia generale}
 		Si considerano, in aggiunta alle descrizioni e alle strategie descritte nella sottosezione corrente, le metodologie sottoriportate:
 		
 		\begin{itemize}
-			\item Il software viene analizzato secondo le metriche stabilite e ogni discrepanza dai risultati attesi viene segnalata tempestivamente ai titolari della porzione di codifica considerata 
+			\item Il software viene analizzato secondo le metriche stabilite e ogni discrepanza dai risultati attesi viene segnalata tempestivamente ai responsabili della porzione di codifica considerata.
 		\end{itemize}
 		
 		\paragraph{Obiettivi attesi}
-		Gli obbiettivi di qualità attesi dall'attività di verifica dei documenti sono:
+		Gli obiettivi di qualità attesi dall'attività di verifica del codice sono:
 		
 		\begin{itemize}
-			\item I test effettuati devono essere quanto più estesi possibili, per coprire ogni caso d'uso del prodotto finale
-			\item I test devono avere l'apporto minimo da parte del verificatore, ed essere quindi quanto più automatizzati possibile.
+			\item I test effettuati devono essere quanto più estesi possibili, per coprire ogni caso d'uso del prodotto finale;
+			\item I test devono avere l'apporto minimo da parte del \textit{Verificatore}, ed essere quindi, quanto più automatizzati possibile.
 		\end{itemize}
 		
 		\paragraph{Test}
@@ -305,11 +323,11 @@
 			TS[Identificativo test]
 		\end{center}
 	
-		\subparagraph{Test di regressione}
-		Durante lo sviluppo, qualora si renda necessaria la modifica di alcune componenti, i test di regressione consistono nel rieseguire tutti i test riguardanti tale componente aggiornata. Il codice utilizzato per denotare questa fase di test sarà:
+		\subparagraph{Test di non regressione}
+		Durante lo sviluppo, qualora si renda necessaria la modifica di alcune componenti, i test di non regressione consistono nel rieseguire tutti i test riguardanti le componenti aggiornate, in modo tale da verificare che il funzionamento non sia stato compromesso. Il codice utilizzato per denotare questa fase di test sarà:
 		
 		\begin{center}
-			TR[Identificativo test]
+			TNR[Identificativo test]
 		\end{center}
 	
 		\subparagraph{Test di validazione}
@@ -341,24 +359,27 @@
 	\newpage
 	\subsection{Validazione}
 	
-	\subsubsection{Validazione documenti}
+	\subsubsection{Validazione dei documenti}
 	
 	\paragraph{Descrizione}
-	L’attività di validazione riguarda la fase preliminare al rilascio di una nuova versione di documento. Il titolare di tale attività è il Responsabile di Progetto, e prevede una lettura e veloce analisi del documento sottoposto ad approvazione. 
+	L’attività di validazione dei documenti riguarda la fase preliminare al rilascio di una nuova versione di documento. Il responsabile di tale attività è il \textit{Responsabile di Progetto}, e prevede una lettura e veloce analisi del documento sottoposto ad approvazione. 
 	
 	\paragraph{Strategia generale}
-	Durante l'attività di approvazione, il Responsabile deve procedere ad una lettura complessiva del documento, per approvare le modifiche e correzioni stabilite. Viene controllata, prima dell'approvazione e distribuzione, l'analisi di Gulpease perchè rispetti gli standard prefissati.
+	Durante l'attività di approvazione, il \textit{Responsabile} deve procedere ad una lettura complessiva del documento, per approvare le modifiche e correzioni stabilite.\\
+	Viene controllato, prima dell'approvazione e distribuzione, l'indice Gulpease affinchè rispetti gli standard prefissati.
 
 	\paragraph{Obiettivi attesi}
-	I documenti devono essere coerenti con la strategia del team, e la restante documentazione.	
+	I documenti devono essere coerenti con la strategia del team e la restante documentazione.	
 	
-	\subsubsection{Validazione codice}
+	\subsubsection{Validazione del codice}
 	
 	\paragraph{Descrizione}
-	L’attività di validazione del codice riguarda un controllo manuale di quanto riguarda i requisiti del software e che le funzioni siano effettivamente coerenti con gli Use cases stabiliti.
+	L’attività di validazione del codice riguarda un controllo manuale per quanto riguarda i requisiti del software, in modo che le funzioni siano effettivamente coerenti con i casi d'uso stabiliti.
 	
 	\paragraph{Strategia generale}
-	Un test generale del prodotto verrà svolto seguendo le procedure come indicate dai Manuali, per verificare che il risultato atteso sia fruibile completamente per l'utilizzatore finale. Inoltre vengono verificati gli Use cases in modo che l'applicazione soddisfi in pieno i requisiti obbligatori pattuiti con il Proponente. Qualora alcuni requisiti non vengano soddisfatti, il software viene sottoposto ad una nuova fase di incremento per integrare le modifiche necessarie alla sua approvazione.
+	Un test generale del prodotto verrà svolto seguendo le procedure come indicate nel \textit{Manuale Manutentore}, per verificare che il risultato atteso sia fruibile completamente per l'utilizzatore finale.\\
+	Inoltre, vengono verificati tutti i casi d'uso, in modo che l'applicazione soddisfi in pieno i requisiti obbligatori pattuiti con il proponente.\\
+	Qualora alcuni requisiti non vengano soddisfatti, il software viene sottoposto ad una nuova fase di incremento per integrare le modifiche necessarie alla sua approvazione e accettazione.
 	
 	\paragraph{Obiettivi attesi}
-	L'obbiettivo principale è che il software rilasciato rispetti tutti i requisiti attesi e pattuiti in fase di definizione contrattuale.
+	L'obiettivo principale è che il software rilasciato rispetti tutti i requisiti attesi e pattuiti in fase di definizione contrattuale.
